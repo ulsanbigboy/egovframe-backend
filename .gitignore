@@ -20,6 +20,8 @@ local.properties
 .classpath
 .settings/
 .loadpath
+org.eclipse.core.resources.prefs
+
 
 # External tool builders
 .externalToolBuilders/
