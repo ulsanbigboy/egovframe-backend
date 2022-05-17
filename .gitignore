@@ -1,11 +1,16 @@
+
+#
 # Java related
+#
 target/**
 *.jar
 *.war
 *.ear
 *.class
 
+#
 # eclipse specific
+#
 *.pydevproject
 .project
 .metadata
@@ -21,11 +26,18 @@ local.properties
 .settings/
 .loadpath
 org.eclipse.core.resources.prefs
+globals.properties
 
 
+#
 # External tool builders
+#
 .externalToolBuilders/
 
+#
 # Locally stored "Eclipse launch configurations"
+#
 *.launch
+
+
 
