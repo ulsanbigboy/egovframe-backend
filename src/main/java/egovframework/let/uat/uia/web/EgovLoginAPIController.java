@@ -1,3 +1,58 @@
+/********+*********+*********+*********+*********+*********+*********+*********
+ * All Rights Reserved,  (C)2016, CO., LTD.
+ *
+ * 패 키 지 명 : 
+ * 버       젼 : 0.0
+ * 서브 시스템 : 
+ * 일       자 : 2022.05.01
+ * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
+ * 주 요 내 용 : ■ 공통 >  로그 출력
+ ********+*********+*********+*********+*********+*********+*********+*********/
+
+/*
+ * ■패키지명
+ */
+
+
+/**
+ * <p>■공통 >  로그 출력</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
+ *
+ * @author   
+ * @version  1.0
+ * @since    1.0
+ */
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
+/********+*********+*********+*********+*********+*********+*********+*********
+ * All Rights Reserved,  (C)2016, CO., LTD.
+ *
+ * 패 키 지 명 : 
+ * 버       젼 : 0.0
+ * 서브 시스템 : 
+ * 일       자 : 2022.05.01
+ * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
+ * 주 요 내 용 : ■ 공통 >  로그 출력
+ ********+*********+*********+*********+*********+*********+*********+*********/
+
+/*
+ * ■패키지명
+ */
 package egovframework.let.uat.uia.web;
 
 import java.util.HashMap;
@@ -17,11 +72,14 @@ import org.springframework.web.context.request.RequestContextHolder;
 import egovframework.com.cmm.EgovMessageSource;
 import egovframework.com.cmm.LoginVO;
 import egovframework.com.cmm.ResponseCode;
+import egovframework.com.cmm.filter.SimpleCORSFilter;
 import egovframework.com.cmm.service.ResultVO;
 import egovframework.let.uat.uia.service.EgovLoginService;
 
 import org.egovframe.rte.fdl.cmmn.trace.LeaveaTrace;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 일반 로그인을 처리하는 컨트롤러 클래스
@@ -43,6 +101,13 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Controller
 public class EgovLoginAPIController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(EgovLoginAPIController.class);
+
 	/** EgovLoginService */
 	@Resource(name = "loginService")
 	private EgovLoginService loginService;
@@ -59,6 +124,14 @@ public class EgovLoginAPIController {
 	@Resource(name = "leaveaTrace")
 	LeaveaTrace leaveaTrace;
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 일반 로그인을 처리한다
 	 * @param vo - 아이디, 비밀번호가 담긴 LoginVO
@@ -69,6 +142,10 @@ public class EgovLoginAPIController {
 	@RequestMapping(value = "/uat/uia/actionLoginAPI.do", consumes = {MediaType.APPLICATION_JSON_VALUE , MediaType.TEXT_HTML_VALUE})
 //	@Consumes({"text/html;charset=UTF-8","application/json;charset=UTF-8"})
 	public @ResponseBody HashMap<String, Object> actionLogin(@RequestBody LoginVO loginVO, HttpServletRequest request) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", request);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+		
 		HashMap<String,Object> resultMap = new HashMap<String,Object>();
 
 		// 1. 일반 로그인 처리
@@ -132,3 +209,6 @@ public class EgovLoginAPIController {
 		return resultVO;
 	}
 }
+
+
+
