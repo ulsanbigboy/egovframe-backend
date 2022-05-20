@@ -76,7 +76,7 @@ public class EgovUserInfManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<UserInfVO> selectUserList(UserInfVO userVO) throws Exception {
 	return (List<UserInfVO>) list("EgovUserInfManageDAO.selectUserList", userVO);
     }
@@ -99,7 +99,7 @@ public class EgovUserInfManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<UserInfVO> selectCmmntyUserList(UserInfVO userVO) throws Exception {
 	return (List<UserInfVO>) list("EgovUserInfManageDAO.selectCmmntyUserList", userVO);
     }
@@ -122,7 +122,7 @@ public class EgovUserInfManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<UserInfVO> selectCmmntyMngrList(UserInfVO userVO) throws Exception {
 	return (List<UserInfVO>) list("EgovUserInfManageDAO.selectCmmntyMngrList", userVO);
     }
@@ -145,7 +145,7 @@ public class EgovUserInfManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<UserInfVO> selectClubUserList(UserInfVO userVO) throws Exception {
 	return (List<UserInfVO>) list("EgovUserInfManageDAO.selectClubUserList", userVO);
     }
@@ -168,7 +168,7 @@ public class EgovUserInfManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<UserInfVO> selectClubOprtrList(UserInfVO userVO) throws Exception {
 	return (List<UserInfVO>) list("EgovUserInfManageDAO.selectClubOprtrList", userVO);
     }
@@ -191,7 +191,7 @@ public class EgovUserInfManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<UserInfVO> selectAllClubUser(UserInfVO userVO) throws Exception {
 	return (List<UserInfVO>) list("EgovUserInfManageDAO.selectAllClubUser", userVO);
     }
@@ -203,7 +203,7 @@ public class EgovUserInfManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<UserInfVO> selectAllCmmntyUser(UserInfVO userVO) throws Exception {
 	return (List<UserInfVO>) list("EgovUserInfManageDAO.selectAllCmmntyUser", userVO);
     }

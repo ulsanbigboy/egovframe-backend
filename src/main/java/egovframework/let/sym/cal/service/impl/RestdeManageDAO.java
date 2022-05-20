@@ -31,14 +31,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.sym.cal.service.impl;
 
 import java.util.List;
@@ -70,12 +62,21 @@ import org.springframework.stereotype.Repository;
 @Repository("RestdeManageDAO")
 public class RestdeManageDAO extends EgovAbstractMapper {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 일반달력 팝업 정보를 조회한다.
 	 * @param restde
 	 * @return List(일반달력 팝업 날짜정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectNormalRestdePopup(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectNormalRestdePopup", restde);
 	}
@@ -86,6 +87,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(행정달력 팝업 날짜정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectAdministRestdePopup(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectAdministRestdePopup", restde);
 	}
@@ -96,6 +98,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(일반달력 일간 날짜정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectNormalDayCal(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectNormalDayCal", restde);
 	}
@@ -106,6 +109,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(일반달력 일간 휴일정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectNormalDayRestde(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectNormalDayRestde", restde);
 	}
@@ -116,6 +120,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(일반달력 월간 휴일정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectNormalMonthRestde(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectNormalMonthRestde", restde);
 	}
@@ -126,6 +131,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(행정달력 일간 날짜정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectAdministDayCal(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectAdministDayCal", restde);
 	}
@@ -136,6 +142,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(행정달력 일간 휴일정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectAdministDayRestde(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectAdministDayRestde", restde);
 	}
@@ -146,6 +153,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(행정달력 월간 휴일정보)
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectAdministMonthRestde(Restde restde) throws Exception {
         return list("RestdeManageDAO.selectAdministMonthRestde", restde);
 	}
@@ -186,6 +194,7 @@ public class RestdeManageDAO extends EgovAbstractMapper {
 	 * @return List(휴일 목록)
      * @throws Exception
      */
+	@SuppressWarnings("deprecation")
 	public List<?> selectRestdeList(RestdeVO searchVO) throws Exception {
         return list("RestdeManageDAO.selectRestdeList", searchVO);
     }

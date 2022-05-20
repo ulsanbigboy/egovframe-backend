@@ -73,7 +73,7 @@ public class CmmUseDAO extends EgovComAbstractDAO {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
 	public List<CmmnDetailCode> selectCmmCodeDetail(ComDefaultCodeVO vo) throws Exception {
 	return (List<CmmnDetailCode>) list("CmmUseDAO.selectCmmCodeDetail", vo);
     }
@@ -85,7 +85,7 @@ public class CmmUseDAO extends EgovComAbstractDAO {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<CmmnDetailCode> selectOgrnztIdDetail(ComDefaultCodeVO vo) throws Exception {
 	return (List<CmmnDetailCode>) list("CmmUseDAO.selectOgrnztIdDetail", vo);
     }
@@ -97,7 +97,7 @@ public class CmmUseDAO extends EgovComAbstractDAO {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<CmmnDetailCode> selectGroupIdDetail(ComDefaultCodeVO vo) throws Exception {
 	return (List<CmmnDetailCode>) list("CmmUseDAO.selectGroupIdDetail", vo);
     }

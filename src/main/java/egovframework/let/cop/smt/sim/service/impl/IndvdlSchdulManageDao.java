@@ -73,6 +73,7 @@ public class IndvdlSchdulManageDao extends EgovAbstractMapper {
 	 * @return List
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectIndvdlSchdulManageMainList(Map<?, ?> map) throws Exception {
 		return list("IndvdlSchdulManage.selectIndvdlSchdulManageMainList", map);
 	}
@@ -83,6 +84,7 @@ public class IndvdlSchdulManageDao extends EgovAbstractMapper {
 	 * @return List
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectIndvdlSchdulManageRetrieve(Map<?, ?> map) throws Exception {
 		return list("IndvdlSchdulManage.selectIndvdlSchdulManageRetrieve", map);
 	}
@@ -105,6 +107,7 @@ public class IndvdlSchdulManageDao extends EgovAbstractMapper {
 	 * @return List
 	 * @throws Exception
 	 */
+	@SuppressWarnings("deprecation")
 	public List<?> selectIndvdlSchdulManageList(ComDefaultVO searchVO) throws Exception {
 		return list("IndvdlSchdulManage.selectIndvdlSchdulManage", searchVO);
 	}

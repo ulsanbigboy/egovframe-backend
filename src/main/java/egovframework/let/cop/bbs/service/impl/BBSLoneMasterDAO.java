@@ -101,7 +101,7 @@ public class BBSLoneMasterDAO extends EgovAbstractMapper {
      *
      * @param BoardMasterVO
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardMasterVO> selectMasterList(BoardMasterVO vo) throws Exception {
 	return (List<BoardMasterVO>) list("BBSLoneMasterDAO.selectMasterList", vo);
     }

@@ -12,6 +12,22 @@
 /*
  * ■패키지명
  */
+package egovframework.let.utl.sim.service;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.security.MessageDigest;
+
+import org.apache.commons.codec.binary.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 
 /**
@@ -31,30 +47,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.utl.sim.service;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.security.MessageDigest;
-
-import org.apache.commons.codec.binary.Base64;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Base64인코딩/디코딩 방식을 이용한 데이터를 암호화/복호화하는 Business Interface class
  * @author 공통서비스개발팀 박지욱
@@ -73,6 +65,14 @@ import org.slf4j.LoggerFactory;
  * </pre>
  */
 public class EgovFileScrty {
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	// 파일구분자
 	static final char FILE_SEPARATOR = File.separatorChar;
 	// 버퍼사이즈
@@ -353,3 +353,4 @@ public class EgovFileScrty {
     	return MessageDigest.isEqual(hashValue, Base64.decodeBase64(encoded.getBytes()));
     }
 }
+

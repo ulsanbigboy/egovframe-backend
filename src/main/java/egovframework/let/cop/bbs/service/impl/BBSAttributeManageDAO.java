@@ -101,7 +101,7 @@ public class BBSAttributeManageDAO extends EgovAbstractMapper {
      *
      * @param BoardMasterVO
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardMasterVO> selectBBSMasterInfs(BoardMasterVO vo) throws Exception {
 	return (List<BoardMasterVO>) list("BBSAttributeManageDAO.selectBBSMasterInfs", vo);
     }
@@ -142,7 +142,7 @@ public class BBSAttributeManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardMasterVO> selectAllBBSMasteInf(BoardMasterVO vo) throws Exception {
 	// 커뮤니티, 동호회의 게시판이 나오지 않도록 LETTNBBSUSE 테이블과 Join 필요
 	return (List<BoardMasterVO>) list("BBSAttributeManageDAO.selectAllBBSMaster", vo);
@@ -153,7 +153,7 @@ public class BBSAttributeManageDAO extends EgovAbstractMapper {
      *
      * @param BoardMasterVO
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardMasterVO> selectBdMstrListByTrget(BoardMasterVO vo) throws Exception {
 	return (List<BoardMasterVO>) list("BBSAttributeManageDAO.selectBdMstrListByTrget", vo);
     }
@@ -176,7 +176,7 @@ public class BBSAttributeManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardMasterVO> selectAllBdMstrByTrget(BoardMasterVO vo) throws Exception {
 	return (List<BoardMasterVO>) list("BBSAttributeManageDAO.selectAllBdMstrByTrget", vo);
     }
@@ -186,7 +186,7 @@ public class BBSAttributeManageDAO extends EgovAbstractMapper {
      *
      * @param BoardMasterVO
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardMasterVO> selectNotUsedBdMstrList(BoardMasterVO vo) throws Exception {
 	return (List<BoardMasterVO>) list("BBSAttributeManageDAO.selectNotUsedBdMstrList", vo);
     }

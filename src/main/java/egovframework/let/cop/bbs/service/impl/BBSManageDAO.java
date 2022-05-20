@@ -128,7 +128,7 @@ public class BBSManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardVO> selectBoardArticleList(BoardVO boardVO) throws Exception {
 	return (List<BoardVO>) list("BBSManageDAO.selectBoardArticleList", boardVO);
     }
@@ -192,7 +192,7 @@ public class BBSManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardVO> selectNoticeListForSort(Board board) throws Exception {
 	return (List<BoardVO>) list("BBSManageDAO.selectNoticeListForSort", board);
     }
@@ -230,7 +230,7 @@ public class BBSManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardVO> selectGuestList(BoardVO boardVO) throws Exception {
 	return (List<BoardVO>) list("BBSManageDAO.selectGuestList", boardVO);
     }

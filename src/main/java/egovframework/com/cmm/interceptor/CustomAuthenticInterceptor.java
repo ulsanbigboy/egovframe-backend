@@ -67,6 +67,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  */
 
 
+@SuppressWarnings("deprecation")
 public class CustomAuthenticInterceptor extends HandlerInterceptorAdapter {
 
 	private final Logger log = LoggerFactory.getLogger(CustomAuthenticInterceptor.class);

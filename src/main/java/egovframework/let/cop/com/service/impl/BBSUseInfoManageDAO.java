@@ -86,7 +86,7 @@ public class BBSUseInfoManageDAO extends EgovAbstractMapper {
      * @param bdUseInf
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardUseInf> selectBBSUseInfByCmmnty(BoardUseInfVO bdUseVO) throws Exception {
 	return (List<BoardUseInf>) list("BBSUseInfoManageDAO.selectBBSUseInfByCmmnty", bdUseVO);
     }
@@ -97,7 +97,7 @@ public class BBSUseInfoManageDAO extends EgovAbstractMapper {
      * @param bdUseInf
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardUseInf> selectBBSUseInfByClub(BoardUseInfVO bdUseVO) throws Exception {
 	return (List<BoardUseInf>) list("BBSUseInfoManageDAO.selectBBSUseInfByClub", bdUseVO);
     }
@@ -139,7 +139,7 @@ public class BBSUseInfoManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardUseInfVO> selectBBSUseInfs(BoardUseInfVO bdUseVO) throws Exception {
 	return (List<BoardUseInfVO>) list("BBSUseInfoManageDAO.selectBBSUseInfs", bdUseVO);
     }
@@ -192,7 +192,7 @@ public class BBSUseInfoManageDAO extends EgovAbstractMapper {
      * @return
      * @throws Exception
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardUseInfVO> selectBBSUseInfsByTrget(BoardUseInfVO bdUseVO) throws Exception {
 	return (List<BoardUseInfVO>) list("BBSUseInfoManageDAO.selectBBSUseInfsByTrget", bdUseVO);
     }

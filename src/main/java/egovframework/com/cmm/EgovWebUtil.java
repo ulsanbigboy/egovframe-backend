@@ -12,7 +12,9 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm;
 
+import java.util.regex.Pattern;
 
 /**
  * <p>■공통 >  로그 출력</p>
@@ -31,18 +33,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm;
-
-import java.util.regex.Pattern;
-
 /**
  * 교차접속 스크립트 공격 취약성 방지(파라미터 문자열 교체)
  *
@@ -59,6 +49,14 @@ import java.util.regex.Pattern;
  */
 
 public class EgovWebUtil {
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String clearXSSMinimum(String value) {
 		if (value == null || value.trim().equals("")) {
 			return "";
@@ -164,3 +162,5 @@ public class EgovWebUtil {
 	}
 
 }
+
+
