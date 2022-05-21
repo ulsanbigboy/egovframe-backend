@@ -23,6 +23,7 @@ tmp/**/*
 *~.nib
 local.properties
 .classpath
+pom2.xml
 .settings/
 .loadpath
 org.eclipse.core.resources.prefs

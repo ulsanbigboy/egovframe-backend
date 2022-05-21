@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ Base64인코딩/디코딩 방식을 이용한 데이터를 암호화/복호화하는 Business Interface class
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■Base64인코딩/디코딩 방식을 이용한 데이터를 암호화/복호화하는 Business Interface class</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -47,23 +47,6 @@ import org.slf4j.LoggerFactory;
  * @version  1.0
  * @since    1.0
  */
-/**
- * Base64인코딩/디코딩 방식을 이용한 데이터를 암호화/복호화하는 Business Interface class
- * @author 공통서비스개발팀 박지욱
- * @since 2009.01.19
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.01.19  박지욱          최초 생성
- *   2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- * </pre>
- */
 public class EgovFileScrty {
 	
 	/**
@@ -75,11 +58,36 @@ public class EgovFileScrty {
 	 */
 	// 파일구분자
 	static final char FILE_SEPARATOR = File.separatorChar;
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	// 버퍼사이즈
 	static final int BUFFER_SIZE = 1024;
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovFileScrty.class);
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 파일을 암호화하는 기능
 	 *
@@ -137,6 +145,14 @@ public class EgovFileScrty {
 		return result;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 파일을 복호화하는 기능
 	 *
@@ -192,6 +208,14 @@ public class EgovFileScrty {
 		return result;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 데이터를 암호화하는 기능
 	 *
@@ -207,6 +231,14 @@ public class EgovFileScrty {
 		return new String(Base64.encodeBase64(data));
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 데이터를 암호화하는 기능
 	 *
@@ -218,6 +250,14 @@ public class EgovFileScrty {
 		return encodeBinary(data.getBytes());
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 데이터를 복호화하는 기능
 	 *
@@ -229,6 +269,14 @@ public class EgovFileScrty {
 		return Base64.decodeBase64(data.getBytes());
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 데이터를 복호화하는 기능
 	 *
@@ -240,6 +288,14 @@ public class EgovFileScrty {
 		return new String(decodeBinary(data));
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
      * 비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용).
      *
@@ -282,6 +338,14 @@ public class EgovFileScrty {
 		return new String(Base64.encodeBase64(hashValue));
     }
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
      * 비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용)
      *
@@ -308,6 +372,14 @@ public class EgovFileScrty {
 		return new String(Base64.encodeBase64(hashValue));
     }
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
      * 비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용)
      * @param data 암호화할 비밀번호
@@ -333,6 +405,14 @@ public class EgovFileScrty {
 		return new String(Base64.encodeBase64(hashValue));
     }
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
      * 비밀번호를 암호화된 패스워드 검증(salt가 사용된 경우만 적용).
      *
@@ -352,5 +432,7 @@ public class EgovFileScrty {
 
     	return MessageDigest.isEqual(hashValue, Base64.decodeBase64(encoded.getBytes()));
     }
+    
 }
+
 

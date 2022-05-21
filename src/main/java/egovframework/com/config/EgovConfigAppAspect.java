@@ -12,6 +12,22 @@
 /*
  * ■패키지명
  */
+package egovframework.com.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.util.AntPathMatcher;
+
+import egovframework.com.cmm.EgovComExcepHndlr;
+import egovframework.com.cmm.EgovComOthersExcepHndlr;
+import egovframework.com.cmm.interceptor.AopExceptionTransfer;
+import org.egovframe.rte.fdl.cmmn.aspect.ExceptionTransfer;
+import org.egovframe.rte.fdl.cmmn.exception.handler.ExceptionHandler;
+import org.egovframe.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager;
+import org.egovframe.rte.fdl.cmmn.exception.manager.ExceptionHandlerService;
 
 
 /**
@@ -31,31 +47,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.config;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.util.AntPathMatcher;
-
-import egovframework.com.cmm.EgovComExcepHndlr;
-import egovframework.com.cmm.EgovComOthersExcepHndlr;
-import egovframework.com.cmm.interceptor.AopExceptionTransfer;
-import org.egovframe.rte.fdl.cmmn.aspect.ExceptionTransfer;
-import org.egovframe.rte.fdl.cmmn.exception.handler.ExceptionHandler;
-import org.egovframe.rte.fdl.cmmn.exception.manager.DefaultExceptionHandleManager;
-import org.egovframe.rte.fdl.cmmn.exception.manager.ExceptionHandlerService;
-
 /**
  * @ClassName : EgovConfigAppAspect.java
  * @Description : Aspect 설정
@@ -92,6 +83,14 @@ public class EgovConfigAppAspect {
 		return egovComOthersExcepHndlr;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Bean
 	public DefaultExceptionHandleManager defaultExceptionHandleManager(ExceptionHandler egovHandler) {
 		DefaultExceptionHandleManager defaultExceptionHandleManager = new DefaultExceptionHandleManager();
@@ -100,7 +99,14 @@ public class EgovConfigAppAspect {
 		defaultExceptionHandleManager.setHandlers(new ExceptionHandler[] {egovHandler});
 		return defaultExceptionHandleManager;
 	}
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Bean
 	public DefaultExceptionHandleManager otherExceptionHandleManager() {
 		DefaultExceptionHandleManager defaultExceptionHandleManager = new DefaultExceptionHandleManager();
@@ -109,7 +115,14 @@ public class EgovConfigAppAspect {
 		defaultExceptionHandleManager.setHandlers(new ExceptionHandler[] {otherHandler()});
 		return defaultExceptionHandleManager;
 	}
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * @return
 	 * Exception 발생시 후처리를 위해 표준프레임워크 실행환경의 ExceptionTransfer를 활용하도록  설정
@@ -124,7 +137,14 @@ public class EgovConfigAppAspect {
 		});
 		return exceptionTransfer;
 	}
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Bean
 	public AopExceptionTransfer aopExceptionTransfer(ExceptionTransfer exceptionTransfer) {
 		AopExceptionTransfer aopExceptionTransfer = new AopExceptionTransfer();
