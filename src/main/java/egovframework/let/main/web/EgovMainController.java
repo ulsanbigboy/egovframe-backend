@@ -57,6 +57,8 @@ import egovframework.let.cop.bbs.service.BoardVO;
 import egovframework.let.cop.bbs.service.EgovBBSManageService;
 
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 템플릿 메인 페이지 컨트롤러 클래스(Sample 소스)
@@ -77,6 +79,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller@SessionAttributes(types = ComDefaultVO.class)
 public class EgovMainController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/**
 	 * EgovBBSManageService
 	 */
@@ -93,6 +102,11 @@ public class EgovMainController {
 	@RequestMapping(value = "/cmm/forwardPage.do")
 	public String forwardPageWithMenuNo(HttpServletRequest request, @RequestParam Map<String, Object> commandMap)
 	  throws Exception{
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		return "";
 	}
 
@@ -107,6 +121,11 @@ public class EgovMainController {
 	@RequestMapping(value = "/cmm/main/mainPage.do")
 	public String getMgtMainPage(HttpServletRequest request, ModelMap model)
 	  throws Exception{
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		// 공지사항 메인 컨텐츠 조회 시작 ---------------------------------
 		BoardVO boardVO = new BoardVO();

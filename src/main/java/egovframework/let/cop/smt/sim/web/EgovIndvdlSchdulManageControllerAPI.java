@@ -12,33 +12,6 @@
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.cop.smt.sim.web;
 
 import java.util.ArrayList;
@@ -76,7 +49,28 @@ import egovframework.let.cop.smt.sim.service.IndvdlSchdulManageVO;
 
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+
+
+/**
+ * <p>■공통 >  로그 출력</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
+ *
+ * @author   
+ * @version  1.0
+ * @since    1.0
+ */
 /**
  * 일정관리를 처리하는 Controller Class 구현
  * @since 2009.04.10
@@ -95,44 +89,88 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Controller
 public class EgovIndvdlSchdulManageControllerAPI {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	@Autowired
 	private DefaultBeanValidator beanValidator;
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	/** EgovMessageSource */
 	@Resource(name = "egovMessageSource")
 	EgovMessageSource egovMessageSource;
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	@Resource(name = "egovIndvdlSchdulManageService")
 	private EgovIndvdlSchdulManageService egovIndvdlSchdulManageService;
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	@Resource(name = "EgovCmmUseService")
 	private EgovCmmUseService cmmUseService;
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertiesService;
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	// 첨부파일 관련
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileMngService;
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	@Resource(name = "EgovFileMngUtil")
 	private EgovFileMngUtil fileUtil;
 
+	
 	/**
-	 * 일정(월별) 목록을 조회한다.
-	 * @param searchVO
-	 * @param commandMap
-	 * @param indvdlSchdulManageVO
-	 * @param model
+	 * ■일정(월별) 목록을 조회
+	 * =================================
+	 * @param  searchVO
+	 * @param  commandMap
+	 * @param  indvdlSchdulManageVO
+	 * @param  model
 	 * @return "/cop/smt/sim/EgovIndvdlSchdulManageMonthList"
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/cop/smt/sim/egovIndvdlSchdulManageMonthListAPI.do")
 	@ResponseBody
-	public ResultVO EgovIndvdlSchdulManageMonthList(
-		@RequestBody Map<String, Object> commandMap) throws Exception {
+	public ResultVO EgovIndvdlSchdulManageMonthList(@RequestBody Map<String, Object> commandMap) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "일정(월별) 목록을 조회", null);
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 
@@ -185,6 +223,7 @@ public class EgovIndvdlSchdulManageControllerAPI {
 		resultVO.setResultCode(ResponseCode.SUCCESS.getCode());
 		resultVO.setResultMessage(ResponseCode.SUCCESS.getMessage());
 
+		egovframework.com.cmm.util.LogUtil.end(logger, "일정(월별) 목록을 조회");
 		return resultVO;
 	}
 
@@ -198,11 +237,17 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	 * @return "/cop/smt/sim/EgovIndvdlSchdulManageRegist"
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unused")
 	@RequestMapping(value = "/cop/smt/sim/egovIndvdlSchdulManageRegistAPI.do")
 	@ResponseBody
 	public ResultVO IndvdlSchdulManageRegist(
 		@ModelAttribute("indvdlSchdulManageVO") IndvdlSchdulManageVO indvdlSchdulManageVO)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -268,6 +313,11 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	//		ModelMap model,
 	) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -330,6 +380,11 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	public ResultVO EgovIndvdlSchdulManageDetail(
 		@RequestBody Map<String, Object> commandMap)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -394,11 +449,17 @@ public class EgovIndvdlSchdulManageControllerAPI {
 		 * @return "/cop/smt/sim/EgovIndvdlSchdulManageDetail"
 		 * @throws Exception
 		 */
+	@SuppressWarnings("unused")
 	@RequestMapping(value = "/cop/smt/sim/egovIndvdlSchdulManageDeleteAPI.do")
 	@ResponseBody
 	public ResultVO EgovIndvdlSchdulManageDelete(
 		@RequestBody Map<String, Object> commandMap)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -435,6 +496,11 @@ public class EgovIndvdlSchdulManageControllerAPI {
 		@RequestBody Map<String, Object> commandMap,
 		IndvdlSchdulManageVO indvdlSchdulManageVO,
 		BindingResult bindingResult) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -508,6 +574,7 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	 * @return "/cop/smt/sim/EgovIndvdlSchdulManageModifyActor"
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unused")
 	@RequestMapping(value = "/cop/smt/sim/egovIndvdlSchdulManageModifyActorAPI.do")
 	@ResponseBody
 	public ResultVO IndvdlSchdulManageModifyActor(
@@ -515,6 +582,11 @@ public class EgovIndvdlSchdulManageControllerAPI {
 		IndvdlSchdulManageVO indvdlSchdulManageVO,
 		BindingResult bindingResult)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -595,6 +667,11 @@ public class EgovIndvdlSchdulManageControllerAPI {
 		@RequestBody Map<String, Object> commandMap)
 		throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 
@@ -663,6 +740,11 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	public ResultVO EgovIndvdlSchdulManageWeekList(
 		@RequestBody Map<String, Object> commandMap)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -878,3 +960,7 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 }
+
+
+
+

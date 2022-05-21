@@ -72,6 +72,8 @@ import egovframework.let.cop.bbs.service.EgovBBSManageService;
 
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 게시물 관리를 위한 컨트롤러 클래스
@@ -94,6 +96,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class EgovBBSManageController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
     @Resource(name = "EgovBBSManageService")
     private EgovBBSManageService bbsMngService;
 
@@ -170,6 +179,11 @@ public class EgovBBSManageController {
      */
     @RequestMapping("/cop/bbs/selectBoardList.do")
     public String selectBoardArticles(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
 
 	boardVO.setBbsId(boardVO.getBbsId());
@@ -236,6 +250,11 @@ public class EgovBBSManageController {
      */
     @RequestMapping("/cop/bbs/selectBoardArticle.do")
     public String selectBoardArticle(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	LoginVO user = new LoginVO();
 	    if(EgovUserDetailsHelper.isAuthenticated()){
 	    	user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
@@ -289,6 +308,11 @@ public class EgovBBSManageController {
      */
     @RequestMapping("/cop/bbs/addBoardArticle.do")
     public String addBoardArticle(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 	// 사용자권한 처리
 	if(!EgovUserDetailsHelper.isAuthenticated()) {
 		model.addAttribute("message", egovMessageSource.getMessage("fail.common.login"));
@@ -337,6 +361,11 @@ public class EgovBBSManageController {
     public String insertBoardArticle(final MultipartHttpServletRequest multiRequest, @ModelAttribute("searchVO") BoardVO boardVO,
 	    @ModelAttribute("bdMstr") BoardMaster bdMstr, @ModelAttribute("board") Board board, BindingResult bindingResult, SessionStatus status,
 	    ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 	// 사용자권한 처리
 	if(!EgovUserDetailsHelper.isAuthenticated()) {
 		model.addAttribute("message", egovMessageSource.getMessage("fail.common.login"));
@@ -407,6 +436,11 @@ public class EgovBBSManageController {
      */
     @RequestMapping("/cop/bbs/addReplyBoardArticle.do")
     public String addReplyBoardArticle(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	// 사용자권한 처리
     	if(!EgovUserDetailsHelper.isAuthenticated()) {
     		model.addAttribute("message", egovMessageSource.getMessage("fail.common.login"));
@@ -453,6 +487,11 @@ public class EgovBBSManageController {
     public String replyBoardArticle(final MultipartHttpServletRequest multiRequest, @ModelAttribute("searchVO") BoardVO boardVO,
 	    @ModelAttribute("bdMstr") BoardMaster bdMstr, @ModelAttribute("board") Board board, BindingResult bindingResult, ModelMap model,
 	    SessionStatus status) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	// 사용자권한 처리
     	if(!EgovUserDetailsHelper.isAuthenticated()) {
@@ -531,6 +570,11 @@ public class EgovBBSManageController {
     public String selectBoardArticleForUpdt(@ModelAttribute("searchVO") BoardVO boardVO, @ModelAttribute("board") BoardVO vo, ModelMap model)
 	    throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 	// 사용자권한 처리 (자유게시판에 대한 요청이 아닌 경우는 로긴화면으로 이동)
 	if(!boardVO.getBbsId().equals("BBSMSTR_BBBBBBBBBBBB") && !EgovUserDetailsHelper.isAuthenticated()) {
 		model.addAttribute("message", egovMessageSource.getMessage("fail.common.login"));
@@ -586,6 +630,11 @@ public class EgovBBSManageController {
     public String updateBoardArticle(final MultipartHttpServletRequest multiRequest, @ModelAttribute("searchVO") BoardVO boardVO,
 	    @ModelAttribute("bdMstr") BoardMaster bdMstr, @ModelAttribute("board") Board board, BindingResult bindingResult, ModelMap model,
 	    SessionStatus status) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	// 사용자권한 처리
     	if(!EgovUserDetailsHelper.isAuthenticated()) {
@@ -661,6 +710,11 @@ public class EgovBBSManageController {
     public String deleteBoardArticle(@ModelAttribute("searchVO") BoardVO boardVO, @ModelAttribute("board") Board board,
 	    @ModelAttribute("bdMstr") BoardMaster bdMstr, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	// 사용자권한 처리
     	if(!EgovUserDetailsHelper.isAuthenticated()) {
     		model.addAttribute("message", egovMessageSource.getMessage("fail.common.login"));
@@ -690,6 +744,11 @@ public class EgovBBSManageController {
      */
     @RequestMapping("/cop/bbs/previewBoardList.do")
     public String previewBoardArticles(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 	//LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
 
 	String template = boardVO.getSearchWrd();	// 템플릿 URL

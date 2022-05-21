@@ -59,6 +59,8 @@ import egovframework.let.uat.uia.service.EgovLoginService;
 
 import org.egovframe.rte.fdl.cmmn.trace.LeaveaTrace;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 일반 로그인을 처리하는 컨트롤러 클래스
@@ -80,6 +82,13 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Controller
 public class EgovLoginController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/** EgovLoginService */
 	@Resource(name = "loginService")
 	private EgovLoginService loginService;
@@ -104,6 +113,11 @@ public class EgovLoginController {
 	 */
 	@RequestMapping(value = "/uat/uia/egovLoginUsr.do")
 	public String loginUsrView(@ModelAttribute("loginVO") LoginVO loginVO, HttpServletRequest request, HttpServletResponse response, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		return "cmm/uat/uia/EgovLoginUsr";
 	}
 
@@ -116,6 +130,11 @@ public class EgovLoginController {
 	 */
 	@RequestMapping(value = "/uat/uia/actionLogin.do")
 	public String actionLogin(@ModelAttribute("loginVO") LoginVO loginVO, HttpServletRequest request, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		// 1. 일반 로그인 처리
 		LoginVO resultVO = loginService.actionLogin(loginVO);
@@ -143,6 +162,11 @@ public class EgovLoginController {
 	@RequestMapping(value = "/uat/uia/actionMain.do")
 	public String actionMain(ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		// 1. 사용자 인증 처리
 		Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
 		if (!isAuthenticated) {
@@ -161,6 +185,11 @@ public class EgovLoginController {
 	 */
 	@RequestMapping(value = "/uat/uia/actionLogout.do")
 	public String actionLogout(HttpServletRequest request, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		RequestContextHolder.getRequestAttributes().removeAttribute("LoginVO", RequestAttributes.SCOPE_SESSION);
 		return "forward:/cmm/main/mainPage.do";
 	}

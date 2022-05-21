@@ -12,6 +12,20 @@
 /*
  * ■패키지명
  */
+package egovframework.com.config;
+
+import javax.servlet.FilterRegistration;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
+
 
 
 /**
@@ -31,28 +45,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.config;
-
-import javax.servlet.FilterRegistration;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.ContextLoaderListener;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
-
 /**
  * @ClassName : EgovWebApplicationInitializer.java
  * @Description : 공통 컴포넌트 3.10 EgovWebApplicationInitializer 참조 작성
@@ -72,8 +64,21 @@ import org.springframework.web.servlet.DispatcherServlet;
  */
 public class EgovWebApplicationInitializer implements WebApplicationInitializer {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovWebApplicationInitializer.class);
 
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 
@@ -102,6 +107,15 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 		LOGGER.debug("EgovWebApplicationInitializer END-============================================");
 	}
 
+
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * @param servletContext
 	 * Root Context를 등록한다.
@@ -113,6 +127,15 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 		servletContext.addListener(new ContextLoaderListener(rootContext));
 	}
 
+
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * @param servletContext
 	 * Servlet Context를 등록한다.
@@ -128,6 +151,15 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 		dispatcher.addMapping("*.do");
 	}
 
+
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * @param servletContext
 	 * 필터들을 등록 한다.
@@ -137,6 +169,15 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 //		addCORSFilter(servletContext);
 	}
 
+
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * @param servletContext
 	 * Spring CharacterEncodingFilter 설정
@@ -149,6 +190,15 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 		characterEncoding.addMappingForUrlPatterns(null, false, "*.do");
 	}
 
+
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * @param servletContext
 	 * CORSFilter 설정

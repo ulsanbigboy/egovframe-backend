@@ -82,6 +82,13 @@ import egovframework.com.cmm.service.FileVO;
 @Controller
 public class EgovImageProcessController extends HttpServlet {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/**
 	 *  serialVersion UID
 	 */
@@ -106,6 +113,10 @@ public class EgovImageProcessController extends HttpServlet {
 	@RequestMapping("/cmm/fms/getImage.do")
 	public void getImageInf(SessionVO sessionVO, ModelMap model, @RequestParam Map<String, Object> commandMap,
 		HttpServletResponse response) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
 		//@RequestParam("atchFileId") String atchFileId,
 		//@RequestParam("fileSn") String fileSn,

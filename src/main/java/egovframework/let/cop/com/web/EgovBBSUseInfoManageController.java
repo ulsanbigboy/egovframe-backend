@@ -71,6 +71,8 @@ import egovframework.let.cop.com.service.EgovBBSUseInfoManageService;
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 게시판의 이용정보를 관리하기 위한 컨트롤러 클래스
@@ -92,6 +94,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class EgovBBSUseInfoManageController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/** EgovBBSUseInfoManageService */
     @Resource(name = "EgovBBSUseInfoManageService")
     private EgovBBSUseInfoManageService bbsUseService;
@@ -123,6 +132,11 @@ public class EgovBBSUseInfoManageController {
     public String deleteBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, @ModelAttribute("bdUseInf") BoardUseInf bdUseInf,
 	    SessionStatus status, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -149,6 +163,11 @@ public class EgovBBSUseInfoManageController {
     @RequestMapping("/cop/com/addBBSUseInf.do")
     public String addBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -171,6 +190,11 @@ public class EgovBBSUseInfoManageController {
     @RequestMapping("/cop/com/insertBBSUseInf.do")
     public String insertBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, @ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
 	    BindingResult bindingResult, @RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {
@@ -221,6 +245,11 @@ public class EgovBBSUseInfoManageController {
     @RequestMapping("/cop/com/selectBBSUseInfs.do")
     public String selectBBSUseInfs(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -266,6 +295,11 @@ public class EgovBBSUseInfoManageController {
     public String updateBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, @ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
 	    HttpServletRequest request, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -291,6 +325,11 @@ public class EgovBBSUseInfoManageController {
      */
     @RequestMapping("/cop/com/selectBBSUseInf.do")
     public String selectBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 	BoardUseInfVO vo = bbsUseService.selectBBSUseInf(bdUseVO);
 
 	    if (!checkAuthority(model))
@@ -321,6 +360,11 @@ public class EgovBBSUseInfoManageController {
      */
     @RequestMapping("/cop/com/selectBBSUseInfsByTrget.do")
     public String selectBBSUseInfsByTrget(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {
@@ -368,6 +412,11 @@ public class EgovBBSUseInfoManageController {
     public String updateBBSUseInfByTrget(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, @ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
     		@RequestParam Map<String, Object> commandMap, SessionStatus status, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -398,6 +447,11 @@ public class EgovBBSUseInfoManageController {
     @RequestMapping("/cop/com/insertBBSUseInfByTrget.do")
     public String insertBBSUseInfByTrget(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, @ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
     		@RequestParam Map<String, Object> commandMap, SessionStatus status, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {

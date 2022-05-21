@@ -77,6 +77,8 @@ import egovframework.let.cop.com.service.EgovBBSUseInfoManageService;
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 게시판의 이용정보를 관리하기 위한 컨트롤러 클래스
@@ -98,6 +100,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class EgovBBSUseInfoManageControllerAPI {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/** EgovBBSUseInfoManageService */
 	@Resource(name = "EgovBBSUseInfoManageService")
 	private EgovBBSUseInfoManageService bbsUseService;
@@ -131,6 +140,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectBBSUseInfs(
 		@RequestBody BoardUseInfVO bdUseVO) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -178,6 +192,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectNotUsedBdMstrList(
 		BoardMasterVO boardMasterVO) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		boardMasterVO.setFirstIndex(0);
@@ -203,6 +222,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectBBSUseInf(
 		@RequestBody BoardUseInfVO bdUseVO) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -244,6 +268,7 @@ public class EgovBBSUseInfoManageControllerAPI {
 	 * @return
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unused")
 	@RequestMapping("/cop/com/insertBBSUseInfAPI.do")
 	@ResponseBody
 	public ResultVO insertBBSUseInf(
@@ -251,6 +276,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 		BindingResult bindingResult
 
 	) throws Exception {
+
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -302,10 +332,16 @@ public class EgovBBSUseInfoManageControllerAPI {
 	 * @return
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unused")
 	@RequestMapping("/cop/com/updateBBSUseInfAPI.do")
 	@ResponseBody
 	public ResultVO updateBBSUseInf(
 		BoardUseInfVO bdUseVO) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -342,6 +378,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 		@ModelAttribute("bdUseInf") BoardUseInf bdUseInf,
 		SessionStatus status, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
 		}
@@ -367,6 +408,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 	@RequestMapping("/cop/com/addBBSUseInfAPI.do")
 	public String addBBSUseInf(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
 		}
@@ -385,6 +431,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 	@RequestMapping("/cop/com/selectBBSUseInfsByTrgetAPI.do")
 	public String selectBBSUseInfsByTrget(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO, ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
@@ -432,6 +483,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 		@ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
 		@RequestParam Map<String, Object> commandMap, SessionStatus status, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
 		}
@@ -462,6 +518,11 @@ public class EgovBBSUseInfoManageControllerAPI {
 	public String insertBBSUseInfByTrget(@ModelAttribute("searchVO") BoardUseInfVO bdUseVO,
 		@ModelAttribute("boardUseInf") BoardUseInf boardUseInf,
 		@RequestParam Map<String, Object> commandMap, SessionStatus status, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인

@@ -12,6 +12,24 @@
 /*
  * ■패키지명
  */
+package egovframework.let.utl.fcc.service;
+
+import java.security.SecureRandom;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TimeZone;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.ibm.icu.util.ChineseCalendar;
+
 
 
 /**
@@ -31,32 +49,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.utl.fcc.service;
-
-import java.security.SecureRandom;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.TimeZone;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.ibm.icu.util.ChineseCalendar;
-
 /**
  *
  * Date 에 대한 Util 클래스
@@ -76,8 +68,15 @@ import com.ibm.icu.util.ChineseCalendar;
  * </pre>
  */
 public class EgovDateUtil {
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovDateUtil.class);
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
+	private static final Logger logger = LoggerFactory.getLogger(EgovDateUtil.class);
 
 	/**
 	 * <p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 년, 월, 일을
@@ -319,7 +318,7 @@ public class EgovDateUtil {
 			}
 			simpledateformat = new SimpleDateFormat(_toDateFormat, Locale.getDefault());
 		} catch (ParseException exception) {
-			LOGGER.debug("{}", exception);
+			logger.debug("{}", exception);
 		}
 		if (simpledateformat != null && simpledateformat.format(date) != null) {
 			return simpledateformat.format(date);

@@ -47,6 +47,8 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -77,6 +79,13 @@ import egovframework.com.cmm.util.EgovUserDetailsHelper;
 @Controller
 public class EgovFileMngController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
     @Resource(name = "EgovFileMngService")
     private EgovFileMngService fileService;
 
@@ -92,6 +101,10 @@ public class EgovFileMngController {
      */
     @RequestMapping("/cmm/fms/selectFileInfs.do")
     public String selectFileInfs(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 	String atchFileId = (String)commandMap.get("param_atchFileId");
 
 	fileVO.setAtchFileId(atchFileId);
@@ -118,6 +131,10 @@ public class EgovFileMngController {
     @RequestMapping("/cmm/fms/selectFileInfsForUpdate.do")
     public String selectFileInfsForUpdate(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam Map<String, Object> commandMap,
 	    ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
 	String atchFileId = (String)commandMap.get("param_atchFileId");
 
@@ -147,6 +164,10 @@ public class EgovFileMngController {
     public String deleteFileInf(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam("returnUrl") String returnUrl,
 	    HttpServletRequest request,
 	    ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
 	Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
 
@@ -185,6 +206,10 @@ public class EgovFileMngController {
     @RequestMapping("/cmm/fms/selectImageFileInfs.do")
     public String selectImageFileInfs(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam Map<String, Object> commandMap,
 	    ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
 	String atchFileId = (String)commandMap.get("atchFileId");
 

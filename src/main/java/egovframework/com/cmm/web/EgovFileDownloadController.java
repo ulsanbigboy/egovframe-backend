@@ -87,6 +87,13 @@ import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 @Controller
 public class EgovFileDownloadController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileService;
 
@@ -167,6 +174,9 @@ public class EgovFileDownloadController {
 	 */
 	@RequestMapping(value = "/cmm/fms/FileDown.do")
 	public void cvplFileDownload(@RequestParam Map<String, Object> commandMap, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
 
 		String atchFileId = (String)commandMap.get("atchFileId");
 		String fileSn = (String)commandMap.get("fileSn");

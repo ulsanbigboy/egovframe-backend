@@ -75,6 +75,8 @@ import egovframework.let.utl.fcc.service.EgovStringUtil;
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 게시판 속성관리를 위한 컨트롤러  클래스
@@ -97,6 +99,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class EgovBBSAttributeManageControllerAPI {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/** EgovBBSAttributeManageService */
 	@Resource(name = "EgovBBSAttributeManageService")
 	private EgovBBSAttributeManageService bbsAttrbService;
@@ -130,6 +139,10 @@ public class EgovBBSAttributeManageControllerAPI {
 	public ResultVO selectBBSMasterInfs(
 		@RequestBody BoardMasterVO boardMasterVO)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
 		ResultVO resultVO = new ResultVO();
 
@@ -177,6 +190,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	public ResultVO selectBBSMasterInf(
 		@RequestBody BoardMasterVO searchVO)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 
@@ -209,6 +227,11 @@ public class EgovBBSAttributeManageControllerAPI {
 		BoardMasterVO boardMasterVO,
 		BindingResult bindingResult)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 
@@ -273,7 +296,12 @@ public class EgovBBSAttributeManageControllerAPI {
 	public ResultVO updateBBSMasterInf(
 		BoardMasterVO boardMasterVO,
 		BindingResult bindingResult) throws Exception {
-		ResultVO resultVO = new ResultVO();
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+	ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -322,6 +350,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	@ResponseBody
 	public ResultVO deleteBBSMasterInf(
 		@RequestBody BoardMasterVO boardMasterVO) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -357,6 +390,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	public ResultVO addBBSMaster(
 		@ModelAttribute("searchVO") BoardMasterVO boardMasterVO)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 
@@ -398,6 +436,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectBBSMasterInfsPop(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -448,7 +491,12 @@ public class EgovBBSAttributeManageControllerAPI {
 		@ModelAttribute("boardMaster") BoardMaster boardMaster, BindingResult bindingResult, SessionStatus status,
 		ModelMap model)
 		throws Exception {
-		ResultVO resultVO = new ResultVO();
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+	ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return handleAuthError(resultVO); // server-side 권한 확인
@@ -502,6 +550,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectBdMstrListByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -545,6 +598,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectBBSMasterInfByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO,
 		@RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -572,6 +630,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	public ResultVO updateBBSMasterInfByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO,
 		@ModelAttribute("boardMaster") BoardMaster boardMaster, BindingResult bindingResult, ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -613,6 +676,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	@ResponseBody
 	public ResultVO addBBSMasterByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -649,6 +717,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	@ResponseBody
 	public ResultVO deleteBBSMasterInfByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO,
 		@ModelAttribute("boardMaster") BoardMaster boardMaster, SessionStatus status, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -680,6 +753,11 @@ public class EgovBBSAttributeManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectAllBdMstrByTrget(@RequestParam Map<String, Object> commandMap, ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {

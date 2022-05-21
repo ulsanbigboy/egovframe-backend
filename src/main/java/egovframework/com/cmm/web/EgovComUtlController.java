@@ -78,7 +78,8 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Controller
 public class EgovComUtlController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovComUtlController.class);
+	//private static final Logger LOGGER = LoggerFactory.getLogger(EgovComUtlController.class);
+	private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
@@ -94,6 +95,9 @@ public class EgovComUtlController {
 	public String moveToPage(@RequestParam("link") String linkPage,
 		HttpSession session,
 		@RequestParam(value = "menuNo", required = false) String menuNo) {
+		
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
 
 		String link = linkPage;
 		link = link.replace(";", "");
@@ -116,7 +120,9 @@ public class EgovComUtlController {
 		// 화이트 리스트 처리
 		// whitelist목록에 있는 경우 결과가 true, 결과가 false인경우 FAIL처리
 		if (egovWhitelist.contains(link) == false) {
-			LOGGER.debug("Page Link WhiteList Error! Please check whitelist!" + link);
+			
+			//LOGGER.debug("Page Link WhiteList Error! Please check whitelist!" + link);
+			logger.debug("Page Link WhiteList Error! Please check whitelist!" + link);
 			link = "cmm/error/egovError";
 		}
 		// 안전한 경로 문자열로 조치
@@ -130,6 +136,8 @@ public class EgovComUtlController {
 	 */
 	@RequestMapping(value="/validator.do", method = RequestMethod.GET)
 	public String validate(){
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
 		return "cmm/validator";
 	}
 

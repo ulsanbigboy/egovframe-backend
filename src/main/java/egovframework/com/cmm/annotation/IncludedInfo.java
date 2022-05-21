@@ -12,6 +12,8 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.annotation;
+
 
 
 /**
@@ -31,16 +33,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.annotation;
-
 /**
  * 컴포넌트의 포함 정보 표현을 위한 annotation 클래스
  * 기본적으로 Controller 클래스에 annotation을 부여하되, 

@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시물 관리를 위한 컨트롤러 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.cop.bbs.web;
 
 import java.util.HashMap;
@@ -73,46 +46,90 @@ import egovframework.let.cop.bbs.service.EgovBBSManageService;
 
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
- * 게시물 관리를 위한 컨트롤러 클래스
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009.03.19
- * @version 1.0
- * @see
+ * <p>■게시물 관리를 위한 컨트롤러 클래스</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2009.03.19  이삼섭          최초 생성
- *  2009.06.29  한성곤	       2단계 기능 추가 (댓글관리, 만족도조사)
- *  2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- *  </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Controller
 public class EgovBBSManageAPIController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "EgovBBSManageService")
 	private EgovBBSManageService bbsMngService;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "EgovBBSAttributeManageService")
 	private EgovBBSAttributeManageService bbsAttrbService;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileMngService;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "EgovFileMngUtil")
 	private EgovFileMngUtil fileUtil;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertyService;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "egovMessageSource")
 	EgovMessageSource egovMessageSource;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileService;
 
@@ -129,22 +146,29 @@ public class EgovBBSManageAPIController {
 	//SHT-CUSTOMIZING//private EgovBBSScrapService bbsScrapService;
 	////-------------------------------
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Autowired
 	private DefaultBeanValidator beanValidator;
 
+	
 	/**
-	 * 게시물에 대한 목록을 조회한다.
-	 *
-	 * @param boardVO
-	 * @param sessionVO
-	 * @param model
+	 * ■게시물에 대한 목록을 조회
+	 * =================================
+	 * @param  boardVO
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value = "/cop/bbs/selectBoardListAPI.do", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public ResultVO selectBoardArticles(@RequestBody BoardVO boardVO)
-		throws Exception {
+	@RequestMapping(value = "/cop/bbs/selectBoardListAPI.do", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResultVO selectBoardArticles(@RequestBody BoardVO boardVO) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "게시물에 대한 목록을 조회", null);
+
+
 		ResultVO resultVO = new ResultVO();
 
 		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
@@ -177,23 +201,23 @@ public class EgovBBSManageAPIController {
 		resultVO.setResultCode(ResponseCode.SUCCESS.getCode());
 		resultVO.setResultMessage(ResponseCode.SUCCESS.getMessage());
 		resultVO.setResult(resultMap);
-
+		egovframework.com.cmm.util.LogUtil.end(logger, "게시물에 대한 목록을 조회");
 		return resultVO;
 	}
 
+	
 	/**
-	 * 게시물에 대한 상세 정보를 조회한다.
-	 *
-	 * @param boardVO
-	 * @param sessionVO
-	 * @param model
+	 * ■게시물에 대한 상세 정보를 조회
+	 * =================================
+	 * @param  boardVO
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping("/cop/bbs/selectBoardArticleAPI.do")
 	@ResponseBody
-	public ResultVO selectBoardArticle(@RequestBody BoardVO boardVO)
-		throws Exception {
+	@RequestMapping("/cop/bbs/selectBoardArticleAPI.do")
+	public ResultVO selectBoardArticle(@RequestBody BoardVO boardVO) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "게시물에 대한 상세 정보를 조회", null);
 
 		ResultVO resultVO = new ResultVO();
 
@@ -249,6 +273,7 @@ public class EgovBBSManageAPIController {
 		resultVO.setResult(resultMap);
 		resultVO.setResultCode(ResponseCode.SUCCESS.getCode());
 		resultVO.setResultMessage(ResponseCode.SUCCESS.getMessage());
+		egovframework.com.cmm.util.LogUtil.end(logger, "게시물에 대한 상세 정보를 조회");
 		return resultVO;
 	}
 
@@ -264,10 +289,10 @@ public class EgovBBSManageAPIController {
 	 */
 	@RequestMapping("/cop/bbs/updateBoardArticleAPI.do")
 	@ResponseBody
-	public ResultVO updateBoardArticle(final MultipartHttpServletRequest multiRequest,
-		BoardVO boardVO,
-		BindingResult bindingResult)
-		throws Exception {
+	public ResultVO updateBoardArticle(final MultipartHttpServletRequest multiRequest, BoardVO boardVO, BindingResult bindingResult) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "게시물에 대한 내용을 수정", null);
+
 		ResultVO resultVO = new ResultVO();
 
 		// 사용자권한 처리
@@ -313,7 +338,7 @@ public class EgovBBSManageAPIController {
 
 		resultVO.setResultCode(ResponseCode.SUCCESS.getCode());
 		resultVO.setResultMessage(ResponseCode.SUCCESS.getMessage());
-
+		egovframework.com.cmm.util.LogUtil.end(logger, "게시물에 대한 내용을 수정");
 		return resultVO;
 	}
 
@@ -329,10 +354,11 @@ public class EgovBBSManageAPIController {
 	 */
 	@RequestMapping("/cop/bbs/insertBoardArticleAPI.do")
 	@ResponseBody
-	public ResultVO insertBoardArticle(final MultipartHttpServletRequest multiRequest,
-		BoardVO boardVO,
-		BindingResult bindingResult)
-		throws Exception {
+	public ResultVO insertBoardArticle(final MultipartHttpServletRequest multiRequest, BoardVO boardVO, BindingResult bindingResult) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "게시물을 등록", null);
+
+
 		ResultVO resultVO = new ResultVO();
 
 		LoginVO user = new LoginVO();
@@ -369,6 +395,7 @@ public class EgovBBSManageAPIController {
 
 		resultVO.setResultCode(ResponseCode.SUCCESS.getCode());
 		resultVO.setResultMessage(ResponseCode.SUCCESS.getMessage());
+		egovframework.com.cmm.util.LogUtil.end(logger, "게시물을 등록");
 		return resultVO;
 	}
 
@@ -388,6 +415,11 @@ public class EgovBBSManageAPIController {
 		BoardVO boardVO,
 		BindingResult bindingResult)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		LoginVO user = new LoginVO();
@@ -448,6 +480,11 @@ public class EgovBBSManageAPIController {
 	public ResultVO deleteBoardArticle(@RequestBody BoardVO boardVO)
 
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		// 사용자권한 처리
@@ -506,3 +543,5 @@ public class EgovBBSManageAPIController {
 	}
 
 }
+
+

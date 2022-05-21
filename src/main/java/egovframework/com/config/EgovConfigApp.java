@@ -1,29 +1,36 @@
 /********+*********+*********+*********+*********+*********+*********+*********
  * All Rights Reserved,  (C)2016, CO., LTD.
  *
- * ÆÐ Å° Áö ¸í : 
- * ¹ö       Á¯ : 0.0
- * ¼­ºê ½Ã½ºÅÛ : 
- * ÀÏ       ÀÚ : 2022.05.01
- * °³ ¹ß È¯ °æ : JDK1.7.0_79, RESIN-3.1.9
- * ÁÖ ¿ä ³» ¿ë : ¡á °øÅë >  ·Î±× Ãâ·Â
+ * íŒ¨ í‚¤ ì§€ ëª… : 
+ * ë²„       ì ¼ : 0.0
+ * ì„œë¸Œ ì‹œìŠ¤í…œ : 
+ * ì¼       ìž : 2022.05.01
+ * ê°œ ë°œ í™˜ ê²½ : JDK1.7.0_79, RESIN-3.1.9
+ * ì£¼ ìš” ë‚´ ìš© : â–  ê³µí†µ >  ë¡œê·¸ ì¶œë ¥
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
- * ¡áÆÐÅ°Áö¸í
+ * â– íŒ¨í‚¤ì§€ëª…
  */
+package egovframework.com.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+
 
 
 /**
- * <p>¡á°øÅë >  ·Î±× Ãâ·Â</p>
+ * <p>â– ê³µí†µ >  ë¡œê·¸ ì¶œë ¥</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
- *   <DT>Ã³¸®¼ø.<BR>
+ *   <DT>ì²˜ë¦¬ìˆœ.<BR>
  *     <DD>.<BR>
  * <BR>
- *   <DT>ÀüÁ¦Á¶°Ç.<BR>
- *     <DD>°³¹ßÈ¯°æ : jdk8, resin 3.1<BR>
+ *   <DT>ì „ì œì¡°ê±´.<BR>
+ *     <DD>ê°œë°œí™˜ê²½ : jdk8, resin 3.1<BR>
  * </DL>
  * <BR>
  *
@@ -32,20 +39,6 @@
  * @since    1.0
  */
 	
-	/**
-	 * ¡áÇÔ¼ö ½ÃÀÛ ·Î±× Ãâ·Â
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.config;
-
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
-
 @Configuration
 @Import({
 	EgovConfigAppAspect.class,
@@ -62,5 +55,13 @@ import org.springframework.context.annotation.PropertySources;
 	@PropertySource("classpath:/egovframework/egovProps/globals.properties")
 }) //CAUTION: min JDK 8
 public class EgovConfigApp {
+	
+	/**
+	 * â– í•¨ìˆ˜ ì‹œìž‘ ë¡œê·¸ ì¶œë ¥
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 
 }

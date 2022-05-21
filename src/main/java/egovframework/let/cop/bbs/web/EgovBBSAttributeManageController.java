@@ -68,6 +68,8 @@ import egovframework.let.utl.fcc.service.EgovStringUtil;
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 게시판 속성관리를 위한 컨트롤러  클래스
@@ -90,6 +92,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class EgovBBSAttributeManageController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/** EgovBBSAttributeManageService */
     @Resource(name = "EgovBBSAttributeManageService")
     private EgovBBSAttributeManageService bbsAttrbService;
@@ -137,6 +146,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/addBBSMaster.do")
     public String addBBSMaster(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -173,6 +186,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/insertBBSMasterInf.do")
     public String insertBBSMasterInf(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, @ModelAttribute("boardMaster") BoardMaster boardMaster,
 	    BindingResult bindingResult, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
     	if (!checkAuthority(model))
 		 {
@@ -225,6 +242,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/SelectBBSMasterInfs.do")
     public String selectBBSMasterInfs(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -266,6 +287,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/SelectBBSMasterInf.do")
     public String selectBBSMasterInf(@ModelAttribute("searchVO") BoardMasterVO searchVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -289,6 +314,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/UpdateBBSMasterInf.do")
     public String updateBBSMasterInf(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, @ModelAttribute("boardMaster") BoardMaster boardMaster,
 	    BindingResult bindingResult, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
     	if (!checkAuthority(model))
 		 {
@@ -329,6 +358,10 @@ public class EgovBBSAttributeManageController {
     public String deleteBBSMasterInf(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, @ModelAttribute("boardMaster") BoardMaster boardMaster,
 	    ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -355,6 +388,10 @@ public class EgovBBSAttributeManageController {
      */
     @RequestMapping("/cop/bbs/SelectBBSMasterInfsPop.do")
     public String selectBBSMasterInfsPop(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
     	if (!checkAuthority(model))
 		 {
@@ -403,6 +440,10 @@ public class EgovBBSAttributeManageController {
     public String insertBdMstrByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO,
 	    @ModelAttribute("boardMaster") BoardMaster boardMaster, BindingResult bindingResult, SessionStatus status, ModelMap model)
 	    throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
 		if (!checkAuthority(model))
 		 {
@@ -456,6 +497,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/selectBdMstrListByTrget.do")
     public String selectBdMstrListByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -498,6 +543,10 @@ public class EgovBBSAttributeManageController {
     public String selectBBSMasterInfByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO,
     		@RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -522,6 +571,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/UpdateBBSMasterInfByTrget.do")
     public String updateBBSMasterInfByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO,
 	    @ModelAttribute("boardMaster") BoardMaster boardMaster, BindingResult bindingResult, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
     	if (!checkAuthority(model))
 		 {
@@ -562,6 +615,10 @@ public class EgovBBSAttributeManageController {
     @RequestMapping("/cop/bbs/addBBSMasterByTrget.do")
     public String addBBSMasterByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -597,6 +654,10 @@ public class EgovBBSAttributeManageController {
     public String deleteBBSMasterInfByTrget(@ModelAttribute("searchVO") BoardMasterVO boardMasterVO,
 	    @ModelAttribute("boardMaster") BoardMaster boardMaster, SessionStatus status, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -625,6 +686,10 @@ public class EgovBBSAttributeManageController {
      */
     @RequestMapping("/cop/bbs/selectAllBdMstrByTrget.do")
     public String selectAllBdMstrByTrget(@RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
 
     	if (!checkAuthority(model))
 		 {

@@ -74,6 +74,8 @@ import egovframework.let.cop.smt.sim.service.IndvdlSchdulManageVO;
 
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 일정관리를 처리하는 Controller Class 구현
@@ -93,6 +95,13 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Controller
 public class EgovIndvdlSchdulManageController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	@Autowired
 	private DefaultBeanValidator beanValidator;
 
@@ -133,6 +142,11 @@ public class EgovIndvdlSchdulManageController {
 		IndvdlSchdulManageVO indvdlSchdulManageVO,
 		ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		//일정구분 검색 유지
 		model.addAttribute("searchKeyword",
@@ -197,6 +211,11 @@ public class EgovIndvdlSchdulManageController {
 		IndvdlSchdulManageVO indvdlSchdulManageVO,
 		ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		//일정구분 검색 유지
 		model.addAttribute("searchKeyword",
@@ -328,6 +347,11 @@ public class EgovIndvdlSchdulManageController {
 		ModelMap model)
 		throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		if (!checkAuthority(model)) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
 		}
@@ -391,6 +415,11 @@ public class EgovIndvdlSchdulManageController {
     		ModelMap model)
     throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		String sLocationUrl = "/cop/smt/sim/EgovIndvdlSchdulManageDetail";
 
 		String sCmd = commandMap.get("cmd") == null ? "" : (String)commandMap.get("cmd");
@@ -438,6 +467,11 @@ public class EgovIndvdlSchdulManageController {
 		BindingResult bindingResult,
 		ModelMap model)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!checkAuthority(model)) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
@@ -516,6 +550,11 @@ public class EgovIndvdlSchdulManageController {
 		ModelMap model,
 		HttpServletRequest request)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!checkAuthority(model)) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
@@ -623,6 +662,11 @@ public class EgovIndvdlSchdulManageController {
 		HttpServletRequest request)
 		throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		if (!checkAuthority(model)) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
 		}
@@ -682,6 +726,11 @@ public class EgovIndvdlSchdulManageController {
 		ModelMap model,
 		HttpServletRequest request)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!checkAuthority(model)) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인

@@ -55,6 +55,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import egovframework.let.sym.cal.service.Restde;
 
 import org.egovframe.rte.fdl.property.EgovPropertyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -76,6 +78,13 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Controller
 public class EgovCalRestdeManageController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertiesService;
@@ -88,6 +97,11 @@ public class EgovCalRestdeManageController {
 	 */
 	@RequestMapping(value = "/sym/cmm/EgovNormalCalPopup.do")
 	public String callNormalCalPopup(ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		return "/cmm/sym/cal/EgovNormalCalPopup";
 	}
 
@@ -100,6 +114,11 @@ public class EgovCalRestdeManageController {
 	 */
 	@RequestMapping(value = "/sym/cmm/EgovselectNormalCalendar.do")
 	public String selectNormalRestdePopup(Restde restde, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		Calendar cal = Calendar.getInstance();
 

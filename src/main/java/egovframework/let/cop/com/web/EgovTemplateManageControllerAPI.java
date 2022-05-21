@@ -73,6 +73,8 @@ import egovframework.let.cop.com.service.TemplateInfVO;
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 템플릿 관리를 위한 컨트롤러 클래스
@@ -94,6 +96,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class EgovTemplateManageControllerAPI {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	@Resource(name = "EgovTemplateManageService")
 	private EgovTemplateManageService tmplatService;
 
@@ -122,6 +131,11 @@ public class EgovTemplateManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectTemplateInfs(@RequestBody TemplateInfVO tmplatInfVO)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -172,6 +186,11 @@ public class EgovTemplateManageControllerAPI {
 	@ResponseBody
 	public ResultVO selectTemplateInf(@RequestBody TemplateInfVO tmplatInfVO)
 		throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 		ResultVO resultVO = new ResultVO();
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
@@ -213,6 +232,11 @@ public class EgovTemplateManageControllerAPI {
 	public String insertTemplateInf(@ModelAttribute("searchVO") TemplateInfVO searchVO,
 		@ModelAttribute("templateInf") TemplateInf templateInf,
 		BindingResult bindingResult, SessionStatus status, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 
@@ -257,6 +281,11 @@ public class EgovTemplateManageControllerAPI {
 	@ResponseBody
 	public String addTemplateInf(@ModelAttribute("searchVO") TemplateInfVO searchVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
 		}
@@ -286,6 +315,11 @@ public class EgovTemplateManageControllerAPI {
 	public String updateTemplateInf(@ModelAttribute("searchVO") TemplateInfVO tmplatInfVO,
 		@ModelAttribute("templateInf") TemplateInf templateInf,
 		BindingResult bindingResult, SessionStatus status, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
@@ -335,6 +369,11 @@ public class EgovTemplateManageControllerAPI {
 		@ModelAttribute("tmplatInf") TemplateInf tmplatInf,
 		SessionStatus status, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
 		}
@@ -363,6 +402,11 @@ public class EgovTemplateManageControllerAPI {
 	@ResponseBody
 	public String selectTemplateInfsPop(@ModelAttribute("searchVO") TemplateInfVO tmplatInfVO,
 		@RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인
@@ -419,6 +463,11 @@ public class EgovTemplateManageControllerAPI {
 	@RequestMapping("/cop/com/openPopupAPI.do")
 
 	public String openPopupWindow(@RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
 		if (!EgovUserDetailsHelper.isAuthenticated()) {
 			return "cmm/uat/uia/EgovLoginUsr"; // server-side 권한 확인

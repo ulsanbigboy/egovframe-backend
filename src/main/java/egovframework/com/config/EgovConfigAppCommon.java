@@ -105,6 +105,7 @@ public class EgovConfigAppCommon {
 	/**
 	 * @return [Resource 설정] 메세지 Properties 경로 설정
 	 */
+	@SuppressWarnings("unused")
 	@Bean
 	public ReloadableResourceBundleMessageSource messageSource() {
 		ReloadableResourceBundleMessageSource reloadableResourceBundleMessageSource = new ReloadableResourceBundleMessageSource();

@@ -67,6 +67,8 @@ import egovframework.let.cop.com.service.TemplateInfVO;
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 템플릿 관리를 위한 컨트롤러 클래스
@@ -88,6 +90,13 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class EgovTemplateManageController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
     @Resource(name = "EgovTemplateManageService")
     private EgovTemplateManageService tmplatService;
 
@@ -114,6 +123,11 @@ public class EgovTemplateManageController {
      */
     @RequestMapping("/cop/com/selectTemplateInfs.do")
     public String selectTemplateInfs(@ModelAttribute("searchVO") TemplateInfVO tmplatInfVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {
@@ -156,6 +170,11 @@ public class EgovTemplateManageController {
     @RequestMapping("/cop/com/selectTemplateInf.do")
     public String selectTemplateInf(@ModelAttribute("searchVO") TemplateInfVO tmplatInfVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -186,6 +205,11 @@ public class EgovTemplateManageController {
     @RequestMapping("/cop/com/insertTemplateInf.do")
     public String insertTemplateInf(@ModelAttribute("searchVO") TemplateInfVO searchVO, @ModelAttribute("templateInf") TemplateInf templateInf,
 	    BindingResult bindingResult, SessionStatus status, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {
@@ -229,6 +253,11 @@ public class EgovTemplateManageController {
     @RequestMapping("/cop/com/addTemplateInf.do")
     public String addTemplateInf(@ModelAttribute("searchVO") TemplateInfVO searchVO, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -257,6 +286,11 @@ public class EgovTemplateManageController {
     @RequestMapping("/cop/com/updateTemplateInf.do")
     public String updateTemplateInf(@ModelAttribute("searchVO") TemplateInfVO tmplatInfVO, @ModelAttribute("templateInf") TemplateInf templateInf,
 	    BindingResult bindingResult, SessionStatus status, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {
@@ -305,6 +339,11 @@ public class EgovTemplateManageController {
     public String deleteTemplateInf(@ModelAttribute("searchVO") TemplateInfVO searchVO, @ModelAttribute("tmplatInf") TemplateInf tmplatInf,
 	    SessionStatus status, ModelMap model) throws Exception {
 
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
+
     	if (!checkAuthority(model))
 		 {
 			return "cmm/uat/uia/EgovLoginUsr";	// server-side 권한 확인
@@ -333,6 +372,11 @@ public class EgovTemplateManageController {
     @RequestMapping("/cop/com/selectTemplateInfsPop.do")
     public String selectTemplateInfsPop(@ModelAttribute("searchVO") TemplateInfVO tmplatInfVO,
     		@RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {
@@ -390,6 +434,11 @@ public class EgovTemplateManageController {
      */
     @RequestMapping("/cop/com/openPopup.do")
     public String openPopupWindow(@RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
+
 
     	if (!checkAuthority(model))
 		 {

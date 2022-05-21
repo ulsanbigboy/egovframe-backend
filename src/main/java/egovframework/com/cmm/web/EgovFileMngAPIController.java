@@ -43,6 +43,8 @@ package egovframework.com.cmm.web;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -73,6 +75,13 @@ import egovframework.com.cmm.service.ResultVO;
 @Controller
 public class EgovFileMngAPIController {
 
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
     @Resource(name = "EgovFileMngService")
     private EgovFileMngService fileService;
 
@@ -88,6 +97,10 @@ public class EgovFileMngAPIController {
      */
     @RequestMapping("/cmm/fms/deleteFileInfsAPI.do")
     public @ResponseBody ResultVO deleteFileInf(@ModelAttribute("searchVO") FileVO fileVO, ModelMap model) throws Exception {
+
+		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+
     	ResultVO resultVO = new ResultVO();
 
 		//Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();

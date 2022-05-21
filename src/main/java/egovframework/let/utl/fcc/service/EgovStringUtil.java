@@ -31,14 +31,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 /**
  * @Class Name  : EgovStringUtil.java
  * @Description : 문자열 데이터 처리 관련 유틸리티
@@ -83,10 +75,24 @@ import java.util.Locale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class EgovStringUtil {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovStringUtil.class);
-
+	
+	/**
+	 * ■로그
+	 * =================================
+	 */
+	private static final Logger logger = LoggerFactory.getLogger(EgovStringUtil.class);
+	
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 빈 문자열 <code>""</code>.
 	 */
@@ -824,6 +830,7 @@ public class EgovStringUtil {
 		try {
 			rtnStr = new String(srcString.getBytes(srcCharsetNm), cnvrCharsetNm);
 		} catch (UnsupportedEncodingException e) {
+			logger.debug("" + e.toString());
 			rtnStr = null;
 		}
 
@@ -915,6 +922,13 @@ public class EgovStringUtil {
 
 	}
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * <p>날짜 형식의 문자열 내부에 마이너스 character(-)를 추가한다.</p>
 	 *
