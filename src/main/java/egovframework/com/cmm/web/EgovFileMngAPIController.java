@@ -98,8 +98,7 @@ public class EgovFileMngAPIController {
     @RequestMapping("/cmm/fms/deleteFileInfsAPI.do")
     public @ResponseBody ResultVO deleteFileInf(@ModelAttribute("searchVO") FileVO fileVO, ModelMap model) throws Exception {
 
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+		egovframework.com.cmm.util.LogUtil.start(logger, "첨부파일에 대한 삭제를 처리", null);
 
     	ResultVO resultVO = new ResultVO();
 
@@ -118,7 +117,7 @@ public class EgovFileMngAPIController {
 
 		resultVO.setResultCode(200);
 		resultVO.setResultMessage("삭제 성공");
-
+		egovframework.com.cmm.util.LogUtil.end(logger, "첨부파일에 대한 삭제를 처리");
 		return resultVO;
     }
 }

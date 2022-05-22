@@ -102,20 +102,16 @@ public class EgovFileMngController {
     @RequestMapping("/cmm/fms/selectFileInfs.do")
     public String selectFileInfs(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
 
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
-
-	String atchFileId = (String)commandMap.get("param_atchFileId");
-
-	fileVO.setAtchFileId(atchFileId);
-	List<FileVO> result = fileService.selectFileInfs(fileVO);
-
-	model.addAttribute("fileList", result);
-	model.addAttribute("updateFlag", "N");
-	model.addAttribute("fileListCnt", result.size());
-	model.addAttribute("atchFileId", atchFileId);
-
-	return "cmm/fms/EgovFileList";
+		egovframework.com.cmm.util.LogUtil.start(logger, "첨부파일에 대한 목록을 조회", null);
+		String atchFileId = (String)commandMap.get("param_atchFileId");
+		fileVO.setAtchFileId(atchFileId);
+		List<FileVO> result = fileService.selectFileInfs(fileVO);
+		model.addAttribute("fileList", result);
+		model.addAttribute("updateFlag", "N");
+		model.addAttribute("fileListCnt", result.size());
+		model.addAttribute("atchFileId", atchFileId);
+		egovframework.com.cmm.util.LogUtil.end(logger, "첨부파일에 대한 목록을 조회");
+		return "cmm/fms/EgovFileList";
     }
 
     /**
@@ -129,25 +125,18 @@ public class EgovFileMngController {
      * @throws Exception
      */
     @RequestMapping("/cmm/fms/selectFileInfsForUpdate.do")
-    public String selectFileInfsForUpdate(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam Map<String, Object> commandMap,
-	    ModelMap model) throws Exception {
+    public String selectFileInfsForUpdate(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam Map<String, Object> commandMap, ModelMap model) throws Exception {
 
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
-
-
-	String atchFileId = (String)commandMap.get("param_atchFileId");
-
-	fileVO.setAtchFileId(atchFileId);
-
-	List<FileVO> result = fileService.selectFileInfs(fileVO);
-
-	model.addAttribute("fileList", result);
-	model.addAttribute("updateFlag", "Y");
-	model.addAttribute("fileListCnt", result.size());
-	model.addAttribute("atchFileId", atchFileId);
-
-	return "cmm/fms/EgovFileList";
+		egovframework.com.cmm.util.LogUtil.start(logger, "첨부파일 변경을 위한 수정페이지로 이동", null);
+		String atchFileId = (String)commandMap.get("param_atchFileId");
+		fileVO.setAtchFileId(atchFileId);
+		List<FileVO> result = fileService.selectFileInfs(fileVO);
+		model.addAttribute("fileList", result);
+		model.addAttribute("updateFlag", "Y");
+		model.addAttribute("fileListCnt", result.size());
+		model.addAttribute("atchFileId", atchFileId);
+		egovframework.com.cmm.util.LogUtil.end(logger, "첨부파일 변경을 위한 수정페이지로 이동");
+		return "cmm/fms/EgovFileList";
     }
 
     /**
@@ -161,36 +150,31 @@ public class EgovFileMngController {
      * @throws Exception
      */
     @RequestMapping("/cmm/fms/deleteFileInfs.do")
-    public String deleteFileInf(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam("returnUrl") String returnUrl,
-	    HttpServletRequest request,
-	    ModelMap model) throws Exception {
+    public String deleteFileInf(@ModelAttribute("searchVO") FileVO fileVO, @RequestParam("returnUrl") String returnUrl, HttpServletRequest request, ModelMap model) throws Exception {
 
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+		egovframework.com.cmm.util.LogUtil.start(logger, "첨부파일에 대한 삭제를 처리", null);
+		Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+		if (isAuthenticated) {
+			fileService.deleteFileInf(fileVO);
+		}
 
+		//--------------------------------------------
+		// contextRoot가 있는 경우 제외 시켜야 함
+		//--------------------------------------------
+		////return "forward:/cmm/fms/selectFileInfs.do";
+		//return "forward:" + returnUrl;
+		egovframework.com.cmm.util.LogUtil.end(logger, "첨부파일에 대한 삭제를 처리");
+		if ("".equals(request.getContextPath()) || "/".equals(request.getContextPath())) {
+			return "forward:" + returnUrl;
+		}
 
-	Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
-
-	if (isAuthenticated) {
-	    fileService.deleteFileInf(fileVO);
-	}
-
-	//--------------------------------------------
-	// contextRoot가 있는 경우 제외 시켜야 함
-	//--------------------------------------------
-	////return "forward:/cmm/fms/selectFileInfs.do";
-	//return "forward:" + returnUrl;
-
-	if ("".equals(request.getContextPath()) || "/".equals(request.getContextPath())) {
-	    return "forward:" + returnUrl;
-	}
-
-	if (returnUrl.startsWith(request.getContextPath())) {
-	    return "forward:" + returnUrl.substring(returnUrl.indexOf("/", 1));
-	} else {
-	    return "forward:" + returnUrl;
-	}
-	////------------------------------------------
+		if (returnUrl.startsWith(request.getContextPath())) {
+			return "forward:" + returnUrl.substring(returnUrl.indexOf("/", 1));
+		} else {
+			return "forward:" + returnUrl;
+		}
+		////------------------------------------------
+	
     }
 
     /**

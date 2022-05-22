@@ -92,12 +92,9 @@ public class EgovComUtlController {
 	 * JSP 호출작업만 처리하는 공통 함수
 	 */
 	@RequestMapping(value="/EgovPageLink.do")
-	public String moveToPage(@RequestParam("link") String linkPage,
-		HttpSession session,
-		@RequestParam(value = "menuNo", required = false) String menuNo) {
+	public String moveToPage(@RequestParam("link") String linkPage, HttpSession session, @RequestParam(value = "menuNo", required = false) String menuNo) {
 		
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+		egovframework.com.cmm.util.LogUtil.start(logger, "JSP 호출작업만 처리하는 공통 함수", null);
 
 		String link = linkPage;
 		link = link.replace(";", "");
@@ -127,7 +124,7 @@ public class EgovComUtlController {
 		}
 		// 안전한 경로 문자열로 조치
 		link = EgovWebUtil.filePathBlackList(link);
-
+		egovframework.com.cmm.util.LogUtil.end(logger, "JSP 호출작업만 처리하는 공통 함수");
 		return link;
 	}
 
@@ -136,8 +133,8 @@ public class EgovComUtlController {
 	 */
 	@RequestMapping(value="/validator.do", method = RequestMethod.GET)
 	public String validate(){
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+		egovframework.com.cmm.util.LogUtil.start(logger, "validation rule dynamic java script", null);
+		egovframework.com.cmm.util.LogUtil.end(logger, "validation rule dynamic java script");
 		return "cmm/validator";
 	}
 

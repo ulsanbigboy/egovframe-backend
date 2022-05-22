@@ -175,8 +175,7 @@ public class EgovFileDownloadController {
 	@RequestMapping(value = "/cmm/fms/FileDown.do")
 	public void cvplFileDownload(@RequestParam Map<String, Object> commandMap, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+		egovframework.com.cmm.util.LogUtil.start(logger, "첨부파일로 등록된 파일에 대하여 다운로드를 제공", null);
 
 		String atchFileId = (String)commandMap.get("atchFileId");
 		String fileSn = (String)commandMap.get("fileSn");
@@ -242,6 +241,7 @@ public class EgovFileDownloadController {
 			} else {
 				throw new EgovBizException();
 			}
+			egovframework.com.cmm.util.LogUtil.end(logger, "첨부파일로 등록된 파일에 대하여 다운로드를 제공");
 		}
 	}
 }

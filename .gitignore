@@ -3,6 +3,7 @@
 # Java related
 #
 target/**
+.settings/**
 *.jar
 *.war
 *.ear
