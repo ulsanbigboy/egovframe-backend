@@ -105,7 +105,7 @@ public class EgovLoginAPIController {
 
 	
 	/**
-	 * ■일반 로그인을 처리한다
+	 * ■일반 로그인을 처리
 	 * =================================
 	 * @param     vo        - 아이디, 비밀번호가 담긴 LoginVO
 	 * @param     request   - 세션처리를 위한 HttpServletRequest
@@ -116,8 +116,7 @@ public class EgovLoginAPIController {
 	@RequestMapping(value = "/uat/uia/actionLoginAPI.do", consumes = {MediaType.APPLICATION_JSON_VALUE , MediaType.TEXT_HTML_VALUE})
 	public @ResponseBody HashMap<String, Object> actionLogin(@RequestBody LoginVO loginVO, HttpServletRequest request) throws Exception {
 
-		egovframework.com.cmm.util.LogUtil.start(logger, "START", request);
-		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
+		egovframework.com.cmm.util.LogUtil.start(logger, "일반 로그인을 처리", request);
 		
 		HashMap<String,Object> resultMap = new HashMap<String,Object>();
 
@@ -138,7 +137,7 @@ public class EgovLoginAPIController {
 			resultMap.put("resultCode", "300");
 			resultMap.put("resultMessage", egovMessageSource.getMessage("fail.common.login"));
 		}
-
+		egovframework.com.cmm.util.LogUtil.end(logger, "일반 로그인을 처리");
 		return resultMap;
 
 	}
