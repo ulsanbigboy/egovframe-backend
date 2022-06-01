@@ -12,6 +12,12 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm;
+
+import java.io.Serializable;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 
 
 /**
@@ -31,20 +37,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm;
-
-import java.io.Serializable;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 /**
  * @Class Name : ComDefaultVO.java
  * @Description : ComDefaultVO class
@@ -62,38 +54,87 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  */
 public class ComDefaultVO implements Serializable {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
 	/** 검색조건 */
     private String searchCondition = "";
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** 검색Keyword */
     private String searchKeyword = "";
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** 검색사용여부 */
     private String searchUseYn = "";
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** 현재페이지 */
     private int pageIndex = 1;
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** 페이지갯수 */
     private int pageUnit = 10;
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** 페이지사이즈 */
     private int pageSize = 10;
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** firstIndex */
     private int firstIndex = 1;
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** lastIndex */
     private int lastIndex = 1;
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** recordCountPerPage */
     private int recordCountPerPage = 10;
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
     /** 검색KeywordFrom */
     private String searchKeywordFrom = "";
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 */
 	/** 검색KeywordTo */
     private String searchKeywordTo = "";
 
@@ -198,11 +239,18 @@ public class ComDefaultVO implements Serializable {
 		return searchKeywordTo;
 	}
 
+
+	
 	/**
-	 * searchKeywordTo attribute 값을 설정한다.
+	 * ■searchKeywordTo attribute 값을 설정한다.
+	 * =================================
 	 * @param searchKeywordTo String
 	 */
 	public void setSearchKeywordTo(String searchKeywordTo) {
 		this.searchKeywordTo = searchKeywordTo;
 	}
+
+
 }
+
+

@@ -12,6 +12,18 @@
 /*
  * ■패키지명
  */
+package egovframework.com.config;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import egovframework.com.cmm.util.EgovIdGnrBuilder;
+import org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl;
+import org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl;
 
 
 /**
@@ -31,27 +43,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.config;
-
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import egovframework.com.cmm.util.EgovIdGnrBuilder;
-import org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl;
-import org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl;
-
 /**
  * @ClassName : EgovConfigAppIdGen.java
  * @Description : IdGeneration 설정
@@ -81,6 +72,14 @@ public class EgovConfigAppIdGen {
 
 	// 구현 방법 1:
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 첨부파일 ID Generation  Config
 	 * @return
@@ -560,7 +559,7 @@ public class EgovConfigAppIdGen {
 			.setBlockSize(10)
 			.setTable("COMTECOPSEQ")
 			.setTableName("NTT_ID")
-			//.setPreFix("SAMPLE-") //TODO : 입력하지 않았을때 처리 필요
+			//.setPreFix("SAMPLE-") // 입력하지 않았을때 처리 필요
 			.setCipers(20)
 			.setFillChar('0')
 			.build();

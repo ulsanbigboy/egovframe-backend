@@ -6,16 +6,17 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ IncludedInfo annotation을 바탕으로 화면에 표시할 정보를 구성하기 위한 VO 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.com.cmm;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■IncludedInfo annotation을 바탕으로 화면에 표시할 정보를 구성하기 위한 VO 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,61 +32,122 @@
  * @version  1.0
  * @since    1.0
  */
+public class IncludedCompInfoVO {
+
+
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 */
+	private String name;
+
+
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 */
+	private String listUrl;
+
+
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 */
+	private int order;
+
+
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 */
+	private int gid;
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■ XXXXXXXXXX
 	 * =================================
 	 * @param logger
 	 * @param msg
 	 * @param req
 	 */
-package egovframework.com.cmm;
-
-/**
- * IncludedInfo annotation을 바탕으로 화면에 표시할 정보를 구성하기 위한 VO 클래스
- * @author 공통컴포넌트 정진오
- * @since 2011.08.26
- * @version 2.0.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *   
- *  수정일		수정자		수정내용
- *  -------    	--------    ---------------------------
- *  2011.08.26	정진오 		최초 생성
- *
- * </pre>
- */
-public class IncludedCompInfoVO {
-	
-	private String name;
-	private String listUrl;
-	private int order;
-	private int gid;
-	
 	public String getName() {
 		return name;
 	}
+	
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public String getListUrl() {
 		return listUrl;
 	}
+	
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public void setListUrl(String listUrl) {
 		this.listUrl = listUrl;
 	}
+	
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public int getOrder() {
 		return order;
 	}
+	
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public void setOrder(int order) {
 		this.order = order;
 	}
+	
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public int getGid() {
 		return gid;
 	}
+	
+	/**
+	 * ■ XXXXXXXXXX
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public void setGid(int gid) {
 		this.gid = gid;
 	}
+	
 }

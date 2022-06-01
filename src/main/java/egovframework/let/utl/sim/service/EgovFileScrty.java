@@ -49,48 +49,31 @@ import org.slf4j.LoggerFactory;
  */
 public class EgovFileScrty {
 	
+	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■파일구분자
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
-	// 파일구분자
 	static final char FILE_SEPARATOR = File.separatorChar;
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■버퍼사이즈
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
-	// 버퍼사이즈
 	static final int BUFFER_SIZE = 1024;
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■로그 변수
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovFileScrty.class);
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■파일을 암호화하는 기능
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * 파일을 암호화하는 기능
-	 *
 	 * @param String source 암호화할 파일
 	 * @param String target 암호화된 파일
 	 * @return boolean result 암호화여부 True/False
@@ -147,15 +130,8 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■파일을 복호화하는 기능
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * 파일을 복호화하는 기능
-	 *
 	 * @param String source 복호화할 파일
 	 * @param String target 복호화된 파일
 	 * @return boolean result 복호화여부 True/False
@@ -210,15 +186,8 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■데이터를 암호화하는 기능
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * 데이터를 암호화하는 기능
-	 *
 	 * @param byte[] data 암호화할 데이터
 	 * @return String result 암호화된 데이터
 	 * @exception Exception
@@ -233,15 +202,8 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■데이터를 암호화하는 기능
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * 데이터를 암호화하는 기능
-	 *
 	 * @param String data 암호화할 데이터
 	 * @return String result 암호화된 데이터
 	 * @exception Exception
@@ -252,15 +214,8 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■데이터를 복호화하는 기능
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * 데이터를 복호화하는 기능
-	 *
 	 * @param String data 복호화할 데이터
 	 * @return String result 복호화된 데이터
 	 * @exception Exception
@@ -271,15 +226,8 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■데이터를 복호화하는 기능
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * 데이터를 복호화하는 기능
-	 *
 	 * @param String data 복호화할 데이터
 	 * @return String result 복호화된 데이터
 	 * @exception Exception
@@ -290,21 +238,13 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용).
+     *   deprecated : 보안 강화를 위하여 salt로 ID를 지정하는 encryptPassword(password, id) 사용
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-    /**
-     * 비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용).
-     *
-     * deprecated : 보안 강화를 위하여 salt로 ID를 지정하는 encryptPassword(password, id) 사용
-     *
-     * @param String data 암호화할 비밀번호
-     * @return String result 암호화된 비밀번호
+     * @param     String data 암호화할 비밀번호
+     * @return    String result 암호화된 비밀번호
      * @exception Exception
-     */
+	 */
     @Deprecated
     public static String encryptPassword(String data) throws Exception {
 
@@ -340,20 +280,13 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용)
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-    /**
-     * 비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용)
-     *
-     * @param password 암호화될 패스워드
-     * @param id salt로 사용될 사용자 ID 지정
+     * @param  password 암호화될 패스워드
+     * @param  id salt로 사용될 사용자 ID 지정
      * @return
      * @throws Exception
-     */
+	 */
     public static String encryptPassword(String password, String id) throws Exception {
 
 		if (password == null) {
@@ -374,19 +307,13 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용)
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-    /**
-     * 비밀번호를 암호화하는 기능(복호화가 되면 안되므로 SHA-256 인코딩 방식 적용)
-     * @param data 암호화할 비밀번호
-     * @param salt Salt
+     * @param  data 암호화할 비밀번호
+     * @param  salt Salt
      * @return 암호화된 비밀번호
      * @throws Exception
-     */
+	 */
     public static String encryptPassword(String data, byte[] salt) throws Exception {
 
 		if (data == null) {
@@ -407,20 +334,13 @@ public class EgovFileScrty {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■비밀번호를 암호화된 패스워드 검증(salt가 사용된 경우만 적용).
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-    /**
-     * 비밀번호를 암호화된 패스워드 검증(salt가 사용된 경우만 적용).
-     *
-     * @param data 원 패스워드
-     * @param encoded 해쉬처리된 패스워드(Base64 인코딩)
+     * @param  data 원 패스워드
+     * @param  encoded 해쉬처리된 패스워드(Base64 인코딩)
      * @return
      * @throws Exception
-     */
+	 */
     public static boolean checkPassword(String data, String encoded, byte[] salt) throws Exception {
     	byte[] hashValue = null; // 해쉬값
 
