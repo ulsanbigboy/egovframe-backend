@@ -12,6 +12,20 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.service.impl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import egovframework.com.cmm.service.EgovFileMngService;
+import egovframework.com.cmm.service.FileVO;
+
+import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
 
 
 /**
@@ -31,29 +45,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.service.impl;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Service;
-
-import egovframework.com.cmm.service.EgovFileMngService;
-import egovframework.com.cmm.service.FileVO;
-
-import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
-
 /**
  * @Class Name : EgovFileMngServiceImpl.java
  * @Description : 파일정보의 관리를 위한 구현 클래스
@@ -72,9 +63,25 @@ import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
 @Service("EgovFileMngService")
 public class EgovFileMngServiceImpl extends EgovAbstractServiceImpl implements EgovFileMngService {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     @Resource(name = "FileManageDAO")
     private FileManageDAO fileMngDAO;
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
      * 여러 개의 파일을 삭제한다.
      *

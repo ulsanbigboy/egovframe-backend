@@ -12,33 +12,6 @@
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.com.config;
 
 import java.util.List;
@@ -61,6 +34,25 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import egovframework.com.cmm.interceptor.AuthenticInterceptor;
 import egovframework.com.cmm.interceptor.CustomAuthenticInterceptor;
 
+
+
+/**
+ * <p>■공통 >  로그 출력</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
+ *
+ * @author   
+ * @version  1.0
+ * @since    1.0
+ */
 /**
  * @ClassName : EgovConfigWebDispatcherServlet.java
  * @Description : DispatcherServlet 설정
@@ -86,14 +78,53 @@ import egovframework.com.cmm.interceptor.CustomAuthenticInterceptor;
 })
 public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	final static String RESOLVER_DEFAULT_ERROR_VIEW = "cmm/error/egovError";
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	final static int URL_BASED_VIEW_RESOLVER_ORDER = 1;
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	final static String URL_BASED_VIEW_RESOLVER_PREFIX = "/WEB-INF/jsp/";
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	final static String URL_BASED_VIEW_RESOLVER_SUFFIX = ".jsp";
 
 	//private final String[] CORS_ORIGIN_SERVER_URLS = {"http://127.0.0.1:3000", "http://localhost:3000"};
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	// =====================================================================
 	// RequestMappingHandlerMapping 설정
 	// =====================================================================
@@ -121,6 +152,14 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 				"/uat/uia/**");
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	// -------------------------------------------------------------
 	// RequestMappingHandlerMapping 설정 View Controller 추가
 	// -------------------------------------------------------------
@@ -131,6 +170,14 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 		registry.addViewController("/").setViewName("forward:/index.jsp");
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	// -------------------------------------------------------------
 	// HandlerExceptionResolver 설정
 	// -------------------------------------------------------------
@@ -151,6 +198,14 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 		exceptionResolvers.add(simpleMappingExceptionResolver);
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	// -------------------------------------------------------------
 	// View Resolver 설정
 	// -------------------------------------------------------------
@@ -164,6 +219,14 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 		return urlBasedViewResolver;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	// -------------------------------------------------------------
 	// CORS 설정 추가
 	// -------------------------------------------------------------

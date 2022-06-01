@@ -12,6 +12,11 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.service;
+
+import java.io.Serializable;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 
 /**
@@ -31,20 +36,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.service;
-
-import java.io.Serializable;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 /**
  * @Class Name : FileVO.java
  * @Description : 파일정보 처리를 위한 VO 클래스
@@ -62,6 +53,14 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  */
 public class FileVO implements Serializable {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
 	 *  serialVersion UID
 	 */
@@ -103,6 +102,14 @@ public class FileVO implements Serializable {
      */
     public String streFileNm = "";
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
      * atchFileId attribute를 리턴한다.
      *

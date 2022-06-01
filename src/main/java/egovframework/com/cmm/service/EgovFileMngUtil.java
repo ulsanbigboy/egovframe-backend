@@ -12,33 +12,6 @@
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.com.cmm.service;
 
 import java.io.BufferedInputStream;
@@ -72,6 +45,25 @@ import egovframework.let.utl.fcc.service.EgovStringUtil;
 import org.egovframe.rte.fdl.idgnr.EgovIdGnrService;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 
+
+
+/**
+ * <p>■공통 >  로그 출력</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
+ *
+ * @author   
+ * @version  1.0
+ * @since    1.0
+ */
 /**
  * @Class Name  : EgovFileMngUtil.java
  * @Description : 메시지 처리 관련 유틸리티
@@ -91,6 +83,13 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Component("EgovFileMngUtil")
 public class EgovFileMngUtil {
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     public static final int BUFF_SIZE = 2048;
 
     @Resource(name = "propertiesService")
@@ -101,6 +100,13 @@ public class EgovFileMngUtil {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EgovFileMngUtil.class);
 
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
      * 첨부파일에 대한 목록 정보를 취득한다.
      *
@@ -506,4 +512,5 @@ public class EgovFileMngUtil {
     	fin.close();
 	//*/
     }
+    
 }

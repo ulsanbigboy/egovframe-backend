@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 공통 컴포넌트 3.10 EgovWebApplicationInitializer 참조 작성
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -29,7 +29,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■공통 컴포넌트 3.10 EgovWebApplicationInitializer 참조 작성</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -44,23 +44,6 @@ import org.springframework.web.servlet.DispatcherServlet;
  * @author   
  * @version  1.0
  * @since    1.0
- */
-/**
- * @ClassName : EgovWebApplicationInitializer.java
- * @Description : 공통 컴포넌트 3.10 EgovWebApplicationInitializer 참조 작성
- *
- * @author : 윤주호
- * @since  : 2021. 7. 20
- * @version : 1.0
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일              수정자               수정내용
- *  -------------  ------------   ---------------------
- *   2021. 7. 20    윤주호               최초 생성
- * </pre>
- *
  */
 public class EgovWebApplicationInitializer implements WebApplicationInitializer {
 
@@ -110,15 +93,9 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 
 	
 	/**
-	 * ■
+	 * ■Root Context를 등록한다.
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
 	 * @param servletContext
-	 * Root Context를 등록한다.
 	 */
 	private void addRootContext(ServletContext servletContext) {
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
@@ -130,15 +107,9 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 
 	
 	/**
-	 * ■
+	 * ■Servlet Context를 등록한다.
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
 	 * @param servletContext
-	 * Servlet Context를 등록한다.
 	 */
 	private void addWebServletContext(ServletContext servletContext) {
 		AnnotationConfigWebApplicationContext webApplicationContext = new AnnotationConfigWebApplicationContext();
@@ -154,15 +125,9 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 
 	
 	/**
-	 * ■
+	 * ■필터들을 등록 한다.
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
 	 * @param servletContext
-	 * 필터들을 등록 한다.
 	 */
 	private void addFilters(ServletContext servletContext) {
 		addEncodingFilter(servletContext);
@@ -172,15 +137,9 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 
 	
 	/**
-	 * ■
+	 * ■Spring CharacterEncodingFilter 설정
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
 	 * @param servletContext
-	 * Spring CharacterEncodingFilter 설정
 	 */
 	private void addEncodingFilter(ServletContext servletContext) {
 		FilterRegistration.Dynamic characterEncoding = servletContext.addFilter("encodingFilter",
@@ -193,15 +152,9 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 
 	
 	/**
-	 * ■
+	 * ■CORSFilter 설정
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
 	 * @param servletContext
-	 * CORSFilter 설정
 	 */
 //	private void addCORSFilter(ServletContext servletContext) {
 //		FilterRegistration.Dynamic corsFilter = servletContext.addFilter("SimpleCORSFilter",
@@ -210,3 +163,4 @@ public class EgovWebApplicationInitializer implements WebApplicationInitializer 
 //	}
 
 }
+

@@ -12,6 +12,14 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.service.impl;
+
+import java.util.Iterator;
+import java.util.List;
+
+import egovframework.com.cmm.service.FileVO;
+
+import org.springframework.stereotype.Repository;
 
 
 /**
@@ -31,23 +39,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.service.impl;
-
-import java.util.Iterator;
-import java.util.List;
-
-import egovframework.com.cmm.service.FileVO;
-
-import org.springframework.stereotype.Repository;
-
 /**
  * @Class Name : EgovFileMngDAO.java
  * @Description : 파일정보 관리를 위한 데이터 처리 클래스
@@ -66,6 +57,14 @@ import org.springframework.stereotype.Repository;
 @Repository("FileManageDAO")
 public class FileManageDAO extends EgovComAbstractDAO {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 여러 개의 파일에 대한 정보(속성 및 상세)를 등록한다.
 	 *

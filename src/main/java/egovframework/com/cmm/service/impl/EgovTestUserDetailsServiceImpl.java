@@ -12,6 +12,15 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import egovframework.com.cmm.LoginVO;
+import egovframework.com.cmm.service.EgovUserDetailsService;
+
+import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
 
 
 /**
@@ -31,24 +40,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.service.impl;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import egovframework.com.cmm.LoginVO;
-import egovframework.com.cmm.service.EgovUserDetailsService;
-
-import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
-
 /**
  *
  * @author 공통서비스 개발팀 서준식
@@ -65,10 +56,16 @@ import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
  *
  *  </pre>
  */
+public class EgovTestUserDetailsServiceImpl extends EgovAbstractServiceImpl implements EgovUserDetailsService {
 
-public class EgovTestUserDetailsServiceImpl extends EgovAbstractServiceImpl implements
-		EgovUserDetailsService {
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	public Object getAuthenticatedUser() {
 

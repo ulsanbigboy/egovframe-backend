@@ -17,6 +17,8 @@ package egovframework.com.cmm.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+
+
 /**
  * <p>■컴포넌트의 포함 정보 표현을 위한 annotation 클래스</p>
  *      기본적으로 Controller 클래스에 annotation을 부여하되, 

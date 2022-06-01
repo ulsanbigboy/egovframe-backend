@@ -12,6 +12,13 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.service.impl;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
 
 
 /**
@@ -31,22 +38,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.service.impl;
-
-import javax.annotation.Resource;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-
-import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
-
 /**
  * EgovComAbstractDAO.java 클래스
  *
@@ -65,6 +56,14 @@ import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
  */
 public abstract class EgovComAbstractDAO extends EgovAbstractMapper {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	@Resource(name = "egov.sqlSession")
 	public void setSqlSessionFactory(SqlSessionFactory sqlSession) {
@@ -72,3 +71,4 @@ public abstract class EgovComAbstractDAO extends EgovAbstractMapper {
 	}
 
 }
+
