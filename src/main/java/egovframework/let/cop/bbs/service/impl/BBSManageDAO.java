@@ -12,6 +12,17 @@
 /*
  * ■패키지명
  */
+package egovframework.let.cop.bbs.service.impl;
+import java.util.Iterator;
+import java.util.List;
+
+import egovframework.let.cop.bbs.service.Board;
+import egovframework.let.cop.bbs.service.BoardVO;
+
+import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
+
+import org.springframework.stereotype.Repository;
+
 
 
 /**
@@ -39,17 +50,6 @@
 	 * @param msg
 	 * @param req
 	 */
-package egovframework.let.cop.bbs.service.impl;
-import java.util.Iterator;
-import java.util.List;
-
-import egovframework.let.cop.bbs.service.Board;
-import egovframework.let.cop.bbs.service.BoardVO;
-
-import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
-
-import org.springframework.stereotype.Repository;
-
 /**
  * 게시물 관리를 위한 데이터 접근 클래스
  * @author 공통 서비스 개발팀 이삼섭
@@ -232,7 +232,7 @@ public class BBSManageDAO extends EgovAbstractMapper {
      */
     @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardVO> selectGuestList(BoardVO boardVO) throws Exception {
-	return (List<BoardVO>) list("BBSManageDAO.selectGuestList", boardVO);
+    	return (List<BoardVO>) list("BBSManageDAO.selectGuestList", boardVO);
     }
 
     /**
@@ -243,7 +243,7 @@ public class BBSManageDAO extends EgovAbstractMapper {
      * @throws Exception
      */
     public int selectGuestListCnt(BoardVO boardVO) throws Exception {
-	return (Integer)selectOne("BBSManageDAO.selectGuestListCnt", boardVO);
+    	return (Integer)selectOne("BBSManageDAO.selectGuestListCnt", boardVO);
     }
 
     /**
@@ -253,7 +253,7 @@ public class BBSManageDAO extends EgovAbstractMapper {
      * @throws Exception
      */
     public void deleteGuestList(BoardVO boardVO) throws Exception {
-	update("BBSManageDAO.deleteGuestList", boardVO);
+    	update("BBSManageDAO.deleteGuestList", boardVO);
     }
 
     /**
@@ -264,6 +264,7 @@ public class BBSManageDAO extends EgovAbstractMapper {
      * @throws Exception
      */
     public String getPasswordInf(Board board) throws Exception {
-	return (String)selectOne("BBSManageDAO.getPasswordInf", board);
+    	return (String)selectOne("BBSManageDAO.getPasswordInf", board);
     }
+    
 }

@@ -6,16 +6,27 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시판 속성정보 관리를 위한 데이터 접근 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.cop.bbs.service.impl;
+
+import java.util.List;
+
+import egovframework.let.cop.bbs.service.BoardMaster;
+import egovframework.let.cop.bbs.service.BoardMasterVO;
+
+import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
+
+import org.springframework.stereotype.Repository;
+
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■게시판 속성정보 관리를 위한 데이터 접근 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,26 +42,8 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.cop.bbs.service.impl;
-import java.util.List;
-
-import egovframework.let.cop.bbs.service.BoardMaster;
-import egovframework.let.cop.bbs.service.BoardMasterVO;
-
-import org.egovframe.rte.psl.dataaccess.EgovAbstractMapper;
-
-import org.springframework.stereotype.Repository;
-
 /**
- * 게시판 속성정보 관리를 위한 데이터 접근 클래스
+ * 
  * @author 공통 서비스 개발팀 한성곤
  * @since 2009.08.25
  * @version 1.0
@@ -69,60 +62,68 @@ import org.springframework.stereotype.Repository;
 @Repository("BBSLoneMasterDAO")
 public class BBSLoneMasterDAO extends EgovAbstractMapper {
 
-    /**
-     * 등록된 게시판 속성정보를 삭제한다.
-     *
+
+	/**
+	 * ■등록된 게시판 속성정보를 삭제한다.
+	 * =================================
      * @param BoardMaster
      */
     public void deleteMaster(BoardMaster boardMaster) throws Exception {
-	update("BBSLoneMasterDAO.deleteMaster", boardMaster);
+    	update("BBSLoneMasterDAO.deleteMaster", boardMaster);
     }
 
+    
     /**
-     * 신규 게시판 속성정보를 등록한다.
-     *
+	 * ■신규 게시판 속성정보를 등록한다.
+	 * =================================
      * @param BoardMaster
      */
     public int insertMaster(BoardMaster boardMaster) throws Exception {
-	return (int)insert("BBSLoneMasterDAO.insertMaster", boardMaster);
+    	return (int)insert("BBSLoneMasterDAO.insertMaster", boardMaster);
     }
 
+    
     /**
-     * 게시판 속성정보 한 건을 상세조회 한다.
-     *
+	 * ■게시판 속성정보 한 건을 상세조회 한다.
+	 * =================================
      * @param BoardMasterVO
      */
     public BoardMasterVO selectMaster(BoardMaster vo) throws Exception {
-	return (BoardMasterVO)selectOne("BBSLoneMasterDAO.selectMaster", vo);
+    	return (BoardMasterVO)selectOne("BBSLoneMasterDAO.selectMaster", vo);
     }
 
+    
     /**
-     * 게시판 속성정보 목록을 조회한다.
-     *
+	 * ■게시판 속성정보 목록을 조회한다.
+	 * =================================
      * @param BoardMasterVO
      */
     @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardMasterVO> selectMasterList(BoardMasterVO vo) throws Exception {
-	return (List<BoardMasterVO>) list("BBSLoneMasterDAO.selectMasterList", vo);
+    	return (List<BoardMasterVO>) list("BBSLoneMasterDAO.selectMasterList", vo);
     }
 
+    
     /**
-     * 게시판 속성정보 목록 숫자를 조회한다
-     *
+	 * ■게시판 속성정보 목록 숫자를 조회한다
+	 * =================================
      * @param vo
      * @return
      * @throws Exception
      */
     public int selectMasterListCnt(BoardMasterVO vo) throws Exception {
-	return (Integer)selectOne("BBSLoneMasterDAO.selectMasterListCnt", vo);
+    	return (Integer)selectOne("BBSLoneMasterDAO.selectMasterListCnt", vo);
     }
 
+    
     /**
-     * 게시판 속성정보를 수정한다.
-     *
+	 * ■게시판 속성정보를 수정한다.
+	 * =================================
      * @param BoardMaster
      */
     public void updateMaster(BoardMaster boardMaster) throws Exception {
-	update("BBSLoneMasterDAO.updateMaster", boardMaster);
+    	update("BBSLoneMasterDAO.updateMaster", boardMaster);
     }
+    
 }
+

@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시물 관리를 위한 서비스 구현 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.cop.bbs.service.impl;
 
 import java.util.ArrayList;
@@ -61,37 +34,62 @@ import egovframework.let.utl.fcc.service.EgovDateUtil;
 import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import org.egovframe.rte.fdl.property.EgovPropertyService;
 
+
+
 /**
- * 게시물 관리를 위한 서비스 구현 클래스
- * @author 공통 서비스 개발팀 한성곤
- * @since 2009.03.19
- * @version 1.0
- * @see
+ * <p>■게시물 관리를 위한 서비스 구현 클래스</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2009.03.19  이삼섭          최초 생성
- *  2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- *  </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Service("EgovBBSManageService")
 public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements EgovBBSManageService {
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "BBSManageDAO")
 	private BBSManageDAO bbsMngDAO;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileService;
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertyService;
 
+	
 	/**
-	 * 게시물 한 건을 삭제 한다.
+	 * ■함수 시작 로그 출력
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
+	/**
+	 * ■게시물 한 건을 삭제 한다.
+	 * =================================
 	 *
 	 * @see egovframework.let.cop.bbs.brd.service.EgovBBSManageService#deleteBoardArticle(egovframework.let.cop.bbs.brd.service.Board)
 	 */
@@ -111,7 +109,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	}
 
 	/**
-	 * 게시판에 게시물 또는 답변 게시물을 등록 한다.
+	 * ■게시판에 게시물 또는 답변 게시물을 등록 한다.
+	 * =================================
 	 *
 	 * @see egovframework.let.cop.bbs.brd.service.EgovBBSManageService#insertBoardArticle(egovframework.let.cop.bbs.brd.service.Board)
 	 */
@@ -138,8 +137,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	}
 
 	/**
-	 * 게시물 대하여 상세 내용을 조회 한다.
-	 *
+	 * ■게시물 대하여 상세 내용을 조회 한다.
+	 * =================================
 	 * @see egovframework.let.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticle(egovframework.let.cop.bbs.brd.service.BoardVO)
 	 */
 	@Override
@@ -155,8 +154,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	}
 
 	/**
-	 * 조건에 맞는 게시물 목록을 조회 한다.
-	 *
+	 * ■조건에 맞는 게시물 목록을 조회 한다.
+	 * =================================
 	 * @see egovframework.let.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.let.cop.bbs.brd.service.BoardVO)
 	 */
 	@Override
@@ -197,8 +196,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	}
 
 	/**
-	 * 게시물 한 건의 내용을 수정 한다.
-	 *
+	 * ■게시물 한 건의 내용을 수정 한다.
+	 * =================================
 	 * @see egovframework.let.cop.bbs.brd.service.EgovBBSManageService#updateBoardArticle(egovframework.let.cop.bbs.brd.service.Board)
 	 */
 	@Override
@@ -207,8 +206,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	}
 
 	/**
-	 * 방명록 내용을 삭제 한다.
-	 *
+	 * ■방명록 내용을 삭제 한다.
+	 * =================================
 	 * @see egovframework.let.cop.bbs.brd.service.EgovBBSManageService#deleteGuestList(egovframework.let.cop.bbs.brd.service.BoardVO)
 	 */
 	@Override
@@ -217,8 +216,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	}
 
 	/**
-	 * 방명록에 대한 목록을 조회 한다.
-	 *
+	 * ■방명록에 대한 목록을 조회 한다.
+	 * =================================
 	 * @see egovframework.let.cop.bbs.brd.service.EgovBBSManageService#selectGuestList(egovframework.let.cop.bbs.brd.service.BoardVO)
 	 */
 	@Override
@@ -235,8 +234,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	}
 
 	/**
-	 * 방명록에 대한 패스워드를 조회 한다.
-	 *
+	 * ■방명록에 대한 패스워드를 조회 한다.
+	 * =================================
 	 * @param board
 	 * @return
 	 * @throws Exception
@@ -245,4 +244,7 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 	public String getPasswordInf(Board board) throws Exception {
 		return bbsMngDAO.getPasswordInf(board);
 	}
+	
 }
+
+
