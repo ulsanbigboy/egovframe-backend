@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 공통 Bean 설정
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.com.config;
 
 import java.util.HashMap;
@@ -67,22 +40,24 @@ import org.egovframe.rte.fdl.cmmn.trace.manager.TraceHandlerService;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationManager;
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationRenderer;
 
+
+
 /**
- * @ClassName : EgovConfigAppCommon.java
- * @Description : 공통 Bean 설정
+ * <p>■공통 Bean 설정</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * @author : 윤주호
- * @since  : 2021. 7. 20
- * @version : 1.0
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일              수정자               수정내용
- *  -------------  ------------   ---------------------
- *   2021. 7. 20    윤주호               최초 생성
- * </pre>
- *
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Configuration
 @ComponentScan(basePackages = "egovframework", includeFilters = {
@@ -94,7 +69,10 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationRenderer;
 })
 public class EgovConfigAppCommon {
 
+	
 	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
 	 * @return AntPathMatcher 등록.  Ant 경로 패턴 경로와 일치하는지 여부를 확인
 	 */
 	@Bean
@@ -102,7 +80,10 @@ public class EgovConfigAppCommon {
 		return new AntPathMatcher();
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [Resource 설정] 메세지 Properties 경로 설정
 	 */
 	@SuppressWarnings("unused")
@@ -118,7 +99,10 @@ public class EgovConfigAppCommon {
 		return reloadableResourceBundleMessageSource;
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [Resource 설정] 메세지 소스 등록
 	 */
 	@Bean
@@ -128,7 +112,10 @@ public class EgovConfigAppCommon {
 		return egovMessageSource;
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [LeaveaTrace 설정] defaultTraceHandler 등록
 	 */
 	@Bean
@@ -136,7 +123,10 @@ public class EgovConfigAppCommon {
 		return new EgovComTraceHandler();
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [LeaveaTrace 설정] traceHandlerService 등록. TraceHandler 설정
 	 */
 	@Bean
@@ -148,7 +138,10 @@ public class EgovConfigAppCommon {
 		return defaultTraceHandleManager;
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [LeaveaTrace 설정] LeaveaTrace 등록
 	 */
 	@Bean
@@ -158,7 +151,10 @@ public class EgovConfigAppCommon {
 		return leaveaTrace;
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [ImagePaginationRenderer 설정] ImagePaginationRenderer 등록
 	 */
 	@Bean
@@ -166,7 +162,10 @@ public class EgovConfigAppCommon {
 		return new ImagePaginationRenderer();
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [ImagePaginationRenderer 설정] defaultPaginationManager 설정.
 	 */
 	@Bean
@@ -180,7 +179,10 @@ public class EgovConfigAppCommon {
 		return defaultPaginationManager;
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [MultipartResolver 설정] CommonsMultipartResolver 등록
 	 */
 	@Bean
@@ -191,8 +193,13 @@ public class EgovConfigAppCommon {
 		return commonsMultipartResolver;
 	}
 
+	
 	/**
+	 * ■XXXXXX
+	 * =================================
 	 * @return [MultipartResolver 설정] EgovMultipartResolver 등록
+	 */
+	/**
 	 */
 	@Bean
 	public EgovMultipartResolver localMultiCommonsMultipartResolver() {
@@ -202,8 +209,15 @@ public class EgovConfigAppCommon {
 		return egovMultipartResolver;
 	}
 
+	
+	/**
+	 * ■XXXXXX
+	 * =================================
+	 * @XXX
+	 */
 	@Bean
 	public CommonsMultipartResolver multipartResolver() {
 		return localMultiCommonsMultipartResolver();
 	}
+	
 }

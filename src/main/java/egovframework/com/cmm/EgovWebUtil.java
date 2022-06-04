@@ -34,9 +34,10 @@ import java.util.regex.Pattern;
  * @since    1.0
  */
 public class EgovWebUtil {
-	
+
+
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
 	 * @param logger
 	 * @param msg
@@ -60,6 +61,14 @@ public class EgovWebUtil {
 		return returnValue;
 	}
 
+
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String clearXSSMaximum(String value) {
 		String returnValue = value;
 		returnValue = clearXSSMinimum(returnValue);
@@ -78,6 +87,14 @@ public class EgovWebUtil {
 		return returnValue;
 	}
 
+
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String filePathBlackList(String value) {
 		String returnValue = value;
 		if (returnValue == null || returnValue.trim().equals("")) {
@@ -89,9 +106,10 @@ public class EgovWebUtil {
 		return returnValue;
 	}
 
+
 	/**
-	 * 행안부 보안취약점 점검 조치 방안.
-	 *
+	 * ■행안부 보안취약점 점검 조치 방안.
+	 * =================================
 	 * @param value
 	 * @return
 	 */
@@ -108,7 +126,15 @@ public class EgovWebUtil {
 
 		return returnValue;
 	}
-	
+
+
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String fileInjectPathReplaceAll(String value) {
 		String returnValue = value;
 		if (returnValue == null || returnValue.trim().equals("")) {
@@ -124,6 +150,14 @@ public class EgovWebUtil {
 		return returnValue;
 	}
 
+
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String filePathWhiteList(String value) {
 		return value;
 	}
@@ -134,14 +168,38 @@ public class EgovWebUtil {
 		return ipPattern.matcher(str).matches();
     }
 
+
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String removeCRLF(String parameter) {
 		return parameter.replaceAll("\r", "").replaceAll("\n", "");
 	}
 
+
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String removeSQLInjectionRisk(String parameter) {
 		return parameter.replaceAll("\\p{Space}", "").replaceAll("\\*", "").replaceAll("%", "").replaceAll(";", "").replaceAll("-", "").replaceAll("\\+", "").replaceAll(",", "");
 	}
 
+
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public static String removeOSCmdRisk(String parameter) {
 		return parameter.replaceAll("\\p{Space}", "").replaceAll("\\*", "").replaceAll("|", "").replaceAll(";", "");
 	}

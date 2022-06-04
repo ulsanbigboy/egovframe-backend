@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 파일 다운로드를 위한 컨트롤러 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.com.cmm.web;
 
 import java.io.BufferedInputStream;
@@ -67,43 +40,48 @@ import egovframework.com.cmm.util.EgovUserDetailsHelper;
 
 import org.egovframe.rte.fdl.cmmn.exception.EgovBizException;
 
+
 /**
- * 파일 다운로드를 위한 컨트롤러 클래스
- * @author 공통서비스개발팀 이삼섭
- * @since 2009.06.01
- * @version 1.0
- * @see
+ * <p>■파일 다운로드를 위한 컨트롤러 클래스</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.3.25  이삼섭          최초 생성
- *
- * Copyright (C) 2009 by MOPAS  All right reserved.
- * </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Controller
 public class EgovFileDownloadController {
 
-	
+
 	/**
 	 * ■로그
 	 * =================================
 	 */
 	private final Logger logger = LoggerFactory.getLogger(getClass());
+
 	
+	/**
+	 * ■
+	 * =================================
+	 */
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileService;
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovFileDownloadController.class);
-
+	
+	
+	
 	/**
-	 * 브라우저 구분 얻기.
-	 *
+	 * ■브라우저 구분 얻기.
+	 * =================================
 	 * @param request
-	 * @return
 	 */
 	private String getBrowser(HttpServletRequest request) {
 		String header = request.getHeader("User-Agent");
@@ -119,16 +97,17 @@ public class EgovFileDownloadController {
 		return "Firefox";
 	}
 
+	
 	/**
-	 * Disposition 지정하기.
-	 *
+	 * ■Disposition 지정하기.
+	 * =================================
 	 * @param filename
 	 * @param request
 	 * @param response
 	 * @throws Exception
 	 */
-	private void setDisposition(String filename, HttpServletRequest request, HttpServletResponse response)
-		throws Exception {
+	private void setDisposition(String filename, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		String browser = getBrowser(request);
 
 		String dispositionPrefix = "attachment; filename=";
@@ -165,9 +144,10 @@ public class EgovFileDownloadController {
 		}
 	}
 
+	
 	/**
-	 * 첨부파일로 등록된 파일에 대하여 다운로드를 제공한다.
-	 *
+	 * ■첨부파일로 등록된 파일에 대하여 다운로드를 제공한다.
+	 * =================================
 	 * @param commandMap
 	 * @param response
 	 * @throws Exception
@@ -220,20 +200,20 @@ public class EgovFileDownloadController {
 				} catch (FileNotFoundException ex) {
 					// 다음 Exception 무시 처리
 					// Connection reset by peer: socket write error
-					LOGGER.debug("IGNORED: {}", ex.getMessage());
+					logger.debug("IGNORED: {}", ex.getMessage());
 				} finally {
 					if (in != null) {
 						try {
 							in.close();
 						} catch (IOException ignore) {
-							LOGGER.debug("IGNORED: {}", ignore.getMessage());
+							logger.debug("IGNORED: {}", ignore.getMessage());
 						}
 					}
 					if (out != null) {
 						try {
 							out.close();
 						} catch (IOException ignore) {
-							LOGGER.debug("IGNORED: {}", ignore.getMessage());
+							logger.debug("IGNORED: {}", ignore.getMessage());
 						}
 					}
 				}
@@ -243,5 +223,11 @@ public class EgovFileDownloadController {
 			}
 			egovframework.com.cmm.util.LogUtil.end(logger, "첨부파일로 등록된 파일에 대하여 다운로드를 제공");
 		}
+
+		
 	}
+
+	
 }
+
+

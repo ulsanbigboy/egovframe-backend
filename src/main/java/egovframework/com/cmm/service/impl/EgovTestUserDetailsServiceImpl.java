@@ -40,27 +40,11 @@ import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
  * @version  1.0
  * @since    1.0
  */
-/**
- *
- * @author 공통서비스 개발팀 서준식
- * @since 2011. 8. 12.
- * @version 1.0
- * @see
- *
- * <pre>
- * 개정이력(Modification Information)
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2011. 8. 12.    서준식        최초생성
- *
- *  </pre>
- */
 public class EgovTestUserDetailsServiceImpl extends EgovAbstractServiceImpl implements EgovUserDetailsService {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
 	 * @param logger
 	 * @param msg
@@ -86,6 +70,14 @@ public class EgovTestUserDetailsServiceImpl extends EgovAbstractServiceImpl impl
 
 	}
 
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	public List<String> getAuthorities() {
 
@@ -103,6 +95,14 @@ public class EgovTestUserDetailsServiceImpl extends EgovAbstractServiceImpl impl
 		return listAuth;
 	}
 
+	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	public Boolean isAuthenticated() {
 		// 인증된 유저인지 확인한다.
@@ -122,4 +122,6 @@ public class EgovTestUserDetailsServiceImpl extends EgovAbstractServiceImpl impl
 		return true;
 	}
 
+	
 }
+

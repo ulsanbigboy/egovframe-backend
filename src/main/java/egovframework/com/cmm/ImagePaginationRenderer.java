@@ -6,16 +6,23 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 이미지 경로에 ContextPath추가
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.com.cmm;
+
+import org.egovframe.rte.ptl.mvc.tags.ui.pagination.AbstractPaginationRenderer;
+
+import javax.servlet.ServletContext;
+
+import org.springframework.web.context.ServletContextAware;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■이미지 경로에 ContextPath추가</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,45 +38,35 @@
  * @version  1.0
  * @since    1.0
  */
+public class ImagePaginationRenderer extends AbstractPaginationRenderer implements ServletContextAware{
+
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
+	 * =================================
+	 */
+	private ServletContext servletContext;
+
+	
+	/**
+	 * ■
 	 * =================================
 	 * @param logger
 	 * @param msg
 	 * @param req
 	 */
-package egovframework.com.cmm;
-
-import org.egovframe.rte.ptl.mvc.tags.ui.pagination.AbstractPaginationRenderer;
-
-import javax.servlet.ServletContext;
-
-import org.springframework.web.context.ServletContextAware;
-/**
- * ImagePaginationRenderer.java 클래스
- * 
- * @author 서준식
- * @since 2011. 9. 16.
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *   
- *   수정일      수정자           수정내용
- *  -------    -------------    ----------------------
- *   2011. 9. 16.   서준식       이미지 경로에 ContextPath추가
- * </pre>
- */
-public class ImagePaginationRenderer extends AbstractPaginationRenderer implements ServletContextAware{
-
-	private ServletContext servletContext;
-	
 	public ImagePaginationRenderer() {
 	
 	}
+
 	
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public void initVariables(){
 		firstPageLabel    = "<li>&#160;</li><li><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \"><img src=\"" + servletContext.getContextPath() +  "/images/egovframework/com/cmm/mod/icon/icon_prevend.gif\" alt=\"처음\"   border=\"0\"/></a></li>";
         previousPageLabel = "<li><a href=\"?pageIndex={1}\" onclick=\"{0}({1});return false; \"><img src=\"" + servletContext.getContextPath() +  "/images/egovframework/com/cmm/mod/icon/icon_prev.gif\"    alt=\"이전\"   border=\"0\"/></a></li>";
@@ -80,10 +77,18 @@ public class ImagePaginationRenderer extends AbstractPaginationRenderer implemen
 	}
 
 	
-
+	/**
+	 * ■
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public void setServletContext(ServletContext servletContext) {
 		this.servletContext = servletContext;
 		initVariables();
 	}
 
+	
 }
+

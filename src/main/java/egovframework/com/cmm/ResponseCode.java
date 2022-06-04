@@ -69,11 +69,14 @@ public enum ResponseCode {
 	 */
 	INPUT_CHECK_ERROR(900, "입력값 무결성 오류 입니다.");
 
+	
 	/**
 	 * ■응답코드
 	 * =================================
 	 */
 	private int code;
+	
+	
 	/**
 	 * ■응답메시지
 	 * =================================
@@ -110,6 +113,7 @@ public enum ResponseCode {
 		return message;
 	}
 
+	
 }
 
 

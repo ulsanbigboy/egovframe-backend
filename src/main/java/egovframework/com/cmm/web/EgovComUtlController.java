@@ -12,6 +12,23 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.web;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import egovframework.com.cmm.EgovWebUtil;
+
+import org.egovframe.rte.fdl.property.EgovPropertyService;
 
 
 /**
@@ -31,32 +48,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.web;
-
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import egovframework.com.cmm.EgovWebUtil;
-
-import org.egovframe.rte.fdl.property.EgovPropertyService;
-
 /**
  * 공통유틸리티성 작업을 위한 Controller 클래스
  * @author 공통 서비스 개발팀 JJY
@@ -78,16 +69,45 @@ import org.egovframe.rte.fdl.property.EgovPropertyService;
 @Controller
 public class EgovComUtlController {
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	//private static final Logger LOGGER = LoggerFactory.getLogger(EgovComUtlController.class);
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertiesService;
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Resource(name = "egovPageLinkWhitelist")
 	protected List<String> egovWhitelist;
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * JSP 호출작업만 처리하는 공통 함수
 	 */
@@ -128,6 +148,14 @@ public class EgovComUtlController {
 		return link;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /**
 	 * validation rule dynamic java script
 	 */
@@ -139,3 +167,4 @@ public class EgovComUtlController {
 	}
 
 }
+

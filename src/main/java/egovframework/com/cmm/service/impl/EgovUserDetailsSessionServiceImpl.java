@@ -43,7 +43,7 @@ public class EgovUserDetailsSessionServiceImpl extends EgovAbstractServiceImpl i
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
 	 * @param logger
 	 * @param msg
@@ -59,7 +59,7 @@ public class EgovUserDetailsSessionServiceImpl extends EgovAbstractServiceImpl i
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
 	 * @param logger
 	 * @param msg
@@ -73,7 +73,7 @@ public class EgovUserDetailsSessionServiceImpl extends EgovAbstractServiceImpl i
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
 	 * @param logger
 	 * @param msg

@@ -129,9 +129,6 @@ public class EgovConfigAppAspect {
 	 * @param logger
 	 * @param msg
 	 * @param req
-	 */
-	/**
-	 * @return
 	 * Exception 발생시 후처리를 위해 표준프레임워크 실행환경의 ExceptionTransfer를 활용하도록  설정
 	 */
 	@Bean

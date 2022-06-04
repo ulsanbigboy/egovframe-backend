@@ -12,6 +12,14 @@
 /*
  * ■패키지명
  */
+package egovframework.com.config;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 
 
 /**
@@ -31,6 +39,9 @@
  * @version  1.0
  * @since    1.0
  */
+@Configuration
+public class EgovConfigAppWhitelist {
+
 	
 	/**
 	 * ■함수 시작 로그 출력
@@ -39,34 +50,6 @@
 	 * @param msg
 	 * @param req
 	 */
-package egovframework.com.config;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-/**
- * @ClassName : EgovConfigAppWhitelist.java
- * @Description : whiteList 설정
- *
- * @author : 윤주호
- * @since  : 2021. 7. 20
- * @version : 1.0
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일              수정자               수정내용
- *  -------------  ------------   ---------------------
- *   2021. 7. 20    윤주호               최초 생성
- * </pre>
- *
- */
-@Configuration
-public class EgovConfigAppWhitelist {
-
 	@Bean
 	public List<String> egovPageLinkWhitelist() {
 		List<String> whiteList = new ArrayList<String>();
@@ -89,4 +72,6 @@ public class EgovConfigAppWhitelist {
 		whiteList.add("main/sample_menu/EgovService");
 		return whiteList;
 	}
+	
 }
+

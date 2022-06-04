@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ ComDefaultVO class
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -21,7 +21,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■XXXXXXXXXX</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -37,186 +37,275 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @version  1.0
  * @since    1.0
  */
-/**
- * @Class Name : ComDefaultVO.java
- * @Description : ComDefaultVO class
- * @Modification Information
- * @
- * @  수정일         수정자                   수정내용
- * @ -------    --------    ---------------------------
- * @ 2009.02.01    조재영         최초 생성
- *
- *  @author 공통서비스 개발팀 조재영
- *  @since 2009.02.01
- *  @version 1.0
- *  @see
- *
- */
 public class ComDefaultVO implements Serializable {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■검색조건
 	 * =================================
 	 */
-	/** 검색조건 */
     private String searchCondition = "";
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■검색Keyword
 	 * =================================
 	 */
-    /** 검색Keyword */
     private String searchKeyword = "";
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■검색사용여부
 	 * =================================
 	 */
-    /** 검색사용여부 */
     private String searchUseYn = "";
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■현재페이지
 	 * =================================
 	 */
-    /** 현재페이지 */
     private int pageIndex = 1;
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■페이지갯수
 	 * =================================
 	 */
-    /** 페이지갯수 */
     private int pageUnit = 10;
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■페이지사이즈
 	 * =================================
 	 */
-    /** 페이지사이즈 */
     private int pageSize = 10;
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■firstIndex
 	 * =================================
 	 */
-    /** firstIndex */
     private int firstIndex = 1;
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■lastIndex
 	 * =================================
 	 */
-    /** lastIndex */
     private int lastIndex = 1;
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■recordCountPerPage
 	 * =================================
 	 */
-    /** recordCountPerPage */
     private int recordCountPerPage = 10;
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■검색KeywordFrom
 	 * =================================
 	 */
-    /** 검색KeywordFrom */
     private String searchKeywordFrom = "";
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■검색KeywordTo 
 	 * =================================
 	 */
-	/** 검색KeywordTo */
     private String searchKeywordTo = "";
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
 	public int getFirstIndex() {
 		return firstIndex;
 	}
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
 	public void setFirstIndex(int firstIndex) {
 		this.firstIndex = firstIndex;
 	}
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
 	public int getLastIndex() {
 		return lastIndex;
 	}
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
 	public void setLastIndex(int lastIndex) {
 		this.lastIndex = lastIndex;
 	}
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
 	public int getRecordCountPerPage() {
 		return recordCountPerPage;
 	}
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
 	public void setRecordCountPerPage(int recordCountPerPage) {
 		this.recordCountPerPage = recordCountPerPage;
 	}
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
 	public String getSearchCondition() {
         return searchCondition;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public void setSearchCondition(String searchCondition) {
         this.searchCondition = searchCondition;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public String getSearchKeyword() {
         return searchKeyword;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public void setSearchKeyword(String searchKeyword) {
         this.searchKeyword = searchKeyword;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public String getSearchUseYn() {
         return searchUseYn;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public void setSearchUseYn(String searchUseYn) {
         this.searchUseYn = searchUseYn;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public int getPageIndex() {
         return pageIndex;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public void setPageIndex(int pageIndex) {
         this.pageIndex = pageIndex;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public int getPageUnit() {
         return pageUnit;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public void setPageUnit(int pageUnit) {
         this.pageUnit = pageUnit;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public int getPageSize() {
         return pageSize;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
 
+
+    /**
+	 * ■
+	 * =================================
+	 * @return String
+	 */
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
 
 
     /**
-	 * searchKeywordFrom attribute를 리턴한다.
+	 * ■searchKeywordFrom attribute를 리턴한다.
+	 * =================================
 	 * @return String
 	 */
 	public String getSearchKeywordFrom() {
@@ -224,7 +313,8 @@ public class ComDefaultVO implements Serializable {
 	}
 
 	/**
-	 * searchKeywordFrom attribute 값을 설정한다.
+	 * ■searchKeywordFrom attribute 값을 설정한다.
+	 * =================================
 	 * @param searchKeywordFrom String
 	 */
 	public void setSearchKeywordFrom(String searchKeywordFrom) {
@@ -232,7 +322,8 @@ public class ComDefaultVO implements Serializable {
 	}
 
 	/**
-	 * searchKeywordTo attribute를 리턴한다.
+	 * ■searchKeywordTo attribute를 리턴한다.
+	 * =================================
 	 * @return String
 	 */
 	public String getSearchKeywordTo() {

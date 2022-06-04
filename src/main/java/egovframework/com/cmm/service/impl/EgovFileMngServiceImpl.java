@@ -227,4 +227,8 @@ public class EgovFileMngServiceImpl extends EgovAbstractServiceImpl implements E
 	public List<FileVO> selectImageFileList(FileVO vo) throws Exception {
     	return fileMngDAO.selectImageFileList(vo);
     }
+    
+    
 }
+
+

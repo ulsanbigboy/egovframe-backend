@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -26,7 +26,7 @@ import egovframework.com.config.EgovWebApplicationInitializer;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>

@@ -6,16 +6,27 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ Cross-Site Scripting 체크하여 값을 되돌려 받는 핸들러 JSP TLD, 자바에서 사용가능
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.com.cmm;
+
+import java.io.IOException;
+import java.io.Reader;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.PageContext;
+import javax.servlet.jsp.tagext.BodyTagSupport;
+
+import org.apache.taglibs.standard.tag.common.core.Util;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■Cross-Site Scripting 체크하여 값을 되돌려 받는 핸들러 JSP TLD, 자바에서 사용가능</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,6 +42,8 @@
  * @version  1.0
  * @since    1.0
  */
+public class EgovComCrossSiteHndlr extends BodyTagSupport {
+
 	
 	/**
 	 * ■함수 시작 로그 출력
@@ -39,53 +52,60 @@
 	 * @param msg
 	 * @param req
 	 */
-package egovframework.com.cmm;
-
-import java.io.IOException;
-import java.io.Reader;
-
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.JspWriter;
-import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.BodyTagSupport;
-
-import org.apache.taglibs.standard.tag.common.core.Util;
-
-/**
- * Cross-Site Scripting 체크하여 값을 되돌려 받는 핸들러 JSP TLD, 자바에서 사용가능
- *
- * @author 공통서비스 장동한
- * @since 2010.11.09
- * @version 1.0
- * @see <pre>
- * &lt;&lt; 개정이력(Modification Information) &gt;&gt;
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2010.11.09  장동한          최초 생성
- *
- * </pre>
- */
-public class EgovComCrossSiteHndlr extends BodyTagSupport {
-
 	/*
 	 * (One almost wishes XML and JSP could support "anonymous tags," given the
 	 * amount of trouble we had naming this one!) :-) - sb
 	 */
 
-	// *********************************************************************
-	// Internal state
 
+	
+	/**
+	 * ■Internal state
+	 * =================================
+	 */
 	private static final long serialVersionUID = -6750233818675360686L;
-	protected Object value; // tag attribute
-	protected String def; // tag attribute
-	protected boolean escapeXml; // tag attribute
-	private boolean needBody; // non-space body needed?
 
-	// *********************************************************************
-	// Construction and initialization
+	
+	/**
+	 * ■tag attribute
+	 * =================================
+	 */
+	protected Object value; 
 
+	
+	/**
+	 * ■tag attribute
+	 * =================================
+	 */
+	protected String def; 
+
+	
+	/**
+	 * ■tag attribute
+	 * =================================
+	 */
+	protected boolean escapeXml;
+
+	
+	/**
+	 * ■non-space body needed?
+	 * =================================
+	 */
+	private boolean needBody; 
+
+
+	
+	/**
+	 * ■Construction and initialization
+	 * =================================
+	 */
 	private String m_sDiffChar ="()[]{}\"',:;= \t\r\n%!+-";
+
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	//private String m_sDiffChar ="()[]{}\"',:;=%!+-";
 	private String m_sArrDiffChar [] = {
 						"&#40;","&#41;",
@@ -100,34 +120,58 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 						"&#43;","&#45;"
 						};
 
+
+	
 	/**
-	 * Constructs a new handler. As with TagSupport, subclasses should not
-	 * provide other constructors and are expected to call the superclass
-	 * constructor.
+	 * ■Constructs a new handler. As with TagSupport, subclasses should not
+	 *   provide other constructors and are expected to call the superclass
+	 *   constructor.
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
 	 */
 	public EgovComCrossSiteHndlr() {
 		super();
 		init();
 	}
 
-	// resets local state
+
+	
+	/**
+	 * ■resets local state
+	 * =================================
+	 */
 	private void init() {
 		value = def = null;
 		escapeXml = true;
 		needBody = false;
 	}
 
-	// Releases any resources we may have (or inherit)
+
+	
+	/**
+	 * ■Releases any resources we may have (or inherit)
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	public void release() {
 		super.release();
 		init();
 	}
 
-	// *********************************************************************
-	// Tag logic
 
-	// evaluates 'value' and determines if the body should be evaluted
+	
+	/**
+	 * ■Tag logic : evaluates 'value' and determines if the body should be evaluted
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	public int doStartTag() throws JspException {
 
@@ -167,7 +211,15 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 		}
 	}
 
-	// prints the body if necessary; reports errors
+
+	
+	/**
+	 * ■prints the body if necessary; reports errors
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Override
 	public int doEndTag() throws JspException {
 		try {
@@ -191,10 +243,10 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 		}
 	}
 
-	// *********************************************************************
-	// Public utility methods
 
+	
 	/**
+	 * ■Public utility methods
 	 * Outputs <tt>text</tt> to <tt>pageContext</tt>'s current JspWriter. If
 	 * <tt>escapeXml</tt> is true, performs the following substring replacements
 	 * (to facilitate output to XML/HTML pages):
@@ -202,6 +254,10 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 	 * & -> &amp; < -> &lt; > -> &gt; " -> &#034; ' -> &#039;
 	 *
 	 * See also Util.escapeXml().
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
 	 */
 	public static void out(PageContext pageContext, boolean escapeXml,
 			Object obj) throws IOException {
@@ -235,19 +291,29 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 		}
 
 	}
-	public static void out2(PageContext pageContext, boolean escapeXml,
-			Object obj) throws IOException {
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
+	public static void out2(PageContext pageContext, boolean escapeXml, Object obj) throws IOException {
+		
 		JspWriter w = pageContext.getOut();
-
 		w.write(obj.toString());
-
 	}
 
+	
 	/**
-	 *
-	 * Optimized to create no extra objects and write directly to the JspWriter
-	 * using blocks of escaped and unescaped characters
-	 *
+	 * ■Optimized to create no extra objects and write directly to the JspWriter
+	 *   using blocks of escaped and unescaped characters
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
 	 */
 	private static void writeEscapedXml(char[] buffer, int length, JspWriter w)
 			throws IOException {
@@ -274,11 +340,14 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 		}
 	}
 
+	
 	/**
-	 *
-	 * Optimized to create no extra objects and write directly to the JspWriter
+	 * ■Optimized to create no extra objects and write directly to the JspWriter
 	 * using blocks of escaped and unescaped characters
-	 *
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
 	 */
 	@SuppressWarnings("unused")
 	private String getWriteEscapedXml() throws IOException {
@@ -339,11 +408,15 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 		return sRtn;
 	}
 
+
+	
 	/**
-	 *
-	 * Optimized to create no extra objects and write directly to the JspWriter
+	 * ■Optimized to create no extra objects and write directly to the JspWriter
 	 * using blocks of escaped and unescaped characters
-	 *
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
 	 */
 	@SuppressWarnings("unused")
 	private String getWriteEscapedXml(String sWriteString) throws IOException {
@@ -405,20 +478,54 @@ public class EgovComCrossSiteHndlr extends BodyTagSupport {
 		return sRtn;
 	}
 
-    // for tag attribute
+
+	
+	/**
+	 * ■for tag attribute
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     public void setValue(Object value) {
         this.value = value;
     }
 
-    // for tag attribute
+
+	
+	/**
+	 * ■for tag attribute
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     public void setDefault(String def) {
         this.def = def;
     }
 
-    // for tag attribute
+
+	
+	/**
+	 * ■for tag attribute
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     public void setEscapeXml(boolean escapeXml) {
         this.escapeXml = escapeXml;
     }
+
+
+	
+	/**
+	 * ■테스트코드
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
     /*
     public static void main(String[] args) throws IOException
     {

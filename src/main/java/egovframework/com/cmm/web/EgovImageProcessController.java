@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 이미지프로세스콘트롤러
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.com.cmm.web;
 
 import java.io.BufferedInputStream;
@@ -63,26 +36,35 @@ import egovframework.com.cmm.SessionVO;
 import egovframework.com.cmm.service.EgovFileMngService;
 import egovframework.com.cmm.service.FileVO;
 
+
 /**
- * @Class Name : EgovImageProcessController.java
- * @Description :
- * @Modification Information
+ * <p>■이미지프로세스콘트롤러</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- *    수정일       수정자         수정내용
- *    -------        -------     -------------------
- *    2009. 4. 2.     이삼섭
- *    2011.08.31.     JJY        경량환경 템플릿 커스터마이징버전 생성
- *
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009. 4. 2.
- * @version
- * @see
- *
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Controller
 public class EgovImageProcessController extends HttpServlet {
-
 	
+	
+	/**
+	 * ■serialVersion UID
+	 * =================================
+	 */
+	private static final long serialVersionUID = -6339945210971171173L;
+
+
 	/**
 	 * ■로그
 	 * =================================
@@ -90,18 +72,16 @@ public class EgovImageProcessController extends HttpServlet {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	/**
-	 *  serialVersion UID
+	 * ■이미지프로세스서비스
+	 * =================================
 	 */
-	private static final long serialVersionUID = -6339945210971171173L;
-
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileService;
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovImageProcessController.class);
+	
 
 	/**
-	 * 첨부된 이미지에 대한 미리보기 기능을 제공한다.
-	 *
+	 * ■첨부된 이미지에 대한 미리보기 기능을 제공한다.
+	 * =================================
 	 * @param atchFileId
 	 * @param fileSn
 	 * @param sessionVO
@@ -111,8 +91,7 @@ public class EgovImageProcessController extends HttpServlet {
 	 */
 	@SuppressWarnings("resource")
 	@RequestMapping("/cmm/fms/getImage.do")
-	public void getImageInf(SessionVO sessionVO, ModelMap model, @RequestParam Map<String, Object> commandMap,
-		HttpServletResponse response) throws Exception {
+	public void getImageInf(SessionVO sessionVO, ModelMap model, @RequestParam Map<String, Object> commandMap, HttpServletResponse response) throws Exception {
 
 		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
 		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
@@ -157,7 +136,7 @@ public class EgovImageProcessController extends HttpServlet {
 				type = "image/" + fvo.getFileExtsn().toLowerCase();
 
 			} else {
-				LOGGER.debug("Image fileType is null.");
+				logger.debug("Image fileType is null.");
 			}
 
 			response.setHeader("Content-Type", type);
@@ -169,29 +148,31 @@ public class EgovImageProcessController extends HttpServlet {
 			response.getOutputStream().close();
 
 		} catch (IOException e) {
-			LOGGER.debug("{}", e);
+			logger.debug("{}", e);
 		} finally {
 			if (bStream != null) {
 				try {
 					bStream.close();
 				} catch (IOException est) {
-					LOGGER.debug("IGNORED: {}", est.getMessage());
+					logger.debug("IGNORED: {}", est.getMessage());
 				}
 			}
 			if (in != null) {
 				try {
 					in.close();
 				} catch (IOException ei) {
-					LOGGER.debug("IGNORED: {}", ei.getMessage());
+					logger.debug("IGNORED: {}", ei.getMessage());
 				}
 			}
 			if (fis != null) {
 				try {
 					fis.close();
 				} catch (IOException efis) {
-					LOGGER.debug("IGNORED: {}", efis.getMessage());
+					logger.debug("IGNORED: {}", efis.getMessage());
 				}
 			}
 		}
 	}
+	
 }
+

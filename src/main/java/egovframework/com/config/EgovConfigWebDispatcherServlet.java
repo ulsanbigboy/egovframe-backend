@@ -53,23 +53,6 @@ import egovframework.com.cmm.interceptor.CustomAuthenticInterceptor;
  * @version  1.0
  * @since    1.0
  */
-/**
- * @ClassName : EgovConfigWebDispatcherServlet.java
- * @Description : DispatcherServlet 설정
- *
- * @author : 윤주호
- * @since  : 2021. 7. 20
- * @version : 1.0
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일              수정자               수정내용
- *  -------------  ------------   ---------------------
- *   2021. 7. 20    윤주호               최초 생성
- * </pre>
- *
- */
 @Configuration
 @ComponentScan(basePackages = "egovframework", excludeFilters = {
 	@ComponentScan.Filter(type = FilterType.ANNOTATION, value = Service.class),
@@ -80,38 +63,26 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
 	final static String RESOLVER_DEFAULT_ERROR_VIEW = "cmm/error/egovError";
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
 	final static int URL_BASED_VIEW_RESOLVER_ORDER = 1;
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
 	final static String URL_BASED_VIEW_RESOLVER_PREFIX = "/WEB-INF/jsp/";
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
 	final static String URL_BASED_VIEW_RESOLVER_SUFFIX = ".jsp";
 
@@ -119,11 +90,9 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
+	 * @param registry
 	 */
 	// =====================================================================
 	// RequestMappingHandlerMapping 설정
@@ -154,11 +123,9 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
+	 * @param registry
 	 */
 	// -------------------------------------------------------------
 	// RequestMappingHandlerMapping 설정 View Controller 추가
@@ -172,11 +139,9 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
+	 * @param exceptionResolvers
 	 */
 	// -------------------------------------------------------------
 	// HandlerExceptionResolver 설정
@@ -200,11 +165,8 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
 	 */
 	// -------------------------------------------------------------
 	// View Resolver 설정
@@ -221,7 +183,7 @@ public class EgovConfigWebDispatcherServlet implements WebMvcConfigurer {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■
 	 * =================================
 	 * @param logger
 	 * @param msg

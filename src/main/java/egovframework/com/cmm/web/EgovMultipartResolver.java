@@ -6,56 +6,14 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 실행환경의 파일업로드 처리를 위한 기능 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.com.cmm.web;
 
-/*
- * Copyright 2001-2006 The Apache Software Foundation.
- *
- * Licensed under the Apache License, Version 2.0 (the ";License&quot;);
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS"; BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -74,29 +32,37 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+
+
 /**
- * 실행환경의 파일업로드 처리를 위한 기능 클래스
- * @author 공통서비스개발팀 이삼섭
- * @since 2009.06.01
- * @version 1.0
- * @see
+ * <p>■실행환경의 파일업로드 처리를 위한 기능 클래스</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.3.25  이삼섭          최초 생성
- *   2011.06.11 서준식          스프링 3.0 업그레이드 API변경으로인한 수정
- *
- * </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 public class EgovMultipartResolver extends CommonsMultipartResolver {
+	
+	/**
+	 * ■생성자
+	 * =================================
+	 */
 	public EgovMultipartResolver() {}
 
+
 	/**
-	 * 첨부파일 처리를 위한 multipart resolver를 생성한다.
-	 *
+	 * ■첨부파일 처리를 위한 multipart resolver를 생성한다.
+	 * =================================
 	 * @param servletContext
 	 */
 	public EgovMultipartResolver(ServletContext servletContext) {
@@ -104,7 +70,10 @@ public class EgovMultipartResolver extends CommonsMultipartResolver {
 	}
 
 	/**
-	 * multipart에 대한 parsing을 처리한다.
+	 * ■multipart에 대한 parsing을 처리한다.
+	 * =================================
+	 * @param fileItems
+	 * @param encoding
 	 */
 	@SuppressWarnings("rawtypes")
 	@Override
@@ -175,4 +144,5 @@ public class EgovMultipartResolver extends CommonsMultipartResolver {
 
 		return new MultipartParsingResult(multipartFiles, multipartParameters, mpParamContentTypes);
 	}
+	
 }

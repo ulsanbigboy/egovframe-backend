@@ -37,23 +37,6 @@ import org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl;
  * @version  1.0
  * @since    1.0
  */
-/**
- * @ClassName : EgovIdGnrBuilder.java
- * @Description : IdGen 정보 builder
- *
- * @author : 윤주호
- * @since  : 2021. 7. 20
- * @version : 1.0
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일              수정자               수정내용
- *  -------------  ------------   ---------------------
- *   2021. 7. 20    윤주호               최초 생성
- * </pre>
- *
- */
 public class EgovIdGnrBuilder {
 
 	
@@ -66,51 +49,189 @@ public class EgovIdGnrBuilder {
 	 */
 	// 기본값 설정, 예외처리 필요
 	private DataSource dataSource;
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private EgovIdGnrStrategyImpl egovIdGnrStrategyImpl;
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private String preFix;
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private int cipers;
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private char fillChar;
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private int blockSize;
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private String table;
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	private String tableName;
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 		return this;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setEgovIdGnrStrategyImpl(EgovIdGnrStrategyImpl egovIdGnrStrategyImpl) {
 		this.egovIdGnrStrategyImpl = egovIdGnrStrategyImpl;
 		return this;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setPreFix(String preFix) {
 		this.preFix = preFix;
 		return this;
 	}
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setCipers(int cipers) {
 		this.cipers = cipers;
 		return this;
 	}
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setFillChar(char fillChar) {
 		this.fillChar = fillChar;
 		return this;
 	}
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setBlockSize(int blockSize) {
 		this.blockSize = blockSize;
 		return this;
 	}
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setTable(String table) {
 		this.table = table;
 		return this;
 	}
+
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovIdGnrBuilder setTableName(String tableName) {
 		this.tableName = tableName;
 		return this;
 	}
 
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	public EgovTableIdGnrServiceImpl build() {
 
 		EgovTableIdGnrServiceImpl egovTableIdGnrServiceImpl = new EgovTableIdGnrServiceImpl();
@@ -131,5 +252,5 @@ public class EgovIdGnrBuilder {
 	}
 
 
-
 }
+

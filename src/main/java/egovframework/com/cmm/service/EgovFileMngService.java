@@ -6,16 +6,20 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 파일정보의 관리를 위한 서비스 인터페이스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.service;
+
+import java.util.List;
+import java.util.Map;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■파일정보의 관리를 위한 서비스 인터페이스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,113 +35,95 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.service;
-
-import java.util.List;
-import java.util.Map;
-
-/**
- * @Class Name : EgovFileMngService.java
- * @Description : 파일정보의 관리를 위한 서비스 인터페이스
- * @Modification Information
- *
- *    수정일       수정자         수정내용
- *    -------        -------     -------------------
- *    2009. 3. 25.     이삼섭    최초생성
- *
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009. 3. 25.
- * @version
- * @see
- *
- */
 public interface EgovFileMngService {
 
+	
     /**
-     * 파일에 대한 목록을 조회한다.
-     *
+	 * ■파일에 대한 목록을 조회한다.
+	 * =================================
      * @param fvo
      * @return
      * @throws Exception
      */
     public List<FileVO> selectFileInfs(FileVO fvo) throws Exception;
 
+    
     /**
-     * 하나의 파일에 대한 정보(속성 및 상세)를 등록한다.
-     *
+	 * ■하나의 파일에 대한 정보(속성 및 상세)를 등록한다.
+	 * =================================
      * @param fvo
      * @throws Exception
      */
     public String insertFileInf(FileVO fvo) throws Exception;
 
+    
     /**
-     * 여러 개의 파일에 대한 정보(속성 및 상세)를 등록한다.
-     *
+	 * ■여러 개의 파일에 대한 정보(속성 및 상세)를 등록한다.
+	 * =================================
      * @param fvoList
      * @throws Exception
      */
     public String insertFileInfs(List<?> fvoList) throws Exception;
 
+    
     /**
-     * 여러 개의 파일에 대한 정보(속성 및 상세)를 수정한다.
-     *
+	 * ■여러 개의 파일에 대한 정보(속성 및 상세)를 수정한다.
+	 * =================================
      * @param fvoList
      * @throws Exception
      */
     public void updateFileInfs(List<?> fvoList) throws Exception;
 
+    
     /**
-     * 여러 개의 파일을 삭제한다.
-     *
+	 * ■여러 개의 파일을 삭제한다.
+	 * =================================
      * @param fvoList
      * @throws Exception
      */
     public void deleteFileInfs(List<?> fvoList) throws Exception;
 
+    
     /**
-     * 하나의 파일을 삭제한다.
+	 * ■하나의 파일을 삭제한다.
      *
      * @param fvo
      * @throws Exception
      */
     public void deleteFileInf(FileVO fvo) throws Exception;
 
+    
     /**
-     * 파일에 대한 상세정보를 조회한다.
-     *
+	 * ■파일에 대한 상세정보를 조회한다.
+	 * =================================
      * @param fvo
      * @return
      * @throws Exception
      */
     public FileVO selectFileInf(FileVO fvo) throws Exception;
 
+    
     /**
-     * 파일 구분자에 대한 최대값을 구한다.
-     *
+	 * ■파일 구분자에 대한 최대값을 구한다.
+	 * =================================
      * @param fvo
      * @return
      * @throws Exception
      */
     public int getMaxFileSN(FileVO fvo) throws Exception;
 
+    
     /**
-     * 전체 파일을 삭제한다.
-     *
+	 * ■전체 파일을 삭제한다.
+	 * =================================
      * @param fvo
      * @throws Exception
      */
     public void deleteAllFileInf(FileVO fvo) throws Exception;
 
+    
     /**
-     * 파일명 검색에 대한 목록을 조회한다.
+	 * ■파일명 검색에 대한 목록을 조회한다.
      *
      * @param fvo
      * @return
@@ -145,12 +131,15 @@ public interface EgovFileMngService {
      */
     public Map<String, Object> selectFileListByFileNm(FileVO fvo) throws Exception;
 
+    
     /**
-     * 이미지 파일에 대한 목록을 조회한다.
-     *
+	 * ■이미지 파일에 대한 목록을 조회한다.
+	 * =================================
      * @param vo
      * @return
      * @throws Exception
      */
     public List<FileVO> selectImageFileList(FileVO vo) throws Exception;
+    
+    
 }

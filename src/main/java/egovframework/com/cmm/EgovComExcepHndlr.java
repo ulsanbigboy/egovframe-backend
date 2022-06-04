@@ -6,16 +6,22 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 공통서비스의 exception 처리 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.com.cmm;
+
+import org.egovframe.rte.fdl.cmmn.exception.handler.ExceptionHandler;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■공통서비스의 exception 처리 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,45 +37,21 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm;
-
-import org.egovframe.rte.fdl.cmmn.exception.handler.ExceptionHandler;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-/**
- * @Class Name : EgovComExcepHndlr.java
- * @Description : 공통서비스의 exception 처리 클래스
- * @Modification Information
- *
- *    수정일       수정자         수정내용
- *    -------        -------     -------------------
- *    2009. 3. 13.     이삼섭
- *
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009. 3. 13.
- * @version
- * @see
- *
- */
 public class EgovComExcepHndlr implements ExceptionHandler {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(EgovComExcepHndlr.class);
-
-    /**
-     * 발생된 Exception을 처리한다.
-     */
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	
+	
+	/**
+	 * ■발생된 Exception을 처리한다.
+	 * =================================
+	 * @param ex
+	 * @param packageName
+	 */
     public void occur(Exception ex, String packageName) {
-		LOGGER.debug("[HANDLER][PACKAGE]::: {}", packageName);
-		LOGGER.debug("[HANDLER][Exception]:::", ex);
+    	logger.debug("[HANDLER][PACKAGE]::: {}", packageName);
+    	logger.debug("[HANDLER][Exception]:::", ex);
     }
+    
 }
+

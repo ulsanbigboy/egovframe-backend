@@ -6,39 +6,13 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ properties값들을 파일로부터 읽어와   Globals클래스의 정적변수로 로드시켜주는 클래스로
+ *                  문자열 정보 기준으로 사용할 전역변수를 시스템 재시작으로 반영할 수 있도록 한다.
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.com.cmm.service;
 
 import java.io.File;
@@ -54,54 +28,97 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//import java.io.FileNotFoundException;
-//import java.io.IOException;
-//import java.util.Properties;
-/**
- *  Class Name : EgovProperties.java
- *  Description : properties값들을 파일로부터 읽어와   Globals클래스의 정적변수로 로드시켜주는 클래스로
- *   문자열 정보 기준으로 사용할 전역변수를 시스템 재시작으로 반영할 수 있도록 한다.
- *  Modification Information
- *
- *     수정일         수정자                   수정내용
- *   -------    --------    ---------------------------
- *   2009.01.19    박지욱          최초 생성
- *	 2011.07.20    서준식 	      Globals파일의 상대경로를 읽은 메서드 추가
- *   2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- *  @author 공통 서비스 개발팀 박지욱
- *  @since 2009. 01. 19
- *  @version 1.0
- *  @see
- *
- */
 
+
+
+/**
+ * <p>■properties값들을 파일로부터 읽어와   Globals클래스의 정적변수로 로드시켜주는 클래스로</p>
+ *      문자열 정보 기준으로 사용할 전역변수를 시스템 재시작으로 반영할 수 있도록 한다.
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
+ *
+ * @author   
+ * @version  1.0
+ * @since    1.0
+ */
 public class EgovProperties {
 
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovProperties.class);
 
-	//프로퍼티값 로드시 에러발생하면 반환되는 에러문자열
+	
+	/**
+	 * ■프로퍼티값 로드시 에러발생하면 반환되는 에러문자열
+	 * =================================
+	 */
 	public static final String ERR_CODE = " EXCEPTION OCCURRED";
+
+	
+	/**
+	 * ■프로퍼티값 로드시 에러발생하면 반환되는 에러문자열
+	 * =================================
+	 */
 	public static final String ERR_CODE_FNFE = " EXCEPTION(FNFE) OCCURRED";
+
+	
+	/**
+	 * ■프로퍼티값 로드시 에러발생하면 반환되는 에러문자열
+	 * =================================
+	 */
 	public static final String ERR_CODE_IOE = " EXCEPTION(IOE) OCCURRED";
 
-	//파일구분자
+	
+	/**
+	 * ■파일구분자
+	 * =================================
+	 */
 	static final char FILE_SEPARATOR = File.separatorChar;
 
-	//프로퍼티 파일의 물리적 위치
+
+	
+	/**
+	 * ■프로퍼티 파일의 물리적 위치
+	 * =================================
+	 */
 	/*public static final String GLOBALS_PROPERTIES_FILE
 	= System.getProperty("user.home") + System.getProperty("file.separator") + "egovProps"
 	+ System.getProperty("file.separator") + "globals.properties";*/
 
+
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	public static final String RELATIVE_PATH_PREFIX = EgovProperties.class.getResource("").getPath()
 		+ System.getProperty("file.separator") + ".." + System.getProperty("file.separator")
 		+ ".." + System.getProperty("file.separator") + ".." + System.getProperty("file.separator");
 
+
+	
+	/**
+	 * ■
+	 * =================================
+	 */
 	public static final String GLOBALS_PROPERTIES_FILE = RELATIVE_PATH_PREFIX + "egovProps"
 		+ System.getProperty("file.separator") + "globals.properties";
 
+
 	/**
-	 * 인자로 주어진 문자열을 Key값으로 하는 상대경로 프로퍼티 값을 절대경로로 반환한다(Globals.java 전용)
+	 * ■인자로 주어진 문자열을 Key값으로 하는 상대경로 프로퍼티 값을 절대경로로 반환한다(Globals.java 전용)
+	 * =================================
 	 * @param keyName String
 	 * @return String
 
@@ -134,11 +151,15 @@ public class EgovProperties {
 	}
 	*/
 
+
+
+	
 	/**
-	 * 인자로 주어진 문자열을 Key값으로 하는 프로퍼티 값을 반환한다(Globals.java 전용)
+	 * ■인자로 주어진 문자열을 Key값으로 하는 프로퍼티 값을 반환한다(Globals.java 전용)
+	 * =================================
 	 * @param keyName String
 	 * @return String
-	*/
+	 */
 	public static String getProperty(String keyName) {
 		String value = ERR_CODE;
 		value = "99";
@@ -166,8 +187,10 @@ public class EgovProperties {
 		return value;
 	}
 
+	
 	/**
-	 * 주어진 파일에서 인자로 주어진 문자열을 Key값으로 하는 프로퍼티 상대 경로값을 절대 경로값으로 반환한다
+	 * ■주어진 파일에서 인자로 주어진 문자열을 Key값으로 하는 프로퍼티 상대 경로값을 절대 경로값으로 반환한다
+	 * =================================
 	 * @param fileName String
 	 * @param key String
 	 * @return String
@@ -197,8 +220,11 @@ public class EgovProperties {
 	}
 	*/
 
+
+	
 	/**
-	 * 주어진 파일에서 인자로 주어진 문자열을 Key값으로 하는 프로퍼티 값을 반환한다
+	 * ■주어진 파일에서 인자로 주어진 문자열을 Key값으로 하는 프로퍼티 값을 반환한다
+	 * =================================
 	 * @param fileName String
 	 * @param key String
 	 * @return String
@@ -226,8 +252,12 @@ public class EgovProperties {
 		}
 	}
 	*/
+
+
+	
 	/**
-	 * 주어진 프로파일의 내용을 파싱하여 (key-value) 형태의 구조체 배열을 반환한다.
+	 * ■주어진 프로파일의 내용을 파싱하여 (key-value) 형태의 구조체 배열을 반환한다.
+	 * =================================
 	 * @param property String
 	 * @return ArrayList
 	 */
@@ -277,8 +307,11 @@ public class EgovProperties {
 		return keyList;
 	}
 
+
+	
 	/**
-	 * 시스템 로그를 출력한다.
+	 * ■시스템 로그를 출력한다.
+	 * =================================
 	 * @param obj Object
 	 */
 	private static void debug(Object obj) {
@@ -286,4 +319,7 @@ public class EgovProperties {
 			LOGGER.debug("IGNORED: {}", ((Exception)obj).getMessage());
 		}
 	}
+	
+	
 }
+
