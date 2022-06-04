@@ -33,12 +33,11 @@ import org.springframework.context.annotation.PropertySources;
  *     <DD>개발환경 : jdk8, resin 3.1<BR>
  * </DL>
  * <BR>
- *
+ *  //CAUTION: min JDK 8
  * @author   
  * @version  1.0
  * @since    1.0
  */
-	
 @Configuration
 @Import({
 	EgovConfigAppAspect.class,
@@ -53,7 +52,7 @@ import org.springframework.context.annotation.PropertySources;
 })
 @PropertySources({
 	@PropertySource("classpath:/egovframework/egovProps/globals.properties")
-}) //CAUTION: min JDK 8
+})
 public class EgovConfigApp {
 	
 	/**
@@ -65,3 +64,5 @@ public class EgovConfigApp {
 	 */
 
 }
+
+

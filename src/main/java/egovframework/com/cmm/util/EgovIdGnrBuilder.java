@@ -12,6 +12,12 @@
 /*
  * ■패키지명
  */
+package egovframework.com.cmm.util;
+
+import javax.sql.DataSource;
+
+import org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl;
+import org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl;
 
 
 /**
@@ -31,21 +37,6 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.com.cmm.util;
-
-import javax.sql.DataSource;
-
-import org.egovframe.rte.fdl.idgnr.impl.EgovTableIdGnrServiceImpl;
-import org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl;
-
 /**
  * @ClassName : EgovIdGnrBuilder.java
  * @Description : IdGen 정보 builder
@@ -65,8 +56,15 @@ import org.egovframe.rte.fdl.idgnr.impl.strategy.EgovIdGnrStrategyImpl;
  */
 public class EgovIdGnrBuilder {
 
-	// TODO : 기본값 설정, 예외처리 필요
-
+	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
+	// 기본값 설정, 예외처리 필요
 	private DataSource dataSource;
 	private EgovIdGnrStrategyImpl egovIdGnrStrategyImpl;
 

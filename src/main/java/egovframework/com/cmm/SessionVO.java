@@ -6,16 +6,20 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 세션 VO 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.com.cmm;
+
+import java.io.Serializable;
+
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■세션 VO 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,6 +35,8 @@
  * @version  1.0
  * @since    1.0
  */
+public class SessionVO implements Serializable {
+
 	
 	/**
 	 * ■함수 시작 로그 출력
@@ -39,41 +45,26 @@
 	 * @param msg
 	 * @param req
 	 */
-package egovframework.com.cmm;
-
-import java.io.Serializable;
-
-/**
- * 세션 VO 클래스
- * @author 공통서비스 개발팀 박지욱
- * @since 2009.03.06
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2009.03.06  박지욱          최초 생성
- *
- *  </pre>
- */
-public class SessionVO implements Serializable {
-
 	private static final long serialVersionUID = -2848741427493626376L;
+	
 	/** 아이디 */
 	private String sUserId;
+	
 	/** 이름 */
 	private String sUserNm;
+	
 	/** 이메일 */
 	private String sEmail;
+	
 	/** 사용자구분 */
 	private String sUserSe;
+	
 	/** 조직(부서)ID */
 	private String orgnztId;
+	
 	/** 고유아이디 */
 	private String uniqId;
+	
 	/**
 	 * sUserId attribute 를 리턴한다.
 	 * @return String
@@ -81,6 +72,7 @@ public class SessionVO implements Serializable {
 	public String getSUserId() {
 		return sUserId;
 	}
+	
 	/**
 	 * sUserId attribute 값을 설정한다.
 	 * @param sUserId String
@@ -88,6 +80,7 @@ public class SessionVO implements Serializable {
 	public void setSUserId(String userId) {
 		sUserId = userId;
 	}
+	
 	/**
 	 * sUserNm attribute 를 리턴한다.
 	 * @return String
@@ -95,6 +88,7 @@ public class SessionVO implements Serializable {
 	public String getSUserNm() {
 		return sUserNm;
 	}
+	
 	/**
 	 * sUserNm attribute 값을 설정한다.
 	 * @param sUserNm String
@@ -102,6 +96,7 @@ public class SessionVO implements Serializable {
 	public void setSUserNm(String userNm) {
 		sUserNm = userNm;
 	}
+	
 	/**
 	 * sEmail attribute 를 리턴한다.
 	 * @return String
@@ -109,6 +104,7 @@ public class SessionVO implements Serializable {
 	public String getSEmail() {
 		return sEmail;
 	}
+	
 	/**
 	 * sEmail attribute 값을 설정한다.
 	 * @param sEmail String
@@ -116,6 +112,7 @@ public class SessionVO implements Serializable {
 	public void setSEmail(String email) {
 		sEmail = email;
 	}
+	
 	/**
 	 * sUserSe attribute 를 리턴한다.
 	 * @return String
@@ -123,6 +120,7 @@ public class SessionVO implements Serializable {
 	public String getSUserSe() {
 		return sUserSe;
 	}
+	
 	/**
 	 * sUserSe attribute 값을 설정한다.
 	 * @param sUserSe String
@@ -130,6 +128,7 @@ public class SessionVO implements Serializable {
 	public void setSUserSe(String userSe) {
 		sUserSe = userSe;
 	}
+	
 	/**
 	 * orgnztId attribute 를 리턴한다.
 	 * @return String
@@ -137,6 +136,7 @@ public class SessionVO implements Serializable {
 	public String getOrgnztId() {
 		return orgnztId;
 	}
+	
 	/**
 	 * orgnztId attribute 값을 설정한다.
 	 * @param orgnztId String
@@ -144,6 +144,7 @@ public class SessionVO implements Serializable {
 	public void setOrgnztId(String orgnztId) {
 		this.orgnztId = orgnztId;
 	}
+	
 	/**
 	 * uniqId attribute 를 리턴한다.
 	 * @return String
@@ -151,6 +152,7 @@ public class SessionVO implements Serializable {
 	public String getUniqId() {
 		return uniqId;
 	}
+	
 	/**
 	 * uniqId attribute 값을 설정한다.
 	 * @param uniqId String
@@ -158,4 +160,5 @@ public class SessionVO implements Serializable {
 	public void setUniqId(String uniqId) {
 		this.uniqId = uniqId;
 	}
+	
 }

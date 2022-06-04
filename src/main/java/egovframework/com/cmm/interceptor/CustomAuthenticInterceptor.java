@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 인증여부 체크 인터셉터
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -40,26 +40,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  * @version  1.0
  * @since    1.0
  */
-/**
- * 인증여부 체크 인터셉터
- * @author 공통서비스 개발팀 서준식
- * @since 2011.07.01
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2011.07.01  서준식          최초 생성
- *  2011.09.07  서준식          인증이 필요없는 URL을 패스하는 로직 추가
- *  </pre>
- */
-
-
 @SuppressWarnings("deprecation")
 public class CustomAuthenticInterceptor extends HandlerInterceptorAdapter {
+
 	
 	/**
 	 * ■함수 시작 로그 출력
@@ -69,7 +52,15 @@ public class CustomAuthenticInterceptor extends HandlerInterceptorAdapter {
 	 * @param req
 	 */
 	private final Logger log = LoggerFactory.getLogger(CustomAuthenticInterceptor.class);
+
 	
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	/**
 	 * 세션에 계정정보(LoginVO)가 있는지 여부로 인증 여부를 체크한다.
 	 * 계정정보(LoginVO)가 없다면, 로그인 페이지로 이동한다.
@@ -86,3 +77,5 @@ public class CustomAuthenticInterceptor extends HandlerInterceptorAdapter {
 	}
 
 }
+
+

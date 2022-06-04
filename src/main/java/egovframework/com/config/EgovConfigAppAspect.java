@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ Aspect 설정
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -31,7 +31,7 @@ import org.egovframe.rte.fdl.cmmn.exception.manager.ExceptionHandlerService;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■Aspect 설정</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -47,36 +47,43 @@ import org.egovframe.rte.fdl.cmmn.exception.manager.ExceptionHandlerService;
  * @version  1.0
  * @since    1.0
  */
-/**
- * @ClassName : EgovConfigAppAspect.java
- * @Description : Aspect 설정
- *
- * @author : 윤주호
- * @since  : 2021. 7. 20
- * @version : 1.0
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일              수정자               수정내용
- *  -------------  ------------   ---------------------
- *   2021. 7. 20    윤주호               최초 생성
- * </pre>
- *
- */
 @Configuration
 @EnableAspectJAutoProxy
 public class EgovConfigAppAspect {
 
+
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Autowired
 	AntPathMatcher antPathMatcher;
 
+
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Bean
 	public EgovComExcepHndlr egovHandler() {
 		EgovComExcepHndlr egovComExcepHndlr = new EgovComExcepHndlr();
 		return egovComExcepHndlr;
 	}
 
+
+	/**
+	 * ■함수 시작 로그 출력
+	 * =================================
+	 * @param logger
+	 * @param msg
+	 * @param req
+	 */
 	@Bean
 	public EgovComOthersExcepHndlr otherHandler() {
 		EgovComOthersExcepHndlr egovComOthersExcepHndlr = new EgovComOthersExcepHndlr();
@@ -153,3 +160,4 @@ public class EgovConfigAppAspect {
 	}
 
 }
+
