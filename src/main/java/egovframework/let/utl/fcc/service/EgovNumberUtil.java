@@ -6,16 +6,26 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 숫자 데이터 처리 관련 유틸리티
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.utl.fcc.service;
+
+import java.security.SecureRandom;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■숫자 데이터 처리 관련 유틸리티</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,54 +41,26 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-/**
- * @Class Name  : EgovNumberUtil.java
- * @Description : 숫자 데이터 처리 관련 유틸리티
- * @Modification Information
- *
- *     수정일         수정자                   수정내용
- *     -------          --------        ---------------------------
- *   2009.02.13       이삼섭                  최초 생성
- *
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009. 02. 13
- * @version 1.0
- * @see
- *
- */
-
-package egovframework.let.utl.fcc.service;
-
-import java.security.SecureRandom;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class EgovNumberUtil {
 
+
+	/**
+	 * ■로그변수
+	 * =================================
+	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(EgovNumberUtil.class);
 
-    /**
-     * 특정숫자 집합에서 랜덤 숫자를 구하는 기능 시작숫자와 종료숫자 사이에서 구한 랜덤 숫자를 반환한다
-     *
+
+	/**
+     * ■특정숫자 집합에서 랜덤 숫자를 구하는 기능 시작숫자와 종료숫자 사이에서 구한 랜덤 숫자를 반환한다
+	 * =================================
      * @param startNum - 시작숫자
      * @param endNum - 종료숫자
      * @return 랜덤숫자
      * @see
      */
     public static int getRandomNum(int startNum, int endNum) {
+
 		int randomNum = 0;
 
 		// 랜덤 객체 생성
@@ -93,8 +75,8 @@ public class EgovNumberUtil {
     }
 
     /**
-     * 특정 숫자 집합에서 특정 숫자가 있는지 체크하는 기능 12345678에서 7이 있는지 없는지 체크하는 기능을 제공함
-     *
+     * ■특정 숫자 집합에서 특정 숫자가 있는지 체크하는 기능 12345678에서 7이 있는지 없는지 체크하는 기능을 제공함
+	 * =================================
      * @param sourceInt - 특정숫자집합
      * @param searchInt - 검색숫자
      * @return 존재여부
@@ -113,8 +95,8 @@ public class EgovNumberUtil {
     }
 
     /**
-     * 숫자타입을 문자열로 변환하는 기능 숫자 20081212를 문자열 '20081212'로 변환하는 기능
-     *
+     * ■숫자타입을 문자열로 변환하는 기능 숫자 20081212를 문자열 '20081212'로 변환하는 기능
+	 * =================================
      * @param srcNumber - 숫자
      * @return 문자열
      * @see
@@ -129,7 +111,8 @@ public class EgovNumberUtil {
 
 
     /**
-     * 숫자타입을 데이트 타입으로 변환하는 기능
+     * ■숫자타입을 데이트 타입으로 변환하는 기능
+	 * =================================
      * 숫자 20081212를 데이트타입  '2008-12-12'로 변환하는 기능
      * @param srcNumber - 숫자
      * @return String
@@ -170,8 +153,8 @@ public class EgovNumberUtil {
     }
 
     /**
-     * 체크할 숫자 중에서 숫자인지 아닌지 체크하는 기능
-     * 숫자이면 True, 아니면 False를 반환한다
+     * ■체크할 숫자 중에서 숫자인지 아닌지 체크하는 기능 숫자이면 True, 아니면 False를 반환한다
+	 * =================================
      * @param checkStr - 체크문자열
      * @return 숫자여부
      * @see
@@ -197,8 +180,8 @@ public class EgovNumberUtil {
     }
 
     /**
-     * 특정숫자를 다른 숫자로 치환하는 기능 숫자 12345678에서 123를 999로 변환하는 기능을 제공(99945678)
-     *
+     * ■특정숫자를 다른 숫자로 치환하는 기능 숫자 12345678에서 123를 999로 변환하는 기능을 제공(99945678)
+	 * =================================
      * @param srcNumber - 숫자집합
      * @param cnvrSrcNumber - 원래숫자
      * @param cnvrTrgtNumber - 치환숫자
@@ -226,28 +209,27 @@ public class EgovNumberUtil {
 		}
 		rtnStr.append(nextStr); // 변환대상 숫자 이후 숫자를 붙여준다.
 
-	return Integer.parseInt(rtnStr.toString());
+		return Integer.parseInt(rtnStr.toString());
     }
 
     /**
-     * 특정숫자가 실수인지, 정수인지, 음수인지 체크하는 기능 123이 실수인지, 정수인지, 음수인지 체크하는 기능을 제공함
-     *
+     * ■특정숫자가 실수인지, 정수인지, 음수인지 체크하는 기능 123이 실수인지, 정수인지, 음수인지 체크하는 기능을 제공함
+	 * =================================
      * @param srcNumber - 숫자집합
      * @return -1(음수), 0(정수), 1(실수)
      * @see
      */
     public static int checkRlnoInteger(double srcNumber) {
 
-	// byte 1바이트 		▶소수점이 없는 숫자로, 범위 -2^7 ~ 2^7 -1
-	// short 2바이트		▶소수점이 없는 숫자로, 범위 -2^15 ~ 2^15 -1
-	// int 4바이트 		▶소수점이 없는 숫자로, 범위 -2^31 ~ 2^31 - 1
-	// long 8바이트 		▶소수점이 없는 숫자로, 범위 -2^63 ~ 2^63-1
 
-	// float 4바이트		▶소수점이 있는 숫자로, 끝에 F 또는 f 가 붙는 숫자 (예:3.14f)
-	// double 8바이트	▶소수점이 있는 숫자로, 끝에 아무것도 붙지 않는 숫자 (예:3.14)
-	//							▶소수점이 있는 숫자로, 끝에 D 또는 d 가 붙는 숫자(예:3.14d)
+    	// byte   1바이트       ▶소수점이 없는 숫자로, 범위 -2^7 ~ 2^7 -1
+    	// short  2바이트       ▶소수점이 없는 숫자로, 범위 -2^15 ~ 2^15 -1
+    	// int    4바이트       ▶소수점이 없는 숫자로, 범위 -2^31 ~ 2^31 - 1
+    	// long   8바이트       ▶소수점이 없는 숫자로, 범위 -2^63 ~ 2^63-1
+    	// float  4바이트       ▶소수점이 있는 숫자로, 끝에 F 또는 f 가 붙는 숫자 (예:3.14f)
+    	// double 8바이트       ▶소수점이 있는 숫자로, 끝에 아무것도 붙지 않는 숫자 (예:3.14)
 
-		String cnvrString = null;
+    	String cnvrString = null;
 
 		if (srcNumber < 0) {
 			return -1;
@@ -261,4 +243,5 @@ public class EgovNumberUtil {
 			}
 		}
 	}
+    
 }

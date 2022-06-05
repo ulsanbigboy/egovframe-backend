@@ -6,16 +6,20 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 일정관리 VO Class 구현
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.cop.smt.sim.service;
+
+import java.io.Serializable;
+
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■일정관리 VO Class 구현</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,115 +35,193 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.cop.smt.sim.service;
-
-import java.io.Serializable;
-
-/**
- * 일정관리 VO Class 구현
- * @since 2009.04.10
- * @see
- * <pre>
- * << 개정이력(Modification Information) >>  수정일      수정자           수정내용 -------    ---
- * -----    --------------------------- 2009.04.10  장동한          최초 생성 2011.05.31
- * JJY           경량환경 커스터마이징버전 생성
- * </pre>
- * @author 조재영
- * @version 1.0
- * @created 09-6-2011 오전 10:08:07
- */
 public class IndvdlSchdulManageVO implements Serializable {
-	
+
+
 	/**
-	 * serialVersionUID
+	 * ■serialVersionUID
+	 * =================================
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/** 일정ID */
+
+	/**
+	 * ■일정ID
+	 * =================================
+	 */
 	private String schdulId;
-	
-	/** 일정구분(회의/교육/세미나/강의 기타) */
+
+
+	/**
+	 * ■일정구분(회의/교육/세미나/강의 기타)
+	 * =================================
+	 */
 	private String schdulSe;
-	
-	/** 일정부서ID */
+
+
+	/**
+	 * ■일정부서ID
+	 * =================================
+	 */
 	private String schdulDeptId;
-	
-	/** 일정종류(부서일정/개인일정) */
+
+
+	/**
+	 * ■일정종류(부서일정/개인일정)
+	 * =================================
+	 */
 	private String schdulKindCode;
-	
-	/** 일정시작일자 */
+
+
+	/**
+	 * ■일정시작일자
+	 * =================================
+	 */
 	private String schdulBgnde;
-	
-	/** 일정종료일자 */
+
+
+	/**
+	 * ■일정종료일자
+	 * =================================
+	 */
 	private String schdulEndde;
-	
-	/** 일정명 */
+
+
+	/**
+	 * ■일정명
+	 * =================================
+	 */
 	private String schdulNm;
-	
-	/** 일정내용 */
+
+
+	/**
+	 * ■일정내용
+	 * =================================
+	 */
 	private String schdulCn;
-	
-	/** 일정장소 */
+
+
+	/**
+	 * ■일정장소
+	 * =================================
+	 */
 	private String schdulPlace;
-	
-	/** 일정중요도코드 */
+
+
+	/**
+	 * ■일정중요도코드
+	 * =================================
+	 */
 	private String schdulIpcrCode;
-	
-	/** 일정담담자ID */
+
+
+	/**
+	 * ■일정담담자ID
+	 * =================================
+	 */
 	private String schdulChargerId;
-	
-	/** 첨부파일ID */
+
+
+	/**
+	 * ■첨부파일ID
+	 * =================================
+	 */
 	private String atchFileId;
-	
-	/** 반복구분(반복, 연속, 요일반복) */
+
+
+	/**
+	 * ■반복구분(반복, 연속, 요일반복)
+	 * =================================
+	 */
 	private String reptitSeCode;
-	
-	/** 최초등록시점 */
+
+
+	/**
+	 * ■최초등록시점
+	 * =================================
+	 */
 	private String frstRegisterPnttm = "";
-	
-	/** 최초등록자ID */
+
+
+	/**
+	 * ■최초등록자ID
+	 * =================================
+	 */
 	private String frstRegisterId = "";
-	
-	/** 최종수정시점 */
+
+
+	/**
+	 * ■최종수정시점
+	 * =================================
+	 */
 	private String lastUpdusrPnttm = "";
-	
-	/** 최종수정ID */
+
+
+	/**
+	 * ■최종수정ID
+	 * =================================
+	 */
 	private String lastUpdusrId = "";
-	
-	/** 일정시작일자(시간) */
+
+
+	/**
+	 * ■일정시작일자(시간)
+	 * =================================
+	 */
 	private String schdulBgndeHH = "";
-	
-	/** 일정시작일자(분) */
+
+
+	/**
+	 * ■일정시작일자(분)
+	 * =================================
+	 */
 	private String schdulBgndeMM = "";
-	
-	/** 일정종료일자(시간) */
+
+
+	/**
+	 * ■일정종료일자(시간)
+	 * =================================
+	 */
 	private String schdulEnddeHH = "";
-	
-	/** 일정종료일자(분) */
+
+
+	/**
+	 * ■일정종료일자(분)
+	 * =================================
+	 */
 	private String schdulEnddeMM = "";
-	
-	/** 일정시작일자(Year/Month/Day) */
+
+
+	/**
+	 * ■일정시작일자(Year/Month/Day)
+	 * =================================
+	 */
 	private String schdulBgndeYYYMMDD = "";
-	
-	/** 일정종료일자(Year/Month/Day) */
+
+
+	/**
+	 * ■일정종료일자(Year/Month/Day)
+	 * =================================
+	 */
 	private String schdulEnddeYYYMMDD = "";
-	
-	/** 담당부서 */
+
+
+	/**
+	 * ■담당부서
+	 * =================================
+	 */
 	private String schdulDeptName = "";
-	
-	/** 담당자명 */
+
+
+	/**
+	 * ■담당자명
+	 * =================================
+	 */
 	private String schdulChargerName = "";
 
 	/**
-	 * schdulId attribute 를 리턴한다.
+	 * ■schdulId attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulId() {
@@ -147,7 +229,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulId attribute 값을 설정한다.
+	 * ■schdulId attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulId String
 	 */
 	public void setSchdulId(String schdulId) {
@@ -155,7 +238,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulSe attribute 를 리턴한다.
+	 * ■schdulSe attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulSe() {
@@ -163,7 +247,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulSe attribute 값을 설정한다.
+	 * ■schdulSe attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulSe String
 	 */
 	public void setSchdulSe(String schdulSe) {
@@ -171,7 +256,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulDeptId attribute 를 리턴한다.
+	 * ■schdulDeptId attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulDeptId() {
@@ -179,7 +265,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulDeptId attribute 값을 설정한다.
+	 * ■schdulDeptId attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulDeptId String
 	 */
 	public void setSchdulDeptId(String schdulDeptId) {
@@ -187,7 +274,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulKindCode attribute 를 리턴한다.
+	 * ■schdulKindCode attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulKindCode() {
@@ -195,7 +283,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulKindCode attribute 값을 설정한다.
+	 * ■schdulKindCode attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulKindCode String
 	 */
 	public void setSchdulKindCode(String schdulKindCode) {
@@ -203,7 +292,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgnde attribute 를 리턴한다.
+	 * ■schdulBgnde attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulBgnde() {
@@ -211,7 +301,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgnde attribute 값을 설정한다.
+	 * ■schdulBgnde attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulBgnde String
 	 */
 	public void setSchdulBgnde(String schdulBgnde) {
@@ -219,7 +310,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEndde attribute 를 리턴한다.
+	 * ■schdulEndde attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulEndde() {
@@ -227,7 +319,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEndde attribute 값을 설정한다.
+	 * ■schdulEndde attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulEndde String
 	 */
 	public void setSchdulEndde(String schdulEndde) {
@@ -235,7 +328,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulNm attribute 를 리턴한다.
+	 * ■schdulNm attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulNm() {
@@ -243,7 +337,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulNm attribute 값을 설정한다.
+	 * ■schdulNm attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulNm String
 	 */
 	public void setSchdulNm(String schdulNm) {
@@ -251,7 +346,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulCn attribute 를 리턴한다.
+	 * ■schdulCn attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulCn() {
@@ -259,7 +355,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulCn attribute 값을 설정한다.
+	 * ■schdulCn attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulCn String
 	 */
 	public void setSchdulCn(String schdulCn) {
@@ -267,7 +364,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulPlace attribute 를 리턴한다.
+	 * ■schdulPlace attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulPlace() {
@@ -275,7 +373,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulPlace attribute 값을 설정한다.
+	 * ■schdulPlace attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulPlace String
 	 */
 	public void setSchdulPlace(String schdulPlace) {
@@ -283,7 +382,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulIpcrCode attribute 를 리턴한다.
+	 * ■schdulIpcrCode attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulIpcrCode() {
@@ -291,7 +391,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulIpcrCode attribute 값을 설정한다.
+	 * ■schdulIpcrCode attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulIpcrCode String
 	 */
 	public void setSchdulIpcrCode(String schdulIpcrCode) {
@@ -299,7 +400,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulChargerId attribute 를 리턴한다.
+	 * ■schdulChargerId attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulChargerId() {
@@ -307,7 +409,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulChargerId attribute 값을 설정한다.
+	 * ■schdulChargerId attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulChargerId String
 	 */
 	public void setSchdulChargerId(String schdulChargerId) {
@@ -315,7 +418,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * atchFileId attribute 를 리턴한다.
+	 * ■atchFileId attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getAtchFileId() {
@@ -323,7 +427,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * atchFileId attribute 값을 설정한다.
+	 * ■atchFileId attribute 값을 설정한다.
+	 * =================================
 	 * @return atchFileId String
 	 */
 	public void setAtchFileId(String atchFileId) {
@@ -331,7 +436,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * reptitSeCode attribute 를 리턴한다.
+	 * ■reptitSeCode attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getReptitSeCode() {
@@ -339,7 +445,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * reptitSeCode attribute 값을 설정한다.
+	 * ■reptitSeCode attribute 값을 설정한다.
+	 * =================================
 	 * @return reptitSeCode String
 	 */
 	public void setReptitSeCode(String reptitSeCode) {
@@ -347,7 +454,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * frstRegisterPnttm attribute 를 리턴한다.
+	 * ■frstRegisterPnttm attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getFrstRegisterPnttm() {
@@ -355,7 +463,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * frstRegisterPnttm attribute 값을 설정한다.
+	 * ■frstRegisterPnttm attribute 값을 설정한다.
+	 * =================================
 	 * @return frstRegisterPnttm String
 	 */
 	public void setFrstRegisterPnttm(String frstRegisterPnttm) {
@@ -363,7 +472,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * frstRegisterId attribute 를 리턴한다.
+	 * ■frstRegisterId attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getFrstRegisterId() {
@@ -371,7 +481,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * frstRegisterId attribute 값을 설정한다.
+	 * ■frstRegisterId attribute 값을 설정한다.
+	 * =================================
 	 * @return frstRegisterId String
 	 */
 	public void setFrstRegisterId(String frstRegisterId) {
@@ -379,7 +490,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * lastUpdusrPnttm attribute 를 리턴한다.
+	 * ■lastUpdusrPnttm attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getLastUpdusrPnttm() {
@@ -387,7 +499,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * lastUpdusrPnttm attribute 값을 설정한다.
+	 * ■lastUpdusrPnttm attribute 값을 설정한다.
+	 * =================================
 	 * @return lastUpdusrPnttm String
 	 */
 	public void setLastUpdusrPnttm(String lastUpdusrPnttm) {
@@ -395,7 +508,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * lastUpdusrId attribute 를 리턴한다.
+	 * ■lastUpdusrId attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getLastUpdusrId() {
@@ -403,7 +517,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * lastUpdusrId attribute 값을 설정한다.
+	 * ■lastUpdusrId attribute 값을 설정한다.
+	 * =================================
 	 * @return lastUpdusrId String
 	 */
 	public void setLastUpdusrId(String lastUpdusrId) {
@@ -411,7 +526,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgndeHH attribute 를 리턴한다.
+	 * ■schdulBgndeHH attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulBgndeHH() {
@@ -419,7 +535,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgndeHH attribute 값을 설정한다.
+	 * ■schdulBgndeHH attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulBgndeHH String
 	 */
 	public void setSchdulBgndeHH(String schdulBgndeHH) {
@@ -427,7 +544,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgndeMM attribute 를 리턴한다.
+	 * ■schdulBgndeMM attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulBgndeMM() {
@@ -435,7 +553,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgndeMM attribute 값을 설정한다.
+	 * ■schdulBgndeMM attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulBgndeMM String
 	 */
 	public void setSchdulBgndeMM(String schdulBgndeMM) {
@@ -443,7 +562,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEnddeHH attribute 를 리턴한다.
+	 * ■schdulEnddeHH attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulEnddeHH() {
@@ -451,7 +571,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEnddeHH attribute 값을 설정한다.
+	 * ■schdulEnddeHH attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulEnddeHH String
 	 */
 	public void setSchdulEnddeHH(String schdulEnddeHH) {
@@ -459,7 +580,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEnddeMM attribute 를 리턴한다.
+	 * ■schdulEnddeMM attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulEnddeMM() {
@@ -467,7 +589,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEnddeMM attribute 값을 설정한다.
+	 * ■schdulEnddeMM attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulEnddeMM String
 	 */
 	public void setSchdulEnddeMM(String schdulEnddeMM) {
@@ -475,7 +598,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgndeYYYMMDD attribute 를 리턴한다.
+	 * ■schdulBgndeYYYMMDD attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulBgndeYYYMMDD() {
@@ -483,7 +607,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulBgndeYYYMMDD attribute 값을 설정한다.
+	 * ■schdulBgndeYYYMMDD attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulBgndeYYYMMDD String
 	 */
 	public void setSchdulBgndeYYYMMDD(String schdulBgndeYYYMMDD) {
@@ -491,7 +616,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEnddeYYYMMDD attribute 를 리턴한다.
+	 * ■schdulEnddeYYYMMDD attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulEnddeYYYMMDD() {
@@ -499,7 +625,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulEnddeYYYMMDD attribute 값을 설정한다.
+	 * ■schdulEnddeYYYMMDD attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulEnddeYYYMMDD String
 	 */
 	public void setSchdulEnddeYYYMMDD(String schdulEnddeYYYMMDD) {
@@ -507,7 +634,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulDeptName attribute 를 리턴한다.
+	 * ■schdulDeptName attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulDeptName() {
@@ -515,7 +643,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulDeptName attribute 값을 설정한다.
+	 * ■schdulDeptName attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulDeptName String
 	 */
 	public void setSchdulDeptName(String schdulDeptName) {
@@ -523,7 +652,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulChargerName attribute 를 리턴한다.
+	 * ■schdulChargerName attribute 를 리턴한다.
+	 * =================================
 	 * @return the String
 	 */
 	public String getSchdulChargerName() {
@@ -531,7 +661,8 @@ public class IndvdlSchdulManageVO implements Serializable {
 	}
 
 	/**
-	 * schdulChargerName attribute 값을 설정한다.
+	 * ■schdulChargerName attribute 값을 설정한다.
+	 * =================================
 	 * @return schdulChargerName String
 	 */
 	public void setSchdulChargerName(String schdulChargerName) {

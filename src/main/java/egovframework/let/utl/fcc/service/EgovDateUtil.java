@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ Date 에 대한 Util 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -33,7 +33,7 @@ import com.ibm.icu.util.ChineseCalendar;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■Date 에 대한 Util 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -49,28 +49,11 @@ import com.ibm.icu.util.ChineseCalendar;
  * @version  1.0
  * @since    1.0
  */
-/**
- *
- * Date 에 대한 Util 클래스
- * @author 공통서비스 개발팀 이중호
- * @since 2009.02.01
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.02.01  이중호          최초 생성
- *   2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- * </pre>
- */
 public class EgovDateUtil {
+
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■로그변수
 	 * =================================
 	 * @param logger
 	 * @param msg
@@ -78,10 +61,11 @@ public class EgovDateUtil {
 	 */
 	private static final Logger logger = LoggerFactory.getLogger(EgovDateUtil.class);
 
+	
 	/**
-	 * <p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 년, 월, 일을
+	 * ■<p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 년, 월, 일을
 	 * 증감한다. 년, 월, 일은 가감할 수를 의미하며, 음수를 입력할 경우 감한다.</p>
-	 *
+	 * =================================
 	 * <pre>
 	 * DateUtil.addYearMonthDay("19810828", 0, 0, 19)  = "19810916"
 	 * DateUtil.addYearMonthDay("20060228", 0, 0, -10) = "20060218"
@@ -125,9 +109,9 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * <p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 년을
+	 * ■<p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 년을
 	 * 증감한다. <code>year</code>는 가감할 수를 의미하며, 음수를 입력할 경우 감한다.</p>
-	 *
+	 * =================================
 	 * <pre>
 	 * DateUtil.addYear("20000201", 62)  = "20620201"
 	 * DateUtil.addYear("20620201", -62) = "20000201"
@@ -147,7 +131,7 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * <p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 월을
+	 * ■<p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 월을
 	 * 증감한다. <code>month</code>는 가감할 수를 의미하며, 음수를 입력할 경우 감한다.</p>
 	 *
 	 * <pre>
@@ -170,12 +154,12 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * <p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 일(day)를
+	 * ■<p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 일(day)를
 	 * 증감한다. <code>day</code>는 가감할 수를 의미하며, 음수를 입력할 경우 감한다.
 	 * <br/><br/>
 	 * 위에 정의된 addDays 메서드는 사용자가 ParseException을 반드시 처리해야 하는 불편함이
 	 * 있기 때문에 추가된 메서드이다.</p>
-	 *
+	 * =================================
 	 * <pre>
 	 * DateUtil.addDay("19991201", 62) = "20000201"
 	 * DateUtil.addDay("20000201", -62) = "19991201"
@@ -196,11 +180,11 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * <p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열 <code>dateStr1</code>과 <code>
+	 * ■<p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열 <code>dateStr1</code>과 <code>
 	 * dateStr2</code> 사이의 일 수를 구한다.<br>
 	 * <code>dateStr2</code>가 <code>dateStr1</code> 보다 과거 날짜일 경우에는
 	 * 음수를 반환한다. 동일한 경우에는 0을 반환한다.</p>
-	 *
+	 * =================================
 	 * <pre>
 	 * DateUtil.getDaysDiff("20060228","20060310") = 10
 	 * DateUtil.getDaysDiff("20060101","20070101") = 365
@@ -239,8 +223,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * <p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 유효한 날짜인지 검사.</p>
-	 *
+	 * ■<p>yyyyMMdd 혹은 yyyy-MM-dd 형식의 날짜 문자열을 입력 받아 유효한 날짜인지 검사.</p>
+	 * =================================
 	 * <pre>
 	 * DateUtil.checkDate("1999-02-35") = false
 	 * DateUtil.checkDate("2000-13-31") = false
@@ -265,8 +249,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * <p>입력한 년, 월, 일이 유효한지 검사.</p>
-	 *
+	 * ■<p>입력한 년, 월, 일이 유효한지 검사.</p>
+	 * =================================
 	 * @param  year 연도
 	 * @param  month 월
 	 * @param  day 일
@@ -288,8 +272,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 날짜형태의 String의 날짜 포맷 및 TimeZone을 변경해 주는 메서드
-	 *
+	 * ■날짜형태의 String의 날짜 포맷 및 TimeZone을 변경해 주는 메서드
+	 * =================================
 	 * @param  strSource       바꿀 날짜 String
 	 * @param  fromDateFormat  기존의 날짜 형태
 	 * @param  toDateFormat    원하는 날짜 형태
@@ -329,16 +313,17 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * yyyyMMdd 형식의 날짜문자열을 원하는 캐릭터(ch)로 쪼개 돌려준다<br/>
-	* <pre>
-	* ex) 20030405, ch(.) -> 2003.04.05
-	* ex) 200304, ch(.) -> 2003.04
-	* ex) 20040101,ch(/) --> 2004/01/01 로 리턴
-	* </pre>
-	*
-	* @param date yyyyMMdd 형식의 날짜문자열
-	* @param ch 구분자
-	* @return 변환된 문자열
+	 * ■yyyyMMdd 형식의 날짜문자열을 원하는 캐릭터(ch)로 쪼개 돌려준다<br/>
+	 * =================================
+	 * <pre>
+	 * ex) 20030405, ch(.) -> 2003.04.05
+	 * ex) 200304, ch(.) -> 2003.04
+	 * ex) 20040101,ch(/) --> 2004/01/01 로 리턴
+	 * </pre>
+	 *
+	 * @param date yyyyMMdd 형식의 날짜문자열
+	 * @param ch 구분자
+	 * @return 변환된 문자열
 	 */
 	public static String formatDate(String sDate, String ch) {
 		String dateStr = validChkDate(sDate);
@@ -383,7 +368,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * HH24MISS 형식의 시간문자열을 원하는 캐릭터(ch)로 쪼개 돌려준다 <br>
+	 * ■HH24MISS 형식의 시간문자열을 원하는 캐릭터(ch)로 쪼개 돌려준다 <br>
+	 * =================================
 	 * <pre>
 	 *     ex) 151241, ch(/) -> 15/12/31
 	 * </pre>
@@ -398,8 +384,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 연도를 입력 받아 해당 연도 2월의 말일(일수)를 문자열로 반환한다.
-	 *
+	 * ■연도를 입력 받아 해당 연도 2월의 말일(일수)를 문자열로 반환한다.
+	 * =================================
 	 * @param year
 	 * @return 해당 연도 2월의 말일(일수)
 	 */
@@ -412,8 +398,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * <p>입력받은 연도가 윤년인지 아닌지 검사한다.</p>
-	 *
+	 * ■<p>입력받은 연도가 윤년인지 아닌지 검사한다.</p>
+	 * =================================
 	 * <pre>
 	 * DateUtil.isLeapYear(2004) = false
 	 * DateUtil.isLeapYear(2005) = true
@@ -431,8 +417,9 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 현재(한국기준) 날짜정보를 얻는다.                     <BR>
+	 * ■현재(한국기준) 날짜정보를 얻는다.                     <BR>
 	 * 표기법은 yyyy-mm-dd                                  <BR>
+	 * =================================
 	 * @return  String      yyyymmdd형태의 현재 한국시간.   <BR>
 	 */
 	public static String getToday() {
@@ -440,7 +427,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 현재(한국기준) 날짜정보를 얻는다.                     <BR>
+	 * ■현재(한국기준) 날짜정보를 얻는다.                     <BR>
+	 * =================================
 	 * 표기법은 yyyy-mm-dd                                  <BR>
 	 * @return  String      yyyymmdd형태의 현재 한국시간.   <BR>
 	 */
@@ -460,7 +448,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 날짜형태의 String의 날짜 포맷만을 변경해 주는 메서드
+	 * ■날짜형태의 String의 날짜 포맷만을 변경해 주는 메서드
+	 * =================================
 	 * @param sDate 날짜
 	 * @param sTime 시간
 	 * @param sFormatStr 포멧 스트링 문자열
@@ -518,7 +507,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력받은 일자 사이의 임의의 일자를 반환
+	 * ■입력받은 일자 사이의 임의의 일자를 반환
+	 * =================================
 	 * @param sDate1 시작일자
 	 * @param sDate2 종료일자
 	 * @return 임의일자
@@ -562,7 +552,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력받은 양력일자를 변환하여 음력일자로 반환
+	 * ■입력받은 양력일자를 변환하여 음력일자로 반환
+	 * =================================
 	 * @param sDate 양력일자
 	 * @return 음력일자
 	 */
@@ -610,7 +601,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력받은 음력일자를 변환하여 양력일자로 반환
+	 * ■입력받은 음력일자를 변환하여 양력일자로 반환
+	 * =================================
 	 * @param sDate 음력일자
 	 * @param iLeapMonth 음력윤달여부(IS_LEAP_MONTH)
 	 * @return 양력일자
@@ -646,7 +638,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력받은 요일의 영문명을 국문명의 요일로 반환
+	 * ■입력받은 요일의 영문명을 국문명의 요일로 반환
+	 * =================================
 	 * @param sWeek 영문 요일명
 	 * @return 국문 요일명
 	 */
@@ -673,7 +666,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력일자의 유효 여부를 확인
+	 * ■입력일자의 유효 여부를 확인
+	 * =================================
 	 * @param sDate 일자
 	 * @return 유효 여부
 	 */
@@ -710,7 +704,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력일자, 요일의 유효 여부를 확인
+	 * ■입력일자, 요일의 유효 여부를 확인
+	 * =================================
 	 * @param     sDate 일자
 	 * @param     sWeek 요일 (DAY_OF_WEEK)
 	 * @return    유효 여부
@@ -739,7 +734,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력시간의 유효 여부를 확인
+	 * ■입력시간의 유효 여부를 확인
+	 * =================================
 	 * @param     sTime 입력시간
 	 * @return    유효 여부
 	 */
@@ -772,7 +768,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력된 일자에 연, 월, 일을 가감한 날짜의 요일을 반환
+	 * ■입력된 일자에 연, 월, 일을 가감한 날짜의 요일을 반환
+	 * =================================
 	 * @param sDate 날짜
 	 * @param year 연
 	 * @param month 월
@@ -798,7 +795,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력된 일자에 연, 월, 일, 시간, 분을 가감한 날짜, 시간을 포멧스트링 형식으로 반환
+	 * ■입력된 일자에 연, 월, 일, 시간, 분을 가감한 날짜, 시간을 포멧스트링 형식으로 반환
+	 * =================================
 	 * @param sDate 날짜
 	 * @param sTime 시간
 	 * @param year 연
@@ -840,7 +838,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력된 일자를 int 형으로 반환
+	 * ■입력된 일자를 int 형으로 반환
+	 * =================================
 	 * @param sDate 일자
 	 * @return int(일자)
 	 */
@@ -849,7 +848,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력된 시간을 int 형으로 반환
+	 * ■입력된 시간을 int 형으로 반환
+	 * =================================
 	 * @param sTime 시간
 	 * @return int(시간)
 	 */
@@ -858,7 +858,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력된 일자 문자열을 확인하고 8자리로 리턴
+	 * ■입력된 일자 문자열을 확인하고 8자리로 리턴
+	 * =================================
 	 * @param sDate
 	 * @return
 	 */
@@ -875,7 +876,8 @@ public class EgovDateUtil {
 	}
 
 	/**
-	 * 입력된 일자 문자열을 확인하고 8자리로 리턴
+	 * ■입력된 일자 문자열을 확인하고 8자리로 리턴
+	 * =================================
 	 * @param sDate
 	 * @return
 	 */
@@ -893,3 +895,5 @@ public class EgovDateUtil {
 	}
 
 }
+
+

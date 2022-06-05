@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시판 속성관리를 위한 컨트롤러  클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.cop.bbs.web;
 
 import java.util.List;
@@ -70,22 +43,23 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 /**
- * 게시판 속성관리를 위한 컨트롤러  클래스
- * @author 공통 서비스 개발팀 한성곤
- * @since 2009.08.25
- * @version 1.0
- * @see
+ * <p>■게시판 속성관리를 위한 컨트롤러  클래스</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2009.08.25  한성곤          최초 생성
- *  2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- *  </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Controller
 public class EgovBBSLoneMasterController {
@@ -96,30 +70,51 @@ public class EgovBBSLoneMasterController {
 	 * =================================
 	 */
 	private final Logger logger = LoggerFactory.getLogger(getClass());
+
 	
-	/** EgovBBSLoneMasterService */
+	/**
+	 * ■EgovBBSLoneMasterService
+	 * =================================
+	 */
     @Resource(name = "EgovBBSLoneMasterService")
     private EgovBBSLoneMasterService bbsLoneService;
 
-    /** EgovCmmUseService */
+	
+	/**
+	 * ■EgovCmmUseService
+	 * =================================
+	 */
     @Resource(name = "EgovCmmUseService")
     private EgovCmmUseService cmmUseService;
 
-    /** EgovPropertyService */
+	
+	/**
+	 * ■EgovPropertyService
+	 * =================================
+	 */
     @Resource(name = "propertiesService")
     protected EgovPropertyService propertyService;
 
-    /** DefaultBeanValidator */
+	
+	/**
+	 * ■DefaultBeanValidator
+	 * =================================
+	 */
     @Autowired
     private DefaultBeanValidator beanValidator;
 
-    /** EgovMessageSource */
+	
+	/**
+	 * ■EgovMessageSource
+	 * =================================
+	 */
     @Resource(name="egovMessageSource")
     EgovMessageSource egovMessageSource;
 
+    
     /**
-     * 신규 게시판 마스터 등록을 위한 등록페이지로 이동한다.
-     *
+     * ■신규 게시판 마스터 등록을 위한 등록페이지로 이동한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -160,8 +155,8 @@ public class EgovBBSLoneMasterController {
     }
 
     /**
-     * 신규 게시판 마스터 정보를 등록한다.
-     *
+     * ■신규 게시판 마스터 정보를 등록한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param status
@@ -217,8 +212,8 @@ public class EgovBBSLoneMasterController {
     }
 
     /**
-     * 게시판 마스터 목록을 조회한다.
-     *
+     * ■게시판 마스터 목록을 조회한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -262,8 +257,8 @@ public class EgovBBSLoneMasterController {
     }
 
     /**
-     * 게시판 마스터 상세내용을 조회한다.
-     *
+     * ■게시판 마스터 상세내용을 조회한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -291,8 +286,8 @@ public class EgovBBSLoneMasterController {
     }
 
     /**
-     * 게시판 마스터 정보를 수정한다.
-     *
+     * ■게시판 마스터 정보를 수정한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param model
@@ -334,8 +329,8 @@ public class EgovBBSLoneMasterController {
     }
 
     /**
-     * 게시판 마스터 정보를 삭제한다.
-     *
+     * ■게시판 마스터 정보를 삭제한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param status
@@ -368,8 +363,8 @@ public class EgovBBSLoneMasterController {
     }
 
     /**
-     * 운영자 권한을 확인한다.(로그인 여부를 확인한다.)
-     *
+     * ■운영자 권한을 확인한다.(로그인 여부를 확인한다.)
+	 * =================================
      * @param boardMaster
      * @throws EgovBizException
      */
@@ -382,4 +377,5 @@ public class EgovBBSLoneMasterController {
     		return true;
     	}
     }
+    
 }

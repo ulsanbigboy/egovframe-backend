@@ -41,101 +41,169 @@ public class UserInfVO implements Serializable {
 
 	
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■serialVersion UID
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-    /**
-	 * serialVersion UID
 	 */
 	private static final long serialVersionUID = -6156707290504312279L;
 
-	/** 유일 아이디 */
+	/**
+	 * ■유일 아이디
+	 * =================================
+	 */
     private String uniqId = "";
 
-    /** 사용자 아이디 */
+	/**
+	 * ■사용자 아이디
+	 * =================================
+	 */
     private String userId = "";
 
-    /** 사용자 명 */
+	/**
+	 * ■사용자 명
+	 * =================================
+	 */
     private String userNm = "";
 
-    /** 사용자 우편번호 */
+	/**
+	 * ■사용자 우편번호
+	 * =================================
+	 */
     private String userZip = "";
 
-    /** 사용자 주소 */
+	/**
+	 * ■사용자 주소
+	 * =================================
+	 */
     private String userAdres = "";
 
-    /** 사용자 이메일 */
+	/**
+	 * ■사용자 이메일
+	 * =================================
+	 */
     private String userEmail = "";
 
-    /** 검색시작일 */
+	/**
+	 * ■검색시작일
+	 * =================================
+	 */
     private String searchBgnDe = "";
 
-    /** 검색조건 */
+	/**
+	 * ■검색조건
+	 * =================================
+	 */
     private String searchCnd = "";
 
-    /** 검색종료일 */
+	/**
+	 * ■검색종료일
+	 * =================================
+	 */
     private String searchEndDe = "";
 
-    /** 검색단어 */
+	/**
+	 * ■검색단어
+	 * =================================
+	 */
     private String searchWrd = "";
 
-    /** 정렬순서(DESC,ASC) */
+	/**
+	 * ■정렬순서(DESC,ASC)
+	 * =================================
+	 */
     private String sortOrdr = "";
 
-    /** 검색사용여부 */
+	/**
+	 * ■검색사용여부
+	 * =================================
+	 */
     private String searchUseYn = "";
 
-    /** 현재페이지 */
+	/**
+	 * ■현재페이지
+	 * =================================
+	 */
     private int pageIndex = 1;
 
-    /** 페이지갯수 */
+	/**
+	 * ■페이지갯수
+	 * =================================
+	 */
     private int pageUnit = 10;
 
-    /** 페이지사이즈 */
+	/**
+	 * ■페이지사이즈
+	 * =================================
+	 */
     private int pageSize = 10;
 
-    /** 첫페이지 인덱스 */
+	/**
+	 * ■첫페이지 인덱스
+	 * =================================
+	 */
     private int firstIndex = 1;
 
-    /** 마지막페이지 인덱스 */
+	/**
+	 * ■마지막페이지 인덱스
+	 * =================================
+	 */
     private int lastIndex = 1;
 
-    /** 페이지당 레코드 개수 */
+	/**
+	 * ■페이지당 레코드 개수
+	 * =================================
+	 */
     private int recordCountPerPage = 10;
 
-    /** 레코드 번호 */
+	/**
+	 * ■레코드 번호
+	 * =================================
+	 */
     private int rowNo = 0;
 
-    /** 대상 아이디 */
+	/**
+	 * ■대상 아이디
+	 * =================================
+	 */
     private String trgetId = "";
 
-    /** 사용여부 */
+	/**
+	 * ■사용여부
+	 * =================================
+	 */
     private String useAt = "Y";
 
-    /** 커뮤니티 아이디 */
+	/**
+	 * ■커뮤니티 아이디
+	 * =================================
+	 */
     private String cmmntyId = "";
 
-    /** 동호회 아이디 */
+	/**
+	 * ■동호회 아이디
+	 * =================================
+	 */
     private String clubId = "";
 
-    /** 대상 중지 여부 (커뮤니티 또는 동호회) */
+	/**
+	 * ■대상 중지 여부 (커뮤니티 또는 동호회)
+	 * =================================
+	 */
     private String deletedAt = "N";
 
+    
+    
     /**
-     * uniqId attribute를 리턴한다.
-     *
+     * ■uniqId attribute를 리턴한다.
+	 * =================================
      * @return the uniqId
      */
     public String getUniqId() {
-	return uniqId;
+    	return uniqId;
     }
 
     /**
-     * uniqId attribute 값을 설정한다.
-     *
+     * ■uniqId attribute 값을 설정한다.
+	 * =================================
      * @param uniqId
      *            the uniqId to set
      */
@@ -144,8 +212,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userId attribute를 리턴한다.
-     *
+     * ■userId attribute를 리턴한다.
+	 * =================================
      * @return the userId
      */
     public String getUserId() {
@@ -153,8 +221,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userId attribute 값을 설정한다.
-     *
+     * ■userId attribute 값을 설정한다.
+	 * =================================
      * @param userId
      *            the userId to set
      */
@@ -163,8 +231,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userNm attribute를 리턴한다.
-     *
+     * ■userNm attribute를 리턴한다.
+	 * =================================
      * @return the userNm
      */
     public String getUserNm() {
@@ -172,8 +240,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userNm attribute 값을 설정한다.
-     *
+     * ■userNm attribute 값을 설정한다.
+	 * =================================
      * @param userNm
      *            the userNm to set
      */
@@ -182,8 +250,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userZip attribute를 리턴한다.
-     *
+     * ■userZip attribute를 리턴한다.
+	 * =================================
      * @return the userZip
      */
     public String getUserZip() {
@@ -191,8 +259,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userZip attribute 값을 설정한다.
-     *
+     * ■userZip attribute 값을 설정한다.
+	 * =================================
      * @param userZip
      *            the userZip to set
      */
@@ -201,8 +269,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userAdres attribute를 리턴한다.
-     *
+     * ■userAdres attribute를 리턴한다.
+	 * =================================
      * @return the userAdres
      */
     public String getUserAdres() {
@@ -210,8 +278,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userAdres attribute 값을 설정한다.
-     *
+     * ■userAdres attribute 값을 설정한다.
+	 * =================================
      * @param userAdres
      *            the userAdres to set
      */
@@ -220,8 +288,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userEmail attribute를 리턴한다.
-     *
+     * ■userEmail attribute를 리턴한다.
+	 * =================================
      * @return the userEmail
      */
     public String getUserEmail() {
@@ -229,8 +297,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * userEmail attribute 값을 설정한다.
-     *
+     * ■userEmail attribute 값을 설정한다.
+	 * =================================
      * @param userEmail
      *            the userEmail to set
      */
@@ -239,8 +307,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchBgnDe attribute를 리턴한다.
-     *
+     * ■searchBgnDe attribute를 리턴한다.
+	 * =================================
      * @return the searchBgnDe
      */
     public String getSearchBgnDe() {
@@ -248,8 +316,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchBgnDe attribute 값을 설정한다.
-     *
+     * ■searchBgnDe attribute 값을 설정한다.
+	 * =================================
      * @param searchBgnDe
      *            the searchBgnDe to set
      */
@@ -258,8 +326,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchCnd attribute를 리턴한다.
-     *
+     * ■searchCnd attribute를 리턴한다.
+	 * =================================
      * @return the searchCnd
      */
     public String getSearchCnd() {
@@ -267,8 +335,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchCnd attribute 값을 설정한다.
-     *
+     * ■searchCnd attribute 값을 설정한다.
+	 * =================================
      * @param searchCnd
      *            the searchCnd to set
      */
@@ -277,8 +345,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchEndDe attribute를 리턴한다.
-     *
+     * ■searchEndDe attribute를 리턴한다.
+	 * =================================
      * @return the searchEndDe
      */
     public String getSearchEndDe() {
@@ -286,8 +354,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchEndDe attribute 값을 설정한다.
-     *
+     * ■searchEndDe attribute 값을 설정한다.
+	 * =================================
      * @param searchEndDe
      *            the searchEndDe to set
      */
@@ -296,8 +364,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchWrd attribute를 리턴한다.
-     *
+     * ■searchWrd attribute를 리턴한다.
+	 * =================================
      * @return the searchWrd
      */
     public String getSearchWrd() {
@@ -305,8 +373,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchWrd attribute 값을 설정한다.
-     *
+     * ■searchWrd attribute 값을 설정한다.
+	 * =================================
      * @param searchWrd
      *            the searchWrd to set
      */
@@ -315,8 +383,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * sortOrdr attribute를 리턴한다.
-     *
+     * ■sortOrdr attribute를 리턴한다.
+	 * =================================
      * @return the sortOrdr
      */
     public String getSortOrdr() {
@@ -324,8 +392,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * sortOrdr attribute 값을 설정한다.
-     *
+     * ■sortOrdr attribute 값을 설정한다.
+	 * =================================
      * @param sortOrdr
      *            the sortOrdr to set
      */
@@ -334,8 +402,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchUseYn attribute를 리턴한다.
-     *
+     * ■searchUseYn attribute를 리턴한다.
+	 * =================================
      * @return the searchUseYn
      */
     public String getSearchUseYn() {
@@ -343,8 +411,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * searchUseYn attribute 값을 설정한다.
-     *
+     * ■searchUseYn attribute 값을 설정한다.
+	 * =================================
      * @param searchUseYn
      *            the searchUseYn to set
      */
@@ -353,8 +421,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * pageIndex attribute를 리턴한다.
-     *
+     * ■pageIndex attribute를 리턴한다.
+	 * =================================
      * @return the pageIndex
      */
     public int getPageIndex() {
@@ -362,8 +430,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * pageIndex attribute 값을 설정한다.
-     *
+     * ■pageIndex attribute 값을 설정한다.
+	 * =================================
      * @param pageIndex
      *            the pageIndex to set
      */
@@ -372,8 +440,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * pageUnit attribute를 리턴한다.
-     *
+     * ■pageUnit attribute를 리턴한다.
+	 * =================================
      * @return the pageUnit
      */
     public int getPageUnit() {
@@ -381,8 +449,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * pageUnit attribute 값을 설정한다.
-     *
+     * ■pageUnit attribute 값을 설정한다.
+	 * =================================
      * @param pageUnit
      *            the pageUnit to set
      */
@@ -391,8 +459,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * pageSize attribute를 리턴한다.
-     *
+     * ■pageSize attribute를 리턴한다.
+	 * =================================
      * @return the pageSize
      */
     public int getPageSize() {
@@ -400,8 +468,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * pageSize attribute 값을 설정한다.
-     *
+     * ■pageSize attribute 값을 설정한다.
+	 * =================================
      * @param pageSize
      *            the pageSize to set
      */
@@ -410,8 +478,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * firstIndex attribute를 리턴한다.
-     *
+     * ■firstIndex attribute를 리턴한다.
+	 * =================================
      * @return the firstIndex
      */
     public int getFirstIndex() {
@@ -419,8 +487,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * firstIndex attribute 값을 설정한다.
-     *
+     * ■firstIndex attribute 값을 설정한다.
+	 * =================================
      * @param firstIndex
      *            the firstIndex to set
      */
@@ -429,8 +497,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * lastIndex attribute를 리턴한다.
-     *
+     * ■lastIndex attribute를 리턴한다.
+	 * =================================
      * @return the lastIndex
      */
     public int getLastIndex() {
@@ -438,8 +506,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * lastIndex attribute 값을 설정한다.
-     *
+     * ■lastIndex attribute 값을 설정한다.
+	 * =================================
      * @param lastIndex
      *            the lastIndex to set
      */
@@ -448,8 +516,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * recordCountPerPage attribute를 리턴한다.
-     *
+     * ■recordCountPerPage attribute를 리턴한다.
+	 * =================================
      * @return the recordCountPerPage
      */
     public int getRecordCountPerPage() {
@@ -457,8 +525,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * recordCountPerPage attribute 값을 설정한다.
-     *
+     * ■recordCountPerPage attribute 값을 설정한다.
+	 * =================================
      * @param recordCountPerPage
      *            the recordCountPerPage to set
      */
@@ -467,8 +535,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * rowNo attribute를 리턴한다.
-     *
+     * ■rowNo attribute를 리턴한다.
+	 * =================================
      * @return the rowNo
      */
     public int getRowNo() {
@@ -476,8 +544,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * rowNo attribute 값을 설정한다.
-     *
+     * ■rowNo attribute 값을 설정한다.
+	 * =================================
      * @param rowNo
      *            the rowNo to set
      */
@@ -486,8 +554,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * trgetId attribute를 리턴한다.
-     *
+     * ■trgetId attribute를 리턴한다.
+	 * =================================
      * @return the trgetId
      */
     public String getTrgetId() {
@@ -495,8 +563,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * trgetId attribute 값을 설정한다.
-     *
+     * ■trgetId attribute 값을 설정한다.
+	 * =================================
      * @param trgetId
      *            the trgetId to set
      */
@@ -505,8 +573,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * useAt attribute를 리턴한다.
-     *
+     * ■useAt attribute를 리턴한다.
+	 * =================================
      * @return the useAt
      */
     public String getUseAt() {
@@ -514,8 +582,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * useAt attribute 값을 설정한다.
-     *
+     * ■useAt attribute 값을 설정한다.
+	 * =================================
      * @param useAt
      *            the useAt to set
      */
@@ -524,8 +592,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * cmmntyId attribute를 리턴한다.
-     *
+     * ■cmmntyId attribute를 리턴한다.
+	 * =================================
      * @return the cmmntyId
      */
     public String getCmmntyId() {
@@ -533,8 +601,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * cmmntyId attribute 값을 설정한다.
-     *
+     * ■cmmntyId attribute 값을 설정한다.
+	 * =================================
      * @param cmmntyId
      *            the cmmntyId to set
      */
@@ -543,8 +611,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * clubId attribute를 리턴한다.
-     *
+     * ■clubId attribute를 리턴한다.
+	 * =================================
      * @return the clubId
      */
     public String getClubId() {
@@ -552,8 +620,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * clubId attribute 값을 설정한다.
-     *
+     * ■clubId attribute 값을 설정한다.
+	 * =================================
      * @param clubId
      *            the clubId to set
      */
@@ -562,8 +630,8 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * deletedAt attribute를 리턴한다.
-     *
+     * ■deletedAt attribute를 리턴한다.
+	 * =================================
      * @return the deletedAt
      */
     public String getDeletedAt() {
@@ -571,20 +639,21 @@ public class UserInfVO implements Serializable {
     }
 
     /**
-     * deletedAt attribute 값을 설정한다.
-     *
+     * ■deletedAt attribute 값을 설정한다.
+	 * =================================
      * @param deletedAt
      *            the deletedAt to set
      */
     public void setDeletedAt(String deletedAt) {
-	this.deletedAt = deletedAt;
+    	this.deletedAt = deletedAt;
     }
 
     /**
-     * toString 메소드를 대치한다.
+     * ■toString 메소드를 대치한다.
+	 * =================================
      */
     public String toString() {
-	return ToStringBuilder.reflectionToString(this);
+    	return ToStringBuilder.reflectionToString(this);
     }
     
     

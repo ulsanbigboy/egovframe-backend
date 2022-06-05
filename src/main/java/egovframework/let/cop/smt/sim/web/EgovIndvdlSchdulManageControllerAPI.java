@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 일정관리를 처리하는 Controller Class 구현
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -55,7 +55,7 @@ import org.slf4j.LoggerFactory;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■일정관리를 처리하는 Controller Class 구현</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -70,21 +70,6 @@ import org.slf4j.LoggerFactory;
  * @author   
  * @version  1.0
  * @since    1.0
- */
-/**
- * 일정관리를 처리하는 Controller Class 구현
- * @since 2009.04.10
- * @see
- * <pre>
- * << 개정이력(Modification Information) >>
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *  2009.04.10  장동한          최초 생성
- *  2011.05.31  JJY           경량환경 커스터마이징버전 생성
- * </pre>
- * @author 조재영
- * @version 1.0
- * @created 09-6-2011 오전 10:08:04
  */
 @Controller
 public class EgovIndvdlSchdulManageControllerAPI {
@@ -228,7 +213,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 일정를 등록 폼
+	 * ■일정를 등록 폼
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -294,7 +280,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 일정를 등록 처리 한다.
+	 * ■일정를 등록 처리 한다.
+	 * =================================
 	 * @param multiRequest
 	 * @param searchVO
 	 * @param commandMap
@@ -367,7 +354,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 일정 목록을 상세조회 조회한다.
+	 * ■일정 목록을 상세조회 조회한다.
+	 * =================================
 	 * @param searchVO
 	 * @param indvdlSchdulManageVO
 	 * @param commandMap
@@ -441,14 +429,15 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-		 * 일정을 삭제한다..
-		 * @param searchVO
-		 * @param indvdlSchdulManageVO
-		 * @param commandMap
-		 * @param model
-		 * @return "/cop/smt/sim/EgovIndvdlSchdulManageDetail"
-		 * @throws Exception
-		 */
+	 * ■일정을 삭제한다..
+	 * =================================
+	 * @param searchVO
+	 * @param indvdlSchdulManageVO
+	 * @param commandMap
+	 * @param model
+	 * @return "/cop/smt/sim/EgovIndvdlSchdulManageDetail"
+	 * @throws Exception
+	 */
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/cop/smt/sim/egovIndvdlSchdulManageDeleteAPI.do")
 	@ResponseBody
@@ -481,7 +470,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 일정 수정 폼
+	 * ■일정 수정 폼
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -564,7 +554,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 일정를 수정 처리 한다.
+	 * ■일정를 수정 처리 한다.
+	 * =================================
 	 * @param multiRequest
 	 * @param searchVO
 	 * @param commandMap
@@ -653,7 +644,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 일정(일별) 목록을 조회한다.
+	 * ■일정(일별) 목록을 조회한다.
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -727,7 +719,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 일정(주간별) 목록을 조회한다.
+	 * ■일정(주간별) 목록을 조회한다.
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -868,7 +861,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 시간을 LIST를 반환한다.
+	 * ■시간을 LIST를 반환한다.
+	 * =================================
 	 * @return  List
 	 * @throws
 	 */
@@ -895,7 +889,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 분을 LIST를 반환한다.
+	 * ■분을 LIST를 반환한다.
+	 * =================================
 	 * @return  List
 	 * @throws
 	 */
@@ -922,7 +917,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 0을 붙여 반환
+	 * ■0을 붙여 반환
+	 * =================================
 	 * @return  String
 	 * @throws
 	 */
@@ -938,8 +934,8 @@ public class EgovIndvdlSchdulManageControllerAPI {
 	}
 
 	/**
-	 * 운영자 권한을 확인한다.(로그인 여부를 확인한다.)
-	 *
+	 * ■운영자 권한을 확인한다.(로그인 여부를 확인한다.)
+	 * =================================
 	 * @param boardMaster
 	 * @throws EgovBizException
 	 */
@@ -953,6 +949,12 @@ public class EgovIndvdlSchdulManageControllerAPI {
 		}
 	}
 
+	/**
+	 * ■
+	 * =================================
+	 * @return  
+	 * @throws
+	 */
 	private ResultVO handleAuthError(ResultVO resultVO) {
 		resultVO.setResultCode(ResponseCode.AUTH_ERROR.getCode());
 		resultVO.setResultMessage(ResponseCode.AUTH_ERROR.getMessage());

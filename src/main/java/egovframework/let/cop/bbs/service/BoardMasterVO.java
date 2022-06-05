@@ -6,16 +6,21 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시판 속성 정보를 관리하기 위한 VO  클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.cop.bbs.service;
+
+import java.io.Serializable;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■게시판 속성 정보를 관리하기 위한 VO  클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,107 +36,169 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.cop.bbs.service;
-
-import java.io.Serializable;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-/**
- * 게시판 속성 정보를 관리하기 위한 VO  클래스
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009.03.12
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2009.03.12  이삼섭          최초 생성
- *  2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- *  </pre>
- */
 public class BoardMasterVO extends BoardMaster implements Serializable {
 
+	
 	/**
-	 *  serialVersion UID
+	 * ■serialVersion UID
+	 * =================================
 	 */
 	private static final long serialVersionUID = -8070768280461816170L;
 
-	/** 검색시작일 */
+	
+	/**
+	 * ■검색시작일
+	 * =================================
+	 */
 	private String searchBgnDe = "";
 
-	/** 검색조건 */
+	
+	/**
+	 * ■검색조건
+	 * =================================
+	 */
 	private String searchCnd = "";
 
-	/** 검색종료일 */
+	
+	/**
+	 * ■검색종료일
+	 * =================================
+	 */
 	private String searchEndDe = "";
 
-	/** 검색단어 */
+	
+	/**
+	 * ■검색단어
+	 * =================================
+	 */
 	private String searchWrd = "";
 
-	/** 정렬순서(DESC,ASC) */
+	
+	/**
+	 * ■정렬순서(DESC,ASC)
+	 * =================================
+	 */
 	private String sortOrdr = "";
 
-	/** 검색사용여부 */
+	
+	/**
+	 * ■검색사용여부
+	 * =================================
+	 */
 	private String searchUseYn = "";
 
-	/** 현재페이지 */
+	
+	/**
+	 * ■현재페이지
+	 * =================================
+	 */
 	private int pageIndex = 1;
 
-	/** 페이지갯수 */
+	
+	/**
+	 * ■페이지갯수
+	 * =================================
+	 */
 	private int pageUnit = 10;
 
-	/** 페이지사이즈 */
+	
+	/**
+	 * ■페이지사이즈
+	 * =================================
+	 */
 	private int pageSize = 10;
 
-	/** firstIndex */
+	
+	/**
+	 * ■firstIndex
+	 * =================================
+	 */
+	/**  */
 	private int firstIndex = 1;
 
-	/** lastIndex */
+	
+	/**
+	 * ■lastIndex
+	 * =================================
+	 */
+	/**  */
 	private int lastIndex = 1;
 
-	/** recordCountPerPage */
+	
+	/**
+	 * ■recordCountPerPage
+	 * =================================
+	 */
+	/**  */
 	private int recordCountPerPage = 10;
 
-	/** rowNo */
+	
+	/**
+	 * ■rowNo
+	 * =================================
+	 */
+	/**  */
 	private int rowNo = 0;
 
-	/** 최초 등록자명 */
+	
+	/**
+	 * ■최초 등록자명
+	 * =================================
+	 */
+	/**  */
 	private String frstRegisterNm = "";
 
-	/** 게시판유형 코드명 */
+	
+	/**
+	 * ■게시판유형 코드명
+	 * =================================
+	 */
+	/**  */
 	private String bbsTyCodeNm = "";
 
-	/** 게시판속성 코드명 */
+	
+	/**
+	 * ■게시판속성 코드명
+	 * =================================
+	 */
+	/**  */
 	private String bbsAttrbCodeNm = "";
 
-	/** 템플릿 명 */
+	
+	/**
+	 * ■템플릿 명
+	 * =================================
+	 */
+	/**  */
 	private String tmplatNm = "";
 
-	/** 최종 수정자명 */
+	
+	/**
+	 * ■최종 수정자명
+	 * =================================
+	 */
+	/**  */
 	private String lastUpdusrNm = "";
 
-	/** 권한지정 여부 */
+	
+	/**
+	 * ■권한지정 여부
+	 * =================================
+	 */
+	/**  */
 	private String authFlag = "";
 
-	/** 템플릿경로 */
+	
+	/**
+	 * ■템플릿경로
+	 * =================================
+	 */
 	private String tmplatCours = "";
 
+	
 	/**
-	 * searchBgnDe attribute를 리턴한다.
-	 *
+	 * ■searchBgnDe attribute를 리턴한다.
+	 * =================================
 	 * @return the searchBgnDe
 	 */
 	public String getSearchBgnDe() {
@@ -139,8 +206,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchBgnDe attribute 값을 설정한다.
-	 *
+	 * ■searchBgnDe attribute 값을 설정한다.
+	 * =================================
 	 * @param searchBgnDe
 	 *            the searchBgnDe to set
 	 */
@@ -149,8 +216,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchCnd attribute를 리턴한다.
-	 *
+	 * ■searchCnd attribute를 리턴한다.
+	 * =================================
 	 * @return the searchCnd
 	 */
 	public String getSearchCnd() {
@@ -158,8 +225,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchCnd attribute 값을 설정한다.
-	 *
+	 * ■searchCnd attribute 값을 설정한다.
+	 * =================================
 	 * @param searchCnd
 	 *            the searchCnd to set
 	 */
@@ -168,8 +235,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchEndDe attribute를 리턴한다.
-	 *
+	 * ■searchEndDe attribute를 리턴한다.
+	 * =================================
 	 * @return the searchEndDe
 	 */
 	public String getSearchEndDe() {
@@ -177,8 +244,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchEndDe attribute 값을 설정한다.
-	 *
+	 * ■searchEndDe attribute 값을 설정한다.
+	 * =================================
 	 * @param searchEndDe
 	 *            the searchEndDe to set
 	 */
@@ -187,8 +254,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchWrd attribute를 리턴한다.
-	 *
+	 * ■searchWrd attribute를 리턴한다.
+	 * =================================
 	 * @return the searchWrd
 	 */
 	public String getSearchWrd() {
@@ -196,8 +263,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchWrd attribute 값을 설정한다.
-	 *
+	 * ■searchWrd attribute 값을 설정한다.
+	 * =================================
 	 * @param searchWrd
 	 *            the searchWrd to set
 	 */
@@ -206,8 +273,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * sortOrdr attribute를 리턴한다.
-	 *
+	 * ■sortOrdr attribute를 리턴한다.
+	 * =================================
 	 * @return the sortOrdr
 	 */
 	public String getSortOrdr() {
@@ -215,8 +282,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * sortOrdr attribute 값을 설정한다.
-	 *
+	 * ■sortOrdr attribute 값을 설정한다.
+	 * =================================
 	 * @param sortOrdr
 	 *            the sortOrdr to set
 	 */
@@ -225,8 +292,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchUseYn attribute를 리턴한다.
-	 *
+	 * ■searchUseYn attribute를 리턴한다.
+	 * =================================
 	 * @return the searchUseYn
 	 */
 	public String getSearchUseYn() {
@@ -234,8 +301,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * searchUseYn attribute 값을 설정한다.
-	 *
+	 * ■searchUseYn attribute 값을 설정한다.
+	 * =================================
 	 * @param searchUseYn
 	 *            the searchUseYn to set
 	 */
@@ -244,8 +311,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * pageIndex attribute를 리턴한다.
-	 *
+	 * ■pageIndex attribute를 리턴한다.
+	 * =================================
 	 * @return the pageIndex
 	 */
 	public int getPageIndex() {
@@ -253,8 +320,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * pageIndex attribute 값을 설정한다.
-	 *
+	 * ■pageIndex attribute 값을 설정한다.
+	 * =================================
 	 * @param pageIndex
 	 *            the pageIndex to set
 	 */
@@ -263,8 +330,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * pageUnit attribute를 리턴한다.
-	 *
+	 * ■pageUnit attribute를 리턴한다.
+	 * =================================
 	 * @return the pageUnit
 	 */
 	public int getPageUnit() {
@@ -272,8 +339,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * pageUnit attribute 값을 설정한다.
-	 *
+	 * ■pageUnit attribute 값을 설정한다.
+	 * =================================
 	 * @param pageUnit
 	 *            the pageUnit to set
 	 */
@@ -282,8 +349,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * pageSize attribute를 리턴한다.
-	 *
+	 * ■pageSize attribute를 리턴한다.
+	 * =================================
 	 * @return the pageSize
 	 */
 	public int getPageSize() {
@@ -291,8 +358,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * pageSize attribute 값을 설정한다.
-	 *
+	 * ■pageSize attribute 값을 설정한다.
+	 * =================================
 	 * @param pageSize
 	 *            the pageSize to set
 	 */
@@ -301,8 +368,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * firstIndex attribute를 리턴한다.
-	 *
+	 * ■firstIndex attribute를 리턴한다.
+	 * =================================
 	 * @return the firstIndex
 	 */
 	public int getFirstIndex() {
@@ -310,8 +377,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * firstIndex attribute 값을 설정한다.
-	 *
+	 * ■firstIndex attribute 값을 설정한다.
+	 * =================================
 	 * @param firstIndex
 	 *            the firstIndex to set
 	 */
@@ -320,8 +387,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * lastIndex attribute를 리턴한다.
-	 *
+	 * ■lastIndex attribute를 리턴한다.
+	 * =================================
 	 * @return the lastIndex
 	 */
 	public int getLastIndex() {
@@ -329,8 +396,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * lastIndex attribute 값을 설정한다.
-	 *
+	 * ■lastIndex attribute 값을 설정한다.
+	 * =================================
 	 * @param lastIndex
 	 *            the lastIndex to set
 	 */
@@ -339,8 +406,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * recordCountPerPage attribute를 리턴한다.
-	 *
+	 * ■recordCountPerPage attribute를 리턴한다.
+	 * =================================
 	 * @return the recordCountPerPage
 	 */
 	public int getRecordCountPerPage() {
@@ -348,8 +415,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * recordCountPerPage attribute 값을 설정한다.
-	 *
+	 * ■recordCountPerPage attribute 값을 설정한다.
+	 * =================================
 	 * @param recordCountPerPage
 	 *            the recordCountPerPage to set
 	 */
@@ -358,8 +425,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * rowNo attribute를 리턴한다.
-	 *
+	 * ■rowNo attribute를 리턴한다.
+	 * =================================
 	 * @return the rowNo
 	 */
 	public int getRowNo() {
@@ -367,8 +434,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * rowNo attribute 값을 설정한다.
-	 *
+	 * ■rowNo attribute 값을 설정한다.
+	 * =================================
 	 * @param rowNo
 	 *            the rowNo to set
 	 */
@@ -377,8 +444,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * frstRegisterNm attribute를 리턴한다.
-	 *
+	 * ■frstRegisterNm attribute를 리턴한다.
+	 * =================================
 	 * @return the frstRegisterNm
 	 */
 	public String getFrstRegisterNm() {
@@ -386,8 +453,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * frstRegisterNm attribute 값을 설정한다.
-	 *
+	 * ■frstRegisterNm attribute 값을 설정한다.
+	 * =================================
 	 * @param frstRegisterNm
 	 *            the frstRegisterNm to set
 	 */
@@ -396,8 +463,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * bbsTyCodeNm attribute를 리턴한다.
-	 *
+	 * ■bbsTyCodeNm attribute를 리턴한다.
+	 * =================================
 	 * @return the bbsTyCodeNm
 	 */
 	public String getBbsTyCodeNm() {
@@ -405,8 +472,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * bbsTyCodeNm attribute 값을 설정한다.
-	 *
+	 * ■bbsTyCodeNm attribute 값을 설정한다.
+	 * =================================
 	 * @param bbsTyCodeNm
 	 *            the bbsTyCodeNm to set
 	 */
@@ -415,8 +482,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * bbsAttrbCodeNm attribute를 리턴한다.
-	 *
+	 * ■bbsAttrbCodeNm attribute를 리턴한다.
+	 * =================================
 	 * @return the bbsAttrbCodeNm
 	 */
 	public String getBbsAttrbCodeNm() {
@@ -424,8 +491,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * bbsAttrbCodeNm attribute 값을 설정한다.
-	 *
+	 * ■bbsAttrbCodeNm attribute 값을 설정한다.
+	 * =================================
 	 * @param bbsAttrbCodeNm
 	 *            the bbsAttrbCodeNm to set
 	 */
@@ -434,8 +501,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * tmplatNm attribute를 리턴한다.
-	 *
+	 * ■tmplatNm attribute를 리턴한다.
+	 * =================================
 	 * @return the tmplatNm
 	 */
 	@Override
@@ -444,8 +511,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * tmplatNm attribute 값을 설정한다.
-	 *
+	 * ■tmplatNm attribute 값을 설정한다.
+	 * =================================
 	 * @param tmplatNm
 	 *            the tmplatNm to set
 	 */
@@ -455,8 +522,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * lastUpdusrNm attribute를 리턴한다.
-	 *
+	 * ■lastUpdusrNm attribute를 리턴한다.
+	 * =================================
 	 * @return the lastUpdusrNm
 	 */
 	public String getLastUpdusrNm() {
@@ -464,8 +531,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * lastUpdusrNm attribute 값을 설정한다.
-	 *
+	 * ■lastUpdusrNm attribute 값을 설정한다.
+	 * =================================
 	 * @param lastUpdusrNm
 	 *            the lastUpdusrNm to set
 	 */
@@ -474,8 +541,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * authFlag attribute를 리턴한다.
-	 *
+	 * ■authFlag attribute를 리턴한다.
+	 * =================================
 	 * @return the authFlag
 	 */
 	public String getAuthFlag() {
@@ -483,8 +550,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * authFlag attribute 값을 설정한다.
-	 *
+	 * ■authFlag attribute 값을 설정한다.
+	 * =================================
 	 * @param authFlag
 	 *            the authFlag to set
 	 */
@@ -493,8 +560,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * tmplatCours attribute를 리턴한다.
-	 *
+	 * ■tmplatCours attribute를 리턴한다.
+	 * =================================
 	 * @return the tmplatCours
 	 */
 	public String getTmplatCours() {
@@ -502,8 +569,8 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * tmplatCours attribute 값을 설정한다.
-	 *
+	 * ■tmplatCours attribute 값을 설정한다.
+	 * =================================
 	 * @param tmplatCours
 	 *            the tmplatCours to set
 	 */
@@ -512,10 +579,15 @@ public class BoardMasterVO extends BoardMaster implements Serializable {
 	}
 
 	/**
-	 * toString 메소드를 대치한다.
+	 * ■toString 메소드를 대치한다.
+	 * =================================
 	 */
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
+	
+	
 }
+
+

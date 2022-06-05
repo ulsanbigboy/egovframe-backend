@@ -6,16 +6,23 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시판의 이용정보를 관리하기 위한 모델 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.cop.com.service;
+
+import java.io.Serializable;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■게시판의 이용정보를 관리하기 위한 모델 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,226 +38,216 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.cop.com.service;
-
-import java.io.Serializable;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-
-/**
- * 게시판의 이용정보를 관리하기 위한 모델 클래스
- * @author 공통서비스개발팀 이삼섭
- * @since 2009.04.02
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.04.02  이삼섭          최초 생성
- *   2011.08.31  JJY            경량환경 커스터마이징버전 생성
- *
- * </pre>
- */
 public class BoardUseInf implements Serializable {
 
-    /**
-	 *  serialVersion UID
+	
+	/**
+	 * ■serialVersion UID
+	 * =================================
 	 */
 	private static final long serialVersionUID = -8164785314697750055L;
 
-	/** 게시판 아이디 */
+	/**
+	 * ■게시판 아이디
+	 * =================================
+	 */
     private String bbsId = "";
 
-    /** 대상시스템 아이디 */
+	/**
+	 * ■대상시스템 아이디
+	 * =================================
+	 */
     private String trgetId = "";
 
-    /** 대상 구분 (커뮤니티, 동호회) */
+	/**
+	 * ■대상 구분 (커뮤니티, 동호회)
+	 * =================================
+	 */
     private String trgetType = "";
 
-    /** 최초 등록자 아이디 */
+	/**
+	 * ■최초 등록자 아이디
+	 * =================================
+	 */
     private String frstRegisterId = "";
 
-    /** 최초등록시점 */
+	/**
+	 * ■최초등록시점
+	 * =================================
+	 */
     private String frstRegisterPnttm = "";
 
-    /** 최종수정자 아이디 */
+	/**
+	 * ■최종수정자 아이디
+	 * =================================
+	 */
     private String lastUpdusrId = "";
 
-    /** 최종수정시점 */
+	/**
+	 * ■최종수정시점
+	 * =================================
+	 */
     private String lastUpdusrPnttm = "";
 
-    /** 등록구분코드 */
+	/**
+	 * ■등록구분코드
+	 * =================================
+	 */
     private String registSeCode = "";
 
-    /** 사용여부 */
+	/**
+	 * ■사용여부
+	 * =================================
+	 */
     private String useAt = "";
 
     /**
-     * bbsId attribute를 리턴한다.
-     *
+     * ■bbsId attribute를 리턴한다.
+	 * =================================
      * @return the bbsId
      */
     public String getBbsId() {
-	return bbsId;
+    	return bbsId;
     }
 
     /**
-     * bbsId attribute 값을 설정한다.
-     *
-     * @param bbsId
-     *            the bbsId to set
+     * ■bbsId attribute 값을 설정한다.
+	 * =================================
+     * @param bbsId - the bbsId to set
      */
     public void setBbsId(String bbsId) {
-	this.bbsId = bbsId;
+    	this.bbsId = bbsId;
     }
 
     /**
-     * trgetId attribute를 리턴한다.
-     *
+     * ■trgetId attribute를 리턴한다.
+	 * =================================
      * @return the trgetId
      */
     public String getTrgetId() {
-	return trgetId;
+    	return trgetId;
     }
 
     /**
-     * trgetId attribute 값을 설정한다.
-     *
-     * @param trgetId
-     *            the trgetId to set
+     * ■trgetId attribute 값을 설정한다.
+	 * =================================
+     * @param trgetId - the trgetId to set
      */
     public void setTrgetId(String trgetId) {
 	this.trgetId = trgetId;
     }
 
     /**
-     * frstRegisterId attribute를 리턴한다.
-     *
+     * ■frstRegisterId attribute를 리턴한다.
+	 * =================================
      * @return the frstRegisterId
      */
     public String getFrstRegisterId() {
-	return frstRegisterId;
+    	return frstRegisterId;
     }
 
     /**
-     * frstRegisterId attribute 값을 설정한다.
-     *
-     * @param frstRegisterId
-     *            the frstRegisterId to set
+     * ■frstRegisterId attribute 값을 설정한다.
+	 * =================================
+     * @param frstRegisterId - the frstRegisterId to set
      */
     public void setFrstRegisterId(String frstRegisterId) {
-	this.frstRegisterId = frstRegisterId;
+    	this.frstRegisterId = frstRegisterId;
     }
 
     /**
-     * frstRegisterPnttm attribute를 리턴한다.
-     *
+     * ■frstRegisterPnttm attribute를 리턴한다.
+	 * =================================
      * @return the frstRegisterPnttm
      */
     public String getFrstRegisterPnttm() {
-	return frstRegisterPnttm;
+    	return frstRegisterPnttm;
     }
 
     /**
-     * frstRegisterPnttm attribute 값을 설정한다.
-     *
-     * @param frstRegisterPnttm
-     *            the frstRegisterPnttm to set
+     * ■frstRegisterPnttm attribute 값을 설정한다.
+	 * =================================
+     * @param frstRegisterPnttm - the frstRegisterPnttm to set
      */
     public void setFrstRegisterPnttm(String frstRegisterPnttm) {
-	this.frstRegisterPnttm = frstRegisterPnttm;
+    	this.frstRegisterPnttm = frstRegisterPnttm;
     }
 
     /**
-     * lastUpdusrId attribute를 리턴한다.
-     *
+     * ■lastUpdusrId attribute를 리턴한다.
+	 * =================================
      * @return the lastUpdusrId
      */
     public String getLastUpdusrId() {
-	return lastUpdusrId;
+    	return lastUpdusrId;
     }
 
     /**
-     * lastUpdusrId attribute 값을 설정한다.
-     *
-     * @param lastUpdusrId
-     *            the lastUpdusrId to set
+     * ■lastUpdusrId attribute 값을 설정한다.
+	 * =================================
+     * @param lastUpdusrId - the lastUpdusrId to set
      */
     public void setLastUpdusrId(String lastUpdusrId) {
 	this.lastUpdusrId = lastUpdusrId;
     }
 
     /**
-     * lastUpdusrPnttm attribute를 리턴한다.
-     *
+     * ■lastUpdusrPnttm attribute를 리턴한다.
+	 * =================================
      * @return the lastUpdusrPnttm
      */
     public String getLastUpdusrPnttm() {
-	return lastUpdusrPnttm;
+    	return lastUpdusrPnttm;
     }
 
     /**
-     * lastUpdusrPnttm attribute 값을 설정한다.
-     *
-     * @param lastUpdusrPnttm
-     *            the lastUpdusrPnttm to set
+     * ■lastUpdusrPnttm attribute 값을 설정한다.
+	 * =================================
+     * @param lastUpdusrPnttm - the lastUpdusrPnttm to set
      */
     public void setLastUpdusrPnttm(String lastUpdusrPnttm) {
-	this.lastUpdusrPnttm = lastUpdusrPnttm;
+    	this.lastUpdusrPnttm = lastUpdusrPnttm;
     }
 
     /**
-     * registSeCode attribute를 리턴한다.
-     *
+     * ■registSeCode attribute를 리턴한다.
+	 * =================================
      * @return the registSeCode
      */
     public String getRegistSeCode() {
-	return registSeCode;
+    	return registSeCode;
     }
 
     /**
-     * registSeCode attribute 값을 설정한다.
-     *
-     * @param registSeCode
-     *            the registSeCode to set
+     * ■registSeCode attribute 값을 설정한다.
+	 * =================================
+     * @param registSeCode - the registSeCode to set
      */
     public void setRegistSeCode(String registSeCode) {
-	this.registSeCode = registSeCode;
+    	this.registSeCode = registSeCode;
     }
 
     /**
-     * useAt attribute를 리턴한다.
-     *
+     * ■useAt attribute를 리턴한다.
+	 * =================================
      * @return the useAt
      */
     public String getUseAt() {
-	return useAt;
+    	return useAt;
     }
 
     /**
-     * useAt attribute 값을 설정한다.
-     *
-     * @param useAt
-     *            the useAt to set
+     * ■useAt attribute 값을 설정한다.
+	 * =================================
+     * @param useAt - the useAt to set
      */
     public void setUseAt(String useAt) {
-	this.useAt = useAt;
+    	this.useAt = useAt;
     }
 
     /**
-     * trgetType attribute를 리턴한다.
+     * ■trgetType attribute를 리턴한다.
+	 * =================================
      * @return the trgetType
      */
     public String getTrgetType() {
@@ -258,7 +255,8 @@ public class BoardUseInf implements Serializable {
     }
 
     /**
-     * trgetType attribute 값을 설정한다.
+     * ■trgetType attribute 값을 설정한다.
+	 * =================================
      * @param trgetType the trgetType to set
      */
     public void setTrgetType(String trgetType) {
@@ -266,9 +264,10 @@ public class BoardUseInf implements Serializable {
     }
 
     /**
-     * toString 메소드를 대치한다.
+     * ■toString 메소드를 대치한다.
+	 * =================================
      */
     public String toString() {
-	return ToStringBuilder.reflectionToString(this);
+    	return ToStringBuilder.reflectionToString(this);
     }
 }

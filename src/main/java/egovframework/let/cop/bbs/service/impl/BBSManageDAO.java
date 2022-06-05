@@ -6,7 +6,7 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시물 관리를 위한 데이터 접근 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
@@ -26,7 +26,7 @@ import org.springframework.stereotype.Repository;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■게시물 관리를 위한 데이터 접근 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -42,131 +42,106 @@ import org.springframework.stereotype.Repository;
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-/**
- * 게시물 관리를 위한 데이터 접근 클래스
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009.03.19
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2009.03.19  이삼섭          최초 생성
- *  2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- *  </pre>
- */
 @Repository("BBSManageDAO")
 public class BBSManageDAO extends EgovAbstractMapper {
 
-    /**
-     * 게시판에 게시물을 등록 한다.
-     *
+
+	/**
+     * ■게시판에 게시물을 등록 한다.
+	 * =================================
      * @param board
      * @throws Exception
      */
     public void insertBoardArticle(Board board) throws Exception {
-	long nttId = (Long)selectOne("BBSManageDAO.selectMaxNttId");
-	board.setNttId(nttId);
-
-	insert("BBSManageDAO.insertBoardArticle", board);
+    	long nttId = (Long)selectOne("BBSManageDAO.selectMaxNttId");
+    	board.setNttId(nttId);
+    	insert("BBSManageDAO.insertBoardArticle", board);
     }
 
     /**
-     * 게시판에 답변 게시물을 등록 한다.
-     *
+     * ■게시판에 답변 게시물을 등록 한다.
+	 * =================================
      * @param board
      * @throws Exception
      */
     public long replyBoardArticle(Board board) throws Exception {
-	long nttId = (Long)selectOne("BBSManageDAO.selectMaxNttId");
-	board.setNttId(nttId);
+    	long nttId = (Long)selectOne("BBSManageDAO.selectMaxNttId");
+    	board.setNttId(nttId);
 
-	insert("BBSManageDAO.replyBoardArticle", board);
+    	insert("BBSManageDAO.replyBoardArticle", board);
 
-	//----------------------------------------------------------
-	// 현재 글 이후 게시물에 대한 NTT_NO를 증가 (정렬을 추가하기 위해)
-	//----------------------------------------------------------
-	//String parentId = board.getParnts();
-	long nttNo = (Long)selectOne("BBSManageDAO.getParentNttNo", board);
+    	//----------------------------------------------------------
+    	// 현재 글 이후 게시물에 대한 NTT_NO를 증가 (정렬을 추가하기 위해)
+    	//----------------------------------------------------------
+    	//String parentId = board.getParnts();
+    	long nttNo = (Long)selectOne("BBSManageDAO.getParentNttNo", board);
 
-	board.setNttNo(nttNo);
-	update("BBSManageDAO.updateOtherNttNo", board);
+    	board.setNttNo(nttNo);
+    	update("BBSManageDAO.updateOtherNttNo", board);
 
-	board.setNttNo(nttNo + 1);
-	update("BBSManageDAO.updateNttNo", board);
+    	board.setNttNo(nttNo + 1);
+    	update("BBSManageDAO.updateNttNo", board);
 
-	return nttId;
+		return nttId;
     }
 
     /**
-     * 게시물 한 건에 대하여 상세 내용을 조회 한다.
-     *
+     * ■게시물 한 건에 대하여 상세 내용을 조회 한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
      */
     public BoardVO selectBoardArticle(BoardVO boardVO) throws Exception {
-	return (BoardVO)selectOne("BBSManageDAO.selectBoardArticle", boardVO);
+    	return (BoardVO)selectOne("BBSManageDAO.selectBoardArticle", boardVO);
     }
 
     /**
-     * 조건에 맞는 게시물 목록을 조회 한다.
-     *
+     * ■조건에 맞는 게시물 목록을 조회 한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
      */
     @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardVO> selectBoardArticleList(BoardVO boardVO) throws Exception {
-	return (List<BoardVO>) list("BBSManageDAO.selectBoardArticleList", boardVO);
+    	return (List<BoardVO>) list("BBSManageDAO.selectBoardArticleList", boardVO);
     }
 
     /**
-     * 조건에 맞는 게시물 목록에 대한 전체 건수를 조회 한다.
-     *
+     * ■조건에 맞는 게시물 목록에 대한 전체 건수를 조회 한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
      */
     public int selectBoardArticleListCnt(BoardVO boardVO) throws Exception {
-	return (Integer)selectOne("BBSManageDAO.selectBoardArticleListCnt", boardVO);
+    	return (Integer)selectOne("BBSManageDAO.selectBoardArticleListCnt", boardVO);
     }
 
     /**
-     * 게시물 한 건의 내용을 수정 한다.
-     *
+     * ■게시물 한 건의 내용을 수정 한다.
+	 * =================================
      * @param board
      * @throws Exception
      */
     public void updateBoardArticle(Board board) throws Exception {
-	update("BBSManageDAO.updateBoardArticle", board);
+    	update("BBSManageDAO.updateBoardArticle", board);
     }
 
     /**
-     * 게시물 한 건을 삭제 한다.
-     *
+     * ■게시물 한 건을 삭제 한다.
+	 * =================================
      * @param board
      * @throws Exception
      */
     public void deleteBoardArticle(Board board) throws Exception {
-	update("BBSManageDAO.deleteBoardArticle", board);
+    	update("BBSManageDAO.deleteBoardArticle", board);
     }
 
     /**
-     * 게시물에 대한 조회 건수를 수정 한다.
-     *
+     * ■게시물에 대한 조회 건수를 수정 한다.
+	 * =================================
      * @param board
      * @throws Exception
      */
@@ -175,57 +150,57 @@ public class BBSManageDAO extends EgovAbstractMapper {
     }
 
     /**
-     * 게시물에 대한 현재 조회 건수를 조회 한다.
-     *
+     * ■게시물에 대한 현재 조회 건수를 조회 한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
      */
     public int selectMaxInqireCo(BoardVO boardVO) throws Exception {
-	return (Integer)selectOne("BBSManageDAO.selectMaxInqireCo", boardVO);
+    	return (Integer)selectOne("BBSManageDAO.selectMaxInqireCo", boardVO);
     }
 
     /**
-     * 게시판에 대한 목록을 정렬 순서로 조회 한다.
-     *
+     * ■게시판에 대한 목록을 정렬 순서로 조회 한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
      */
     @SuppressWarnings({ "unchecked", "deprecation" })
     public List<BoardVO> selectNoticeListForSort(Board board) throws Exception {
-	return (List<BoardVO>) list("BBSManageDAO.selectNoticeListForSort", board);
+    	return (List<BoardVO>) list("BBSManageDAO.selectNoticeListForSort", board);
     }
 
     /**
-     * 게사판에 대한 정렬 순서를 수정 한다.
-     *
+     * ■게사판에 대한 정렬 순서를 수정 한다.
+	 * =================================
      * @param sortList
      * @throws Exception
      */
     public void updateSortOrder(List<BoardVO> sortList) throws Exception {
-	BoardVO vo;
-	Iterator<BoardVO> iter = sortList.iterator();
-	while (iter.hasNext()) {
-	    vo = (BoardVO)iter.next();
-	    update("BBSManageDAO.updateSortOrder", vo);
-	}
+    	BoardVO vo;
+    	Iterator<BoardVO> iter = sortList.iterator();
+    	while (iter.hasNext()) {
+    		vo = (BoardVO)iter.next();
+    		update("BBSManageDAO.updateSortOrder", vo);
+    	}
     }
 
     /**
-     * 게시판에 대한 현재 게시물 번호의 최대값을 구한다.
-     *
+     * ■게시판에 대한 현재 게시물 번호의 최대값을 구한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
      */
     public long selectNoticeItemForSort(Board board) throws Exception {
-	return (Long)selectOne("BBSManageDAO.selectNoticeItemForSort", board);
+    	return (Long)selectOne("BBSManageDAO.selectNoticeItemForSort", board);
     }
 
     /**
-     * 방명록에 대한 목록을 조회 한다.
-     *
+     * ■방명록에 대한 목록을 조회 한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
@@ -236,8 +211,8 @@ public class BBSManageDAO extends EgovAbstractMapper {
     }
 
     /**
-     * 방명록에 대한 목록 건수를 조회 한다.
-     *
+     * ■방명록에 대한 목록 건수를 조회 한다.
+	 * =================================
      * @param boardVO
      * @return
      * @throws Exception
@@ -247,8 +222,8 @@ public class BBSManageDAO extends EgovAbstractMapper {
     }
 
     /**
-     * 방명록 내용을 삭제 한다.
-     *
+     * ■방명록 내용을 삭제 한다.
+	 * =================================
      * @param boardVO
      * @throws Exception
      */
@@ -257,8 +232,8 @@ public class BBSManageDAO extends EgovAbstractMapper {
     }
 
     /**
-     * 방명록에 대한 패스워드를 조회 한다.
-     *
+     * ■방명록에 대한 패스워드를 조회 한다.
+	 * =================================
      * @param board
      * @return
      * @throws Exception
@@ -268,3 +243,5 @@ public class BBSManageDAO extends EgovAbstractMapper {
     }
     
 }
+
+

@@ -6,16 +6,22 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 휴일 VO 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.sym.cal.service;
+
+import java.io.Serializable;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■휴일 VO 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,73 +37,89 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.sym.cal.service;
-
-import java.io.Serializable;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-/**
- * 
- * 휴일 VO 클래스
- * @author 공통서비스 개발팀 이중호
- * @since 2009.04.01
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *   
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.04.01  이중호          최초 생성
- *
- * </pre>
- */
 public class RestdeVO extends Restde implements Serializable {
 	
+	
 	/**
-	 * serialVersionUID
+	 * ■serialVersionUID
+	 * =================================
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/** 검색조건 */
+	
+	
+	/**
+	 * ■검색조건
+	 * =================================
+	 */
     private String searchCondition = "";
     
-    /** 검색Keyword */
+	
+	
+	/**
+	 * ■검색Keyword
+	 * =================================
+	 */
     private String searchKeyword = "";
     
-    /** 검색사용여부 */
+	
+	
+	/**
+	 * ■검색사용여부
+	 * =================================
+	 */
     private String searchUseYn = "";
     
-    /** 현재페이지 */
+	
+	
+	/**
+	 * ■현재페이지
+	 * =================================
+	 */
     private int pageIndex = 1;
     
-    /** 페이지갯수 */
+	
+	
+	/**
+	 * ■페이지갯수
+	 * =================================
+	 */
     private int pageUnit = 10;
     
-    /** 페이지사이즈 */
+	
+	
+	/**
+	 * ■페이지사이즈
+	 * =================================
+	 */
     private int pageSize = 10;
 
-    /** firstIndex */
+	
+	
+	/**
+	 * ■firstIndex
+	 * =================================
+	 */
     private int firstIndex = 1;
 
-    /** lastIndex */
+	
+	
+	/**
+	 * ■lastIndex
+	 * =================================
+	 */
     private int lastIndex = 1;
 
-    /** recordCountPerPage */
+
+    /**
+	 * ■recordCountPerPage
+	 * =================================
+	 */
     private int recordCountPerPage = 10;
 
 	/**
-	 * searchCondition attribute 를 리턴한다.
+	 * ■searchCondition attribute 를 리턴한다.
+	 * =================================
 	 * @return String
 	 */
 	public String getSearchCondition() {
@@ -105,7 +127,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * searchCondition attribute 값을 설정한다.
+	 * ■searchCondition attribute 값을 설정한다.
+	 * =================================
 	 * @param searchCondition String
 	 */
 	public void setSearchCondition(String searchCondition) {
@@ -113,7 +136,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * searchKeyword attribute 를 리턴한다.
+	 * ■searchKeyword attribute 를 리턴한다.
+	 * =================================
 	 * @return String
 	 */
 	public String getSearchKeyword() {
@@ -121,7 +145,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * searchKeyword attribute 값을 설정한다.
+	 * ■searchKeyword attribute 값을 설정한다.
+	 * =================================
 	 * @param searchKeyword String
 	 */
 	public void setSearchKeyword(String searchKeyword) {
@@ -129,7 +154,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * searchUseYn attribute 를 리턴한다.
+	 * ■searchUseYn attribute 를 리턴한다.
+	 * =================================
 	 * @return String
 	 */
 	public String getSearchUseYn() {
@@ -137,7 +163,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * searchUseYn attribute 값을 설정한다.
+	 * ■searchUseYn attribute 값을 설정한다.
+	 * =================================
 	 * @param searchUseYn String
 	 */
 	public void setSearchUseYn(String searchUseYn) {
@@ -145,7 +172,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * pageIndex attribute 를 리턴한다.
+	 * ■pageIndex attribute 를 리턴한다.
+	 * =================================
 	 * @return int
 	 */
 	public int getPageIndex() {
@@ -153,7 +181,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * pageIndex attribute 값을 설정한다.
+	 * ■pageIndex attribute 값을 설정한다.
+	 * =================================
 	 * @param pageIndex int
 	 */
 	public void setPageIndex(int pageIndex) {
@@ -161,7 +190,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * pageUnit attribute 를 리턴한다.
+	 * ■pageUnit attribute 를 리턴한다.
+	 * =================================
 	 * @return int
 	 */
 	public int getPageUnit() {
@@ -169,7 +199,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * pageUnit attribute 값을 설정한다.
+	 * ■pageUnit attribute 값을 설정한다.
+	 * =================================
 	 * @param pageUnit int
 	 */
 	public void setPageUnit(int pageUnit) {
@@ -177,7 +208,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * pageSize attribute 를 리턴한다.
+	 * ■pageSize attribute 를 리턴한다.
+	 * =================================
 	 * @return int
 	 */
 	public int getPageSize() {
@@ -185,7 +217,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * pageSize attribute 값을 설정한다.
+	 * ■pageSize attribute 값을 설정한다.
+	 * =================================
 	 * @param pageSize int
 	 */
 	public void setPageSize(int pageSize) {
@@ -193,7 +226,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * firstIndex attribute 를 리턴한다.
+	 * ■firstIndex attribute 를 리턴한다.
+	 * =================================
 	 * @return int
 	 */
 	public int getFirstIndex() {
@@ -201,7 +235,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * firstIndex attribute 값을 설정한다.
+	 * ■firstIndex attribute 값을 설정한다.
+	 * =================================
 	 * @param firstIndex int
 	 */
 	public void setFirstIndex(int firstIndex) {
@@ -209,7 +244,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * lastIndex attribute 를 리턴한다.
+	 * ■lastIndex attribute 를 리턴한다.
+	 * =================================
 	 * @return int
 	 */
 	public int getLastIndex() {
@@ -217,7 +253,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * lastIndex attribute 값을 설정한다.
+	 * ■lastIndex attribute 값을 설정한다.
+	 * =================================
 	 * @param lastIndex int
 	 */
 	public void setLastIndex(int lastIndex) {
@@ -225,7 +262,8 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * recordCountPerPage attribute 를 리턴한다.
+	 * ■recordCountPerPage attribute 를 리턴한다.
+	 * =================================
 	 * @return int
 	 */
 	public int getRecordCountPerPage() {
@@ -233,15 +271,16 @@ public class RestdeVO extends Restde implements Serializable {
 	}
 
 	/**
-	 * recordCountPerPage attribute 값을 설정한다.
+	 * ■recordCountPerPage attribute 값을 설정한다.
+	 * =================================
 	 * @param recordCountPerPage int
 	 */
 	public void setRecordCountPerPage(int recordCountPerPage) {
 		this.recordCountPerPage = recordCountPerPage;
 	}
-    
 	/**
-     * toString 메소드를 대치한다.
+     * ■toString 메소드를 대치한다.
+	 * =================================
      */
     public String toString() {
     	return ToStringBuilder.reflectionToString(this);

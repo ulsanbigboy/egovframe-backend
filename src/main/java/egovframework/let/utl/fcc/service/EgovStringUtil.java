@@ -6,16 +6,27 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 문자열 데이터 처리 관련 유틸리티
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.utl.fcc.service;
+
+import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.security.SecureRandom;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■문자열 데이터 처리 관련 유틸리티</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,51 +42,6 @@
  * @version  1.0
  * @since    1.0
  */
-/**
- * @Class Name  : EgovStringUtil.java
- * @Description : 문자열 데이터 처리 관련 유틸리티
- * @Modification Information
- *
- *     수정일         수정자                   수정내용
- *     -------          --------        ---------------------------
- *   2009.01.13     박정규          최초 생성
- *   2009.02.13     이삼섭          내용 추가
- *
- * @author 공통 서비스 개발팀 박정규
- * @since 2009. 01. 13
- * @version 1.0
- * @see
- *
- */
-
-package egovframework.let.utl.fcc.service;
-
-/*
- * Copyright 2001-2006 The Apache Software Foundation.
- *
- * Licensed under the Apache License, Version 2.0 (the ";License&quot;);
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS"; BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-import java.io.UnsupportedEncodingException;
-import java.math.BigDecimal;
-import java.security.SecureRandom;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
 public class EgovStringUtil {
 
 	
@@ -84,39 +50,37 @@ public class EgovStringUtil {
 	 * =================================
 	 */
 	private static final Logger logger = LoggerFactory.getLogger(EgovStringUtil.class);
-	
-	
+
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■빈 문자열 <code>""</code>.
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * 빈 문자열 <code>""</code>.
 	 */
 	public static final String EMPTY = "";
 
 	/**
-	 * <p>Padding을 할 수 있는 최대 수치</p>
+	 * ■<p>Padding을 할 수 있는 최대 수치</p>
+	 * =================================
 	 */
 	// private static final int PAD_LIMIT = 8192;
+
+	
 	/**
+	 * ■An array of <code>String</code>s used for padding.
+	 * =================================
 	 * <p>An array of <code>String</code>s used for padding.</p>
 	 * <p>Used for efficient space padding. The length of each String expands as needed.</p>
 	 */
 	/*
 	private static final String[] PADDING = new String[Character.MAX_VALUE];
-
 	static {
 		// space padding is most common, start with 64 chars
 		PADDING[32] = "                                                                ";
 	}
-	 */
+	*/
 
 	/**
-	 * 문자열이 지정한 길이를 초과했을때 지정한길이에다가 해당 문자열을 붙여주는 메서드.
+	 * ■문자열이 지정한 길이를 초과했을때 지정한길이에다가 해당 문자열을 붙여주는 메서드.
+	 * =================================
 	 * @param source 원본 문자열 배열
 	 * @param output 더할문자열
 	 * @param slength 지정길이
@@ -135,7 +99,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 문자열이 지정한 길이를 초과했을때 해당 문자열을 삭제하는 메서드
+	 * ■문자열이 지정한 길이를 초과했을때 해당 문자열을 삭제하는 메서드
+	 * =================================
 	 * @param source 원본 문자열 배열
 	 * @param slength 지정길이
 	 * @return 지정길이로 잘라서 더할분자열 합친 문자열
@@ -153,10 +118,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>
-	 * String이 비었거나("") 혹은 null 인지 검증한다.
-	 * </p>
-	 *
+	 * ■<p>String이 비었거나("") 혹은 null 인지 검증한다.</p>
+	 * =================================
 	 * <pre>
 	 *  StringUtil.isEmpty(null)      = true
 	 *  StringUtil.isEmpty("")        = true
@@ -164,7 +127,6 @@ public class EgovStringUtil {
 	 *  StringUtil.isEmpty("bob")     = false
 	 *  StringUtil.isEmpty("  bob  ") = false
 	 * </pre>
-	 *
 	 * @param str - 체크 대상 스트링오브젝트이며 null을 허용함
 	 * @return <code>true</code> - 입력받은 String 이 빈 문자열 또는 null인 경우
 	 */
@@ -173,8 +135,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>기준 문자열에 포함된 모든 대상 문자(char)를 제거한다.</p>
-	 *
+	 * ■<p>기준 문자열에 포함된 모든 대상 문자(char)를 제거한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.remove(null, *)       = null
 	 * StringUtil.remove("", *)         = ""
@@ -201,8 +163,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>문자열 내부의 콤마 character(,)를 모두 제거한다.</p>
-	 *
+	 * ■<p>문자열 내부의 콤마 character(,)를 모두 제거한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.removeCommaChar(null)       = null
 	 * StringUtil.removeCommaChar("")         = ""
@@ -218,8 +180,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>문자열 내부의 마이너스 character(-)를 모두 제거한다.</p>
-	 *
+	 * ■<p>문자열 내부의 마이너스 character(-)를 모두 제거한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.removeMinusChar(null)       = null
 	 * StringUtil.removeMinusChar("")         = ""
@@ -235,7 +197,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 원본 문자열의 포함된 특정 문자열을 새로운 문자열로 변환하는 메서드
+	 * ■원본 문자열의 포함된 특정 문자열을 새로운 문자열로 변환하는 메서드
+	 * =================================
 	 * @param source 원본 문자열
 	 * @param subject 원본 문자열에 포함된 특정 문자열
 	 * @param object 변환할 문자열
@@ -258,7 +221,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 원본 문자열의 포함된 특정 문자열 첫번째 한개만 새로운 문자열로 변환하는 메서드
+	 * ■원본 문자열의 포함된 특정 문자열 첫번째 한개만 새로운 문자열로 변환하는 메서드
+	 * =================================
 	 * @param source 원본 문자열
 	 * @param subject 원본 문자열에 포함된 특정 문자열
 	 * @param object 변환할 문자열
@@ -279,8 +243,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <code>subject</code>에 포함된 각각의 문자를 object로 변환한다.
-	 *
+	 * ■<code>subject</code>에 포함된 각각의 문자를 object로 변환한다.
+	 * =================================
 	 * @param source 원본 문자열
 	 * @param subject 원본 문자열에 포함된 특정 문자열
 	 * @param object 변환할 문자열
@@ -308,8 +272,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p><code>str</code> 중 <code>searchStr</code>의 시작(index) 위치를 반환.</p>
-	 *
+	 * ■<p><code>str</code> 중 <code>searchStr</code>의 시작(index) 위치를 반환.</p>
+	 * =================================
 	 * <p>입력값 중 <code>null</code>이 있을 경우 <code>-1</code>을 반환.</p>
 	 *
 	 * <pre>
@@ -334,11 +298,11 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>오라클의 decode 함수와 동일한 기능을 가진 메서드이다.
+	 * ■<p>오라클의 decode 함수와 동일한 기능을 가진 메서드이다.
 	 * <code>sourStr</code>과 <code>compareStr</code>의 값이 같으면
 	 * <code>returStr</code>을 반환하며, 다르면  <code>defaultStr</code>을 반환한다.
 	 * </p>
-	 *
+	 * =================================
 	 * <pre>
 	 * StringUtil.decode(null, null, "foo", "bar")= "foo"
 	 * StringUtil.decode("", null, "foo", "bar") = "bar"
@@ -373,11 +337,11 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>오라클의 decode 함수와 동일한 기능을 가진 메서드이다.
+	 * ■<p>오라클의 decode 함수와 동일한 기능을 가진 메서드이다.
 	 * <code>sourStr</code>과 <code>compareStr</code>의 값이 같으면
 	 * <code>returStr</code>을 반환하며, 다르면  <code>sourceStr</code>을 반환한다.
 	 * </p>
-	 *
+	 * =================================
 	 * <pre>
 	 * StringUtil.decode(null, null, "foo") = "foo"
 	 * StringUtil.decode("", null, "foo") = ""
@@ -398,7 +362,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 객체가 null인지 확인하고 null인 경우 "" 로 바꾸는 메서드
+	 * ■객체가 null인지 확인하고 null인 경우 "" 로 바꾸는 메서드
+	 * =================================
 	 * @param object 원본 객체
 	 * @return resultVal 문자열
 	 */
@@ -413,6 +378,8 @@ public class EgovStringUtil {
 	}
 
 	/**
+	 * ■인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다.
+	 * =================================
 	 *<pre>
 	 * 인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다.
 	 * &#064;param src null값일 가능성이 있는 String 값.
@@ -433,6 +400,8 @@ public class EgovStringUtil {
 	}
 
 	/**
+	 * ■인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다.
+	 * =================================
 	 *<pre>
 	 * 인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다.
 	 * &#064;param src null값일 가능성이 있는 String 값.
@@ -449,6 +418,8 @@ public class EgovStringUtil {
 	}
 
 	/**
+	 * ■인자로 받은 String이 null일 경우 &quot;0&quot;로 리턴한다.
+	 * =================================
 	 *<pre>
 	 * 인자로 받은 String이 null일 경우 &quot;0&quot;로 리턴한다.
 	 * &#064;param src null값일 가능성이 있는 String 값.
@@ -465,6 +436,8 @@ public class EgovStringUtil {
 	}
 
 	/**
+	 * ■인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다.
+	 * =================================
 	 *<pre>
 	 * 인자로 받은 String이 null일 경우 &quot;&quot;로 리턴한다.
 	 * &#064;param src null값일 가능성이 있는 String 값.
@@ -481,9 +454,9 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>문자열에서 {@link Character#isWhitespace(char)}에 정의된
+	 * ■<p>문자열에서 {@link Character#isWhitespace(char)}에 정의된
 	 * 모든 공백문자를 제거한다.</p>
-	 *
+	 * =================================
 	 * <pre>
 	 * StringUtil.removeWhitespace(null)         = null
 	 * StringUtil.removeWhitespace("")           = ""
@@ -514,8 +487,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * Html 코드가 들어간 문서를 표시할때 태그에 손상없이 보이기 위한 메서드
-	 *
+	 * ■Html 코드가 들어간 문서를 표시할때 태그에 손상없이 보이기 위한 메서드
+	 * =================================
 	 * @param strString
 	 * @return HTML 태그를 치환한 문자열
 	 */
@@ -560,7 +533,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 문자열을 지정한 분리자에 의해 배열로 리턴하는 메서드.
+	 * ■문자열을 지정한 분리자에 의해 배열로 리턴하는 메서드.
+	 * =================================
 	 * @param source 원본 문자열
 	 * @param separator 분리자
 	 * @return result 분리자로 나뉘어진 문자열 배열
@@ -590,8 +564,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>{@link String#toLowerCase()}를 이용하여 소문자로 변환한다.</p>
-	 *
+	 * ■<p>{@link String#toLowerCase()}를 이용하여 소문자로 변환한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.lowerCase(null)  = null
 	 * StringUtil.lowerCase("")    = ""
@@ -610,8 +584,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>{@link String#toUpperCase()}를 이용하여 대문자로 변환한다.</p>
-	 *
+	 * ■<p>{@link String#toUpperCase()}를 이용하여 대문자로 변환한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.upperCase(null)  = null
 	 * StringUtil.upperCase("")    = ""
@@ -630,8 +604,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>입력된 String의 앞쪽에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다.</p>
-	 *
+	 * ■<p>입력된 String의 앞쪽에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.stripStart(null, *)          = null
 	 * StringUtil.stripStart("", *)            = ""
@@ -669,8 +643,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>입력된 String의 뒤쪽에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다.</p>
-	 *
+	 * ■<p>입력된 String의 뒤쪽에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.stripEnd(null, *)          = null
 	 * StringUtil.stripEnd("", *)            = ""
@@ -708,8 +682,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * <p>입력된 String의 앞, 뒤에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다.</p>
-	 *
+	 * ■<p>입력된 String의 앞, 뒤에서 두번째 인자로 전달된 문자(stripChars)를 모두 제거한다.</p>
+	 * =================================
 	 * <pre>
 	 * StringUtil.strip(null, *)          = null
 	 * StringUtil.strip("", *)            = ""
@@ -736,7 +710,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 문자열을 지정한 분리자에 의해 지정된 길이의 배열로 리턴하는 메서드.
+	 * ■문자열을 지정한 분리자에 의해 지정된 길이의 배열로 리턴하는 메서드.
+	 * =================================
 	 * @param source 원본 문자열
 	 * @param separator 분리자
 	 * @param arraylength 배열 길이
@@ -764,8 +739,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 문자열 A에서 Z사이의 랜덤 문자열을 구하는 기능을 제공 시작문자열과 종료문자열 사이의 랜덤 문자열을 구하는 기능
-	 *
+	 * ■문자열 A에서 Z사이의 랜덤 문자열을 구하는 기능을 제공 시작문자열과 종료문자열 사이의 랜덤 문자열을 구하는 기능
+	 * =================================
 	 * @param startChr
 	 *            - 첫 문자
 	 * @param endChr
@@ -804,10 +779,11 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 문자열을 다양한 문자셋(EUC-KR[KSC5601],UTF-8..)을 사용하여 인코딩하는 기능 역으로 디코딩하여 원래의 문자열을
+	 * ■문자열을 다양한 문자셋(EUC-KR[KSC5601],UTF-8..)을 사용하여 인코딩하는 기능 역으로 디코딩하여 원래의 문자열을
 	 * 복원하는 기능을 제공함 String temp = new String(문자열.getBytes("바꾸기전 인코딩"),"바꿀 인코딩");
 	 * String temp = new String(문자열.getBytes("8859_1"),"KSC5601"); => UTF-8 에서
 	 * EUC-KR
+	 * =================================
 	 *
 	 * @param srcString
 	 *            - 문자열
@@ -838,12 +814,13 @@ public class EgovStringUtil {
 	}
 
 	/**
-	     * 특수문자를 웹 브라우저에서 정상적으로 보이기 위해 특수문자를 처리('<' -> & lT)하는 기능이다
-	     * @param 	srcString 		- '<'
-	     * @return 	변환문자열('<' -> "&lt"
-	     * @exception MyException
-	     * @see
-	     */
+	 * ■특수문자를 웹 브라우저에서 정상적으로 보이기 위해 특수문자를 처리('<' -> & lT)하는 기능이다
+	 * =================================
+     * @param 	srcString 		- '<'
+     * @return 	변환문자열('<' -> "&lt"
+     * @exception MyException
+     * @see
+     */
 	public static String getSpclStrCnvr(String srcString) {
 
 		String rtnStr = null;
@@ -877,8 +854,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * 응용어플리케이션에서 고유값을 사용하기 위해 시스템에서17자리의TIMESTAMP값을 구하는 기능
-	 *
+	 * ■응용어플리케이션에서 고유값을 사용하기 위해 시스템에서17자리의TIMESTAMP값을 구하는 기능
+	 * =================================
 	 * @param
 	 * @return Timestamp 값
 	 * @exception MyException
@@ -900,8 +877,8 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * html의 특수문자를 표현하기 위해
-	 *
+	 * ■html의 특수문자를 표현하기 위해
+	 * =================================
 	 * @param srcString
 	 * @return String
 	 * @exception Exception
@@ -923,19 +900,11 @@ public class EgovStringUtil {
 	}
 
 	/**
-	 * ■함수 시작 로그 출력
+	 * ■<p>날짜 형식의 문자열 내부에 마이너스 character(-)를 추가한다.</p>
 	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-	/**
-	 * <p>날짜 형식의 문자열 내부에 마이너스 character(-)를 추가한다.</p>
-	 *
 	 * <pre>
 	 *   StringUtil.addMinusChar("20100901") = "2010-09-01"
 	 * </pre>
-	 *
 	 * @param date  입력받는 문자열
 	 * @return " - "가 추가된 입력문자열
 	 */

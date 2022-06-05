@@ -6,16 +6,21 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 템플릿 정보 관리를 위한 VO 클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
+package egovframework.let.cop.com.service;
+
+import java.io.Serializable;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 
 /**
- * <p>■공통 >  로그 출력</p>
+ * <p>■템플릿 정보 관리를 위한 VO 클래스</p>
  * <p>COPYRIGHT: Copyright (c) 2003</p>
  * <p>COMPANY: (LTD)KYOBOBOOK</p>
  * <DL>
@@ -31,98 +36,122 @@
  * @version  1.0
  * @since    1.0
  */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
-package egovframework.let.cop.com.service;
-
-import java.io.Serializable;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-/**
- * 템플릿 정보 관리를 위한 VO 클래스
- * @author 공통서비스개발팀 이삼섭
- * @since 2009.03.17
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.03.17  이삼섭          최초 생성
- *   2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- * </pre>
- */
 public class TemplateInfVO extends TemplateInf implements Serializable {
 
-    /**
-	 * serialVersion UID
+	/**
+	 * ■serialVersion UID
+	 * =================================
 	 */
 	private static final long serialVersionUID = -6744703117289632930L;
 
-	/** 최초 등록자명 */
+	/**
+	 * ■최초 등록자명
+	 * =================================
+	 */
     private String frstRegisterNm = "";
 
-    /** 최종 수정자명 */
+	/**
+	 * ■최종 수정자명
+	 * =================================
+	 */
     private String lastUpdusrNm = "";
 
-    /** 템플릿 구분 코드명 */
+	/**
+	 * ■템플릿 구분 코드명
+	 * =================================
+	 */
     private String tmplatSeCodeNm = "";
 
-    /** 검색시작일 */
+	/**
+	 * ■검색시작일
+	 * =================================
+	 */
     private String searchBgnDe = "";
 
-    /** 검색조건 */
+	/**
+	 * ■검색조건
+	 * =================================
+	 */
     private String searchCnd = "";
 
-    /** 검색종료일 */
+	/**
+	 * ■검색종료일
+	 * =================================
+	 */
     private String searchEndDe = "";
 
-    /** 검색단어 */
+	/**
+	 * ■검색단어
+	 * =================================
+	 */
     private String searchWrd = "";
 
-    /** 정렬순서(DESC,ASC) */
+	/**
+	 * ■정렬순서(DESC,ASC)
+	 * =================================
+	 */
     private String sortOrdr = "";
 
-    /** 검색사용여부 */
+	/**
+	 * ■검색사용여부
+	 * =================================
+	 */
     private String searchUseYn = "";
 
-    /** 현재페이지 */
+	/**
+	 * ■현재페이지
+	 * =================================
+	 */
     private int pageIndex = 1;
 
-    /** 페이지갯수 */
+	/**
+	 * ■페이지갯수
+	 * =================================
+	 */
     private int pageUnit = 10;
 
-    /** 페이지사이즈 */
+	/**
+	 * ■페이지사이즈
+	 * =================================
+	 */
     private int pageSize = 10;
 
-    /** 첫페이지 인덱스 */
+	/**
+	 * ■첫페이지 인덱스
+	 * =================================
+	 */
     private int firstIndex = 1;
 
-    /** 마지막페이지 인덱스 */
+	/**
+	 * ■마지막페이지 인덱스
+	 * =================================
+	 */
     private int lastIndex = 1;
 
-    /** 페이지당 레코드 개수 */
+	/**
+	 * ■페이지당 레코드 개수
+	 * =================================
+	 */
     private int recordCountPerPage = 10;
 
-    /** 레코드 번호 */
+	/**
+	 * ■레코드 번호
+	 * =================================
+	 */
     private int rowNo = 0;
 
-    /** 구분 유형 */
+	/**
+	 * ■구분 유형
+	 * =================================
+	 */
     private String typeFlag = "";
 
+    
+    
+    
     /**
-     * frstRegisterNm attribute를 리턴한다.
-     *
+     * ■frstRegisterNm attribute를 리턴한다.
+	 * =================================
      * @return the frstRegisterNm
      */
     public String getFrstRegisterNm() {
@@ -130,8 +159,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * frstRegisterNm attribute 값을 설정한다.
-     *
+     * ■frstRegisterNm attribute 값을 설정한다.
+	 * =================================
      * @param frstRegisterNm
      *            the frstRegisterNm to set
      */
@@ -140,8 +169,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * lastUpdusrNm attribute를 리턴한다.
-     *
+     * ■lastUpdusrNm attribute를 리턴한다.
+	 * =================================
      * @return the lastUpdusrNm
      */
     public String getLastUpdusrNm() {
@@ -149,8 +178,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * lastUpdusrNm attribute 값을 설정한다.
-     *
+     * ■lastUpdusrNm attribute 값을 설정한다.
+	 * =================================
      * @param lastUpdusrNm
      *            the lastUpdusrNm to set
      */
@@ -159,8 +188,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * tmplatSeCodeNm attribute를 리턴한다.
-     *
+     * ■tmplatSeCodeNm attribute를 리턴한다.
+	 * =================================
      * @return the tmplatSeCodeNm
      */
     public String getTmplatSeCodeNm() {
@@ -168,8 +197,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * tmplatSeCodeNm attribute 값을 설정한다.
-     *
+     * ■tmplatSeCodeNm attribute 값을 설정한다.
+	 * =================================
      * @param tmplatSeCodeNm
      *            the tmplatSeCodeNm to set
      */
@@ -178,8 +207,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchBgnDe attribute를 리턴한다.
-     *
+     * ■searchBgnDe attribute를 리턴한다.
+	 * =================================
      * @return the searchBgnDe
      */
     public String getSearchBgnDe() {
@@ -187,8 +216,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchBgnDe attribute 값을 설정한다.
-     *
+     * ■searchBgnDe attribute 값을 설정한다.
+	 * =================================
      * @param searchBgnDe
      *            the searchBgnDe to set
      */
@@ -197,8 +226,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchCnd attribute를 리턴한다.
-     *
+     * ■searchCnd attribute를 리턴한다.
+	 * =================================
      * @return the searchCnd
      */
     public String getSearchCnd() {
@@ -206,8 +235,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchCnd attribute 값을 설정한다.
-     *
+     * ■searchCnd attribute 값을 설정한다.
+	 * =================================
      * @param searchCnd
      *            the searchCnd to set
      */
@@ -216,8 +245,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchEndDe attribute를 리턴한다.
-     *
+     * ■searchEndDe attribute를 리턴한다.
+	 * =================================
      * @return the searchEndDe
      */
     public String getSearchEndDe() {
@@ -225,8 +254,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchEndDe attribute 값을 설정한다.
-     *
+     * ■searchEndDe attribute 값을 설정한다.
+	 * =================================
      * @param searchEndDe
      *            the searchEndDe to set
      */
@@ -235,8 +264,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchWrd attribute를 리턴한다.
-     *
+     * ■searchWrd attribute를 리턴한다.
+	 * =================================
      * @return the searchWrd
      */
     public String getSearchWrd() {
@@ -244,8 +273,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchWrd attribute 값을 설정한다.
-     *
+     * ■searchWrd attribute 값을 설정한다.
+	 * =================================
      * @param searchWrd
      *            the searchWrd to set
      */
@@ -254,8 +283,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * sortOrdr attribute를 리턴한다.
-     *
+     * ■sortOrdr attribute를 리턴한다.
+	 * =================================
      * @return the sortOrdr
      */
     public String getSortOrdr() {
@@ -263,8 +292,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * sortOrdr attribute 값을 설정한다.
-     *
+     * ■sortOrdr attribute 값을 설정한다.
+	 * =================================
      * @param sortOrdr
      *            the sortOrdr to set
      */
@@ -273,8 +302,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchUseYn attribute를 리턴한다.
-     *
+     * ■searchUseYn attribute를 리턴한다.
+	 * =================================
      * @return the searchUseYn
      */
     public String getSearchUseYn() {
@@ -282,8 +311,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * searchUseYn attribute 값을 설정한다.
-     *
+     * ■searchUseYn attribute 값을 설정한다.
+	 * =================================
      * @param searchUseYn
      *            the searchUseYn to set
      */
@@ -292,8 +321,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * pageIndex attribute를 리턴한다.
-     *
+     * ■pageIndex attribute를 리턴한다.
+	 * =================================
      * @return the pageIndex
      */
     public int getPageIndex() {
@@ -301,8 +330,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * pageIndex attribute 값을 설정한다.
-     *
+     * ■pageIndex attribute 값을 설정한다.
+	 * =================================
      * @param pageIndex
      *            the pageIndex to set
      */
@@ -311,8 +340,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * pageUnit attribute를 리턴한다.
-     *
+     * ■pageUnit attribute를 리턴한다.
+	 * =================================
      * @return the pageUnit
      */
     public int getPageUnit() {
@@ -320,8 +349,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * pageUnit attribute 값을 설정한다.
-     *
+     * ■pageUnit attribute 값을 설정한다.
+	 * =================================
      * @param pageUnit
      *            the pageUnit to set
      */
@@ -330,8 +359,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * pageSize attribute를 리턴한다.
-     *
+     * ■pageSize attribute를 리턴한다.
+	 * =================================
      * @return the pageSize
      */
     public int getPageSize() {
@@ -339,8 +368,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * pageSize attribute 값을 설정한다.
-     *
+     * ■pageSize attribute 값을 설정한다.
+	 * =================================
      * @param pageSize
      *            the pageSize to set
      */
@@ -349,8 +378,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * firstIndex attribute를 리턴한다.
-     *
+     * ■firstIndex attribute를 리턴한다.
+	 * =================================
      * @return the firstIndex
      */
     public int getFirstIndex() {
@@ -358,8 +387,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * firstIndex attribute 값을 설정한다.
-     *
+     * ■firstIndex attribute 값을 설정한다.
+	 * =================================
      * @param firstIndex
      *            the firstIndex to set
      */
@@ -368,8 +397,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * lastIndex attribute를 리턴한다.
-     *
+     * ■lastIndex attribute를 리턴한다.
+	 * =================================
      * @return the lastIndex
      */
     public int getLastIndex() {
@@ -377,8 +406,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * lastIndex attribute 값을 설정한다.
-     *
+     * ■lastIndex attribute 값을 설정한다.
+	 * =================================
      * @param lastIndex
      *            the lastIndex to set
      */
@@ -387,8 +416,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * recordCountPerPage attribute를 리턴한다.
-     *
+     * ■recordCountPerPage attribute를 리턴한다.
+	 * =================================
      * @return the recordCountPerPage
      */
     public int getRecordCountPerPage() {
@@ -396,8 +425,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * recordCountPerPage attribute 값을 설정한다.
-     *
+     * ■recordCountPerPage attribute 값을 설정한다.
+	 * =================================
      * @param recordCountPerPage
      *            the recordCountPerPage to set
      */
@@ -406,8 +435,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * rowNo attribute를 리턴한다.
-     *
+     * ■rowNo attribute를 리턴한다.
+	 * =================================
      * @return the rowNo
      */
     public int getRowNo() {
@@ -415,8 +444,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * rowNo attribute 값을 설정한다.
-     *
+     * ■rowNo attribute 값을 설정한다.
+	 * =================================
      * @param rowNo
      *            the rowNo to set
      */
@@ -425,8 +454,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * typeFlag attribute를 리턴한다.
-     *
+     * ■typeFlag attribute를 리턴한다.
+	 * =================================
      * @return the typeFlag
      */
     public String getTypeFlag() {
@@ -434,8 +463,8 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * typeFlag attribute 값을 설정한다.
-     *
+     * ■typeFlag attribute 값을 설정한다.
+	 * =================================
      * @param typeFlag
      *            the typeFlag to set
      */
@@ -444,9 +473,10 @@ public class TemplateInfVO extends TemplateInf implements Serializable {
     }
 
     /**
-     * toString 메소드를 대치한다.
+     * ■toString 메소드를 대치한다.
+	 * =================================
      */
     public String toString() {
-	return ToStringBuilder.reflectionToString(this);
+    	return ToStringBuilder.reflectionToString(this);
     }
 }

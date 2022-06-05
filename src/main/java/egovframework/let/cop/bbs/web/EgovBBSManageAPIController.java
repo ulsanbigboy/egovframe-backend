@@ -278,8 +278,8 @@ public class EgovBBSManageAPIController {
 	}
 
 	/**
-	 * 게시물에 대한 내용을 수정한다.
-	 *
+	 * ■게시물에 대한 내용을 수정한다.
+	 * =================================
 	 * @param boardVO
 	 * @param board
 	 * @param sessionVO
@@ -343,8 +343,8 @@ public class EgovBBSManageAPIController {
 	}
 
 	/**
-	 * 게시물을 등록한다.
-	 *
+	 * ■게시물을 등록한다.
+	 * =================================
 	 * @param boardVO
 	 * @param board
 	 * @param sessionVO
@@ -400,8 +400,8 @@ public class EgovBBSManageAPIController {
 	}
 
 	/**
-	 * 게시물에 대한 답변을 등록한다.
-	 *
+	 * ■게시물에 대한 답변을 등록한다.
+	 * =================================
 	 * @param boardVO
 	 * @param board
 	 * @param sessionVO
@@ -466,8 +466,8 @@ public class EgovBBSManageAPIController {
 	}
 
 	/**
-	 * 게시물에 대한 내용을 삭제한다.
-	 *
+	 * ■게시물에 대한 내용을 삭제한다.
+	 * =================================
 	 * @param boardVO
 	 * @param board
 	 * @param sessionVO
@@ -512,8 +512,8 @@ public class EgovBBSManageAPIController {
 	}
 
 	/**
-	 * XSS 방지 처리.
-	 *
+	 * ■XSS 방지 처리.
+	 * =================================
 	 * @param data
 	 * @return
 	 */

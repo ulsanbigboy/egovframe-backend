@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 휴일에 대한 서비스 구현클래스를 정의한다
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.sym.cal.service.impl;
 
 import java.util.List;
@@ -56,30 +29,35 @@ import org.springframework.stereotype.Service;
 
 
 /**
+ * <p>■휴일에 대한 서비스 구현클래스를 정의한다</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * 휴일에 대한 서비스 구현클래스를 정의한다
- * @author 공통서비스 개발팀 이중호
- * @since 2009.04.01
- * @version 1.0
- * @see
- *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2009.04.01  이중호          최초 생성
- *
- * </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Service("RestdeManageService")
 public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl implements EgovCalRestdeManageService {
 
+	/**
+	 * ■
+	 * =================================
+	 */
     @Resource(name="RestdeManageDAO")
     private RestdeManageDAO restdeManageDAO;
 
 	/**
-	 * 일반달력 팝업 정보를 조회한다.
+	 * ■일반달력 팝업 정보를 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectNormalRestdePopup(Restde restde) throws Exception {
@@ -87,7 +65,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 행정달력 팝업 정보를 조회한다.
+	 * ■행정달력 팝업 정보를 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectAdministRestdePopup(Restde restde) throws Exception {
@@ -95,7 +74,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 일반달력 일간 정보를 조회한다.
+	 * ■일반달력 일간 정보를 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectNormalDayCal(Restde restde) throws Exception {
@@ -103,7 +83,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 일반달력 일간 휴일을 조회한다.
+	 * ■일반달력 일간 휴일을 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectNormalDayRestde(Restde restde) throws Exception {
@@ -111,7 +92,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 일반달력 월간 휴일을 조회한다.
+	 * ■일반달력 월간 휴일을 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectNormalMonthRestde(Restde restde) throws Exception {
@@ -119,7 +101,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 행정달력 일간 정보를 조회한다.
+	 * ■행정달력 일간 정보를 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectAdministDayCal(Restde restde) throws Exception {
@@ -127,7 +110,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 행정달력 일간 휴일을 조회한다.
+	 * ■행정달력 일간 휴일을 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectAdministDayRestde(Restde restde) throws Exception {
@@ -135,7 +119,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
     /**
-	 * 행정달력 월간 휴일을 조회한다.
+	 * ■행정달력 월간 휴일을 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectAdministMonthRestde(Restde restde) throws Exception {
@@ -143,7 +128,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
     /**
-	 * 휴일을 삭제한다.
+	 * ■휴일을 삭제한다.
+	 * =================================
 	 */
 	@Override
 	public void deleteRestde(Restde restde) throws Exception {
@@ -151,7 +137,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 휴일을 등록한다.
+	 * ■휴일을 등록한다.
+	 * =================================
 	 */
 	@Override
 	public void insertRestde(Restde restde) throws Exception {
@@ -159,7 +146,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 휴일 상세항목을 조회한다.
+	 * ■휴일 상세항목을 조회한다.
+	 * =================================
 	 */
 	@Override
 	public Restde selectRestdeDetail(Restde restde) throws Exception {
@@ -168,7 +156,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 휴일 목록을 조회한다.
+	 * ■휴일 목록을 조회한다.
+	 * =================================
 	 */
 	@Override
 	public List<?> selectRestdeList(RestdeVO searchVO) throws Exception {
@@ -176,7 +165,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 휴일 총 갯수를 조회한다.
+	 * ■휴일 총 갯수를 조회한다.
+	 * =================================
 	 */
 	@Override
 	public int selectRestdeListTotCnt(RestdeVO searchVO) throws Exception {
@@ -184,7 +174,8 @@ public class EgovCalRestdeManageServiceImpl extends EgovAbstractServiceImpl impl
 	}
 
 	/**
-	 * 휴일을 수정한다.
+	 * ■휴일을 수정한다.
+	 * =================================
 	 */
 	@Override
 	public void updateRestde(Restde restde) throws Exception {

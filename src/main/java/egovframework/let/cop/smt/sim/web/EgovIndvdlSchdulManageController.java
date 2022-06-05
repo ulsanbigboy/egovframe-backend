@@ -34,7 +34,6 @@
 	
 	/**
 	 * ■함수 시작 로그 출력
-	 * =================================
 	 * @param logger
 	 * @param msg
 	 * @param req
@@ -101,33 +100,69 @@ public class EgovIndvdlSchdulManageController {
 	 * =================================
 	 */
 	private final Logger logger = LoggerFactory.getLogger(getClass());
+
 	
+	/**
+	 * ■XXXXXXXXXX
+	 * =================================
+	 */
 	@Autowired
 	private DefaultBeanValidator beanValidator;
 
+	
+	/**
+	 * ■XXXXXXXXXX
+	 * =================================
+	 */
 	/** EgovMessageSource */
 	@Resource(name = "egovMessageSource")
 	EgovMessageSource egovMessageSource;
 
+	
+	/**
+	 * ■XXXXXXXXXX
+	 * =================================
+	 */
 	@Resource(name = "egovIndvdlSchdulManageService")
 	private EgovIndvdlSchdulManageService egovIndvdlSchdulManageService;
 
+	
+	/**
+	 * ■XXXXXXXXXX
+	 * =================================
+	 */
 	@Resource(name = "EgovCmmUseService")
 	private EgovCmmUseService cmmUseService;
 
+	
+	/**
+	 * ■XXXXXXXXXX
+	 * =================================
+	 */
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertiesService;
 
+	
+	/**
+	 * ■XXXXXXXXXX
+	 * =================================
+	 */
 	// 첨부파일 관련
 	@Resource(name = "EgovFileMngService")
 	private EgovFileMngService fileMngService;
 
+	
+	/**
+	 * ■XXXXXXXXXX
+	 * =================================
+	 */
 	@Resource(name = "EgovFileMngUtil")
 	private EgovFileMngUtil fileUtil;
 
 	/**
-	 * 일정(일별) 목록을 조회한다.
+	 * ■일정(일별) 목록을 조회한다.
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -196,7 +231,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 일정(주간별) 목록을 조회한다.
+	 * ■일정(주간별) 목록을 조회한다.
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -331,7 +367,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 일정(월별) 목록을 조회한다.
+	 * ■일정(월별) 목록을 조회한다.
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -399,7 +436,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 일정 목록을 상세조회 조회한다.
+	 * ■일정 목록을 상세조회 조회한다.
+	 * =================================
 	 * @param searchVO
 	 * @param indvdlSchdulManageVO
 	 * @param commandMap
@@ -450,7 +488,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 일정 수정 폼
+	 * ■일정 수정 폼
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -530,7 +569,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 일정를 수정 처리 한다.
+	 * ■일정를 수정 처리 한다.
+	 * =================================
 	 * @param multiRequest
 	 * @param searchVO
 	 * @param commandMap
@@ -643,7 +683,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 일정를 등록 폼
+	 * ■일정를 등록 폼
+	 * =================================
 	 * @param searchVO
 	 * @param commandMap
 	 * @param indvdlSchdulManageVO
@@ -706,7 +747,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 일정를 등록 처리 한다.
+	 * ■일정를 등록 처리 한다.
+	 * =================================
 	 * @param multiRequest
 	 * @param searchVO
 	 * @param commandMap
@@ -778,7 +820,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 시간을 LIST를 반환한다.
+	 * ■시간을 LIST를 반환한다.
+	 * =================================
 	 * @return  List
 	 * @throws
 	 */
@@ -805,7 +848,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 분을 LIST를 반환한다.
+	 * ■분을 LIST를 반환한다.
+	 * =================================
 	 * @return  List
 	 * @throws
 	 */
@@ -832,7 +876,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 0을 붙여 반환
+	 * ■0을 붙여 반환
+	 * =================================
 	 * @return  String
 	 * @throws
 	 */
@@ -848,8 +893,8 @@ public class EgovIndvdlSchdulManageController {
 	}
 
 	/**
-	 * 운영자 권한을 확인한다.(로그인 여부를 확인한다.)
-	 *
+	 * ■운영자 권한을 확인한다.(로그인 여부를 확인한다.)
+	 * =================================
 	 * @param boardMaster
 	 * @throws EgovBizException
 	 */

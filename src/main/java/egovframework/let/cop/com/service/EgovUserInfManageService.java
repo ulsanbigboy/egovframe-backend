@@ -107,5 +107,9 @@ public interface EgovUserInfManageService {
      * @throws Exception
      */
     public List<UserInfVO> selectAllCmmntyUser(UserInfVO userVO) throws Exception;
+    
+    
 }
+
+
 

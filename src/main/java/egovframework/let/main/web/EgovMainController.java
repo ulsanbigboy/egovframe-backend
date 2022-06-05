@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 템플릿 메인 페이지 컨트롤러 클래스(Sample 소스)
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.main.web;
 
 import java.util.Map;
@@ -60,21 +33,24 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
+
 /**
- * 템플릿 메인 페이지 컨트롤러 클래스(Sample 소스)
- * @author 실행환경 개발팀 JJY
- * @since 2011.08.31
- * @version 1.0
- * @see
+ * <p>■템플릿 메인 페이지 컨트롤러 클래스(Sample 소스)</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자           수정내용
- *  -------    --------    ---------------------------
- *   2011.08.31  JJY            최초 생성
- *
- * </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Controller@SessionAttributes(types = ComDefaultVO.class)
 public class EgovMainController {
@@ -86,46 +62,42 @@ public class EgovMainController {
 	 */
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
+	
 	/**
-	 * EgovBBSManageService
+	 * ■EgovBBSManageService
+	 * =================================
 	 */
 	@Resource(name = "EgovBBSManageService")
     private EgovBBSManageService bbsMngService;
 
+	
 	/**
-	 * 메인 페이지에서 각 업무 화면으로 연계하는 기능을 제공한다.
-	 *
+	 * ■메인 페이지에서 각 업무 화면으로 연계하는 기능을 제공한다.
+	 * =================================
 	 * @param request
 	 * @param commandMap
 	 * @exception Exception Exception
 	 */
 	@RequestMapping(value = "/cmm/forwardPage.do")
-	public String forwardPageWithMenuNo(HttpServletRequest request, @RequestParam Map<String, Object> commandMap)
-	  throws Exception{
-
+	public String forwardPageWithMenuNo(HttpServletRequest request, @RequestParam Map<String, Object> commandMap) throws Exception{
 		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
 		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
-
-
 		return "";
 	}
 
 	/**
-	 * 템플릿 메인 페이지 조회
+	 * ■템플릿 메인 페이지 조회
+	 * =================================
 	 * @return 메인페이지 정보 Map [key : 항목명]
-	 *
 	 * @param request
 	 * @param model
 	 * @exception Exception Exception
 	 */
 	@RequestMapping(value = "/cmm/main/mainPage.do")
-	public String getMgtMainPage(HttpServletRequest request, ModelMap model)
-	  throws Exception{
+	public String getMgtMainPage(HttpServletRequest request, ModelMap model) throws Exception{
 
 		egovframework.com.cmm.util.LogUtil.start(logger, "START", null);
 		egovframework.com.cmm.util.LogUtil.end(logger, "E N D");
-
-
 
 		// 공지사항 메인 컨텐츠 조회 시작 ---------------------------------
 		BoardVO boardVO = new BoardVO();
@@ -156,3 +128,4 @@ public class EgovMainController {
 	}
 
 }
+

@@ -6,39 +6,12 @@
  * 서브 시스템 : 
  * 일       자 : 2022.05.01
  * 개 발 환 경 : JDK1.7.0_79, RESIN-3.1.9
- * 주 요 내 용 : ■ 공통 >  로그 출력
+ * 주 요 내 용 : ■ 게시판 속성관리를 위한 컨트롤러  클래스
  ********+*********+*********+*********+*********+*********+*********+*********/
 
 /*
  * ■패키지명
  */
-
-
-/**
- * <p>■공통 >  로그 출력</p>
- * <p>COPYRIGHT: Copyright (c) 2003</p>
- * <p>COMPANY: (LTD)KYOBOBOOK</p>
- * <DL>
- *   <DT>처리순.<BR>
- *     <DD>.<BR>
- * <BR>
- *   <DT>전제조건.<BR>
- *     <DD>개발환경 : jdk8, resin 3.1<BR>
- * </DL>
- * <BR>
- *
- * @author   
- * @version  1.0
- * @since    1.0
- */
-	
-	/**
-	 * ■함수 시작 로그 출력
-	 * =================================
-	 * @param logger
-	 * @param msg
-	 * @param req
-	 */
 package egovframework.let.cop.bbs.web;
 import java.util.List;
 import java.util.Map;
@@ -71,57 +44,71 @@ import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 /**
- * 게시판 속성관리를 위한 컨트롤러  클래스
- * @author 공통 서비스 개발팀 이삼섭
- * @since 2009.03.12
- * @version 1.0
- * @see
+ * <p>■게시판 속성관리를 위한 컨트롤러  클래스</p>
+ * <p>COPYRIGHT: Copyright (c) 2003</p>
+ * <p>COMPANY: (LTD)KYOBOBOOK</p>
+ * <DL>
+ *   <DT>처리순.<BR>
+ *     <DD>.<BR>
+ * <BR>
+ *   <DT>전제조건.<BR>
+ *     <DD>개발환경 : jdk8, resin 3.1<BR>
+ * </DL>
+ * <BR>
  *
- * <pre>
- * << 개정이력(Modification Information) >>
- *
- *   수정일      수정자          수정내용
- *  -------    --------    ---------------------------
- *  2009.03.12  이삼섭          최초 생성
- *  2009.06.26	한성곤		2단계 기능 추가 (댓글관리, 만족도조사)
- *  2011.08.31  JJY            경량환경 템플릿 커스터마이징버전 생성
- *
- *  </pre>
+ * @author   
+ * @version  1.0
+ * @since    1.0
  */
 @Controller
 public class EgovBBSAttributeManageController {
 
-	
 	/**
 	 * ■로그
 	 * =================================
 	 */
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
-	/** EgovBBSAttributeManageService */
+	/**
+	 * ■EgovBBSAttributeManageService
+	 * =================================
+	 */
     @Resource(name = "EgovBBSAttributeManageService")
     private EgovBBSAttributeManageService bbsAttrbService;
-
-    /** EgovCmmUseService */
+	
+	/**
+	 * ■EgovCmmUseService
+	 * =================================
+	 */
     @Resource(name = "EgovCmmUseService")
     private EgovCmmUseService cmmUseService;
-
-    /** EgovPropertyService */
+	
+	/**
+	 * ■EgovPropertyService
+	 * =================================
+	 */
     @Resource(name = "propertiesService")
     protected EgovPropertyService propertyService;
-
-    /** DefaultBeanValidator */
+	
+	/**
+	 * ■DefaultBeanValidator
+	 * =================================
+	 */
     @Autowired
     private DefaultBeanValidator beanValidator;
-
-    /** EgovMessageSource */
+	
+	/**
+	 * ■EgovMessageSource
+	 * =================================
+	 */
     @Resource(name="egovMessageSource")
     EgovMessageSource egovMessageSource;
 
     /**
-     * 운영자 권한을 확인한다.(로그인 여부를 확인한다.)
-     *
+     * ■운영자 권한을 확인한다.(로그인 여부를 확인한다.)
+	 * =================================
      * @param boardMaster
      * @throws EgovBizException
      */
@@ -136,8 +123,8 @@ public class EgovBBSAttributeManageController {
     }
 
 	/**
-     * 신규 게시판 마스터 등록을 위한 등록페이지로 이동한다.
-     *
+     * ■신규 게시판 마스터 등록을 위한 등록페이지로 이동한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -176,8 +163,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 신규 게시판 마스터 정보를 등록한다.
-     *
+     * ■신규 게시판 마스터 정보를 등록한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @return
@@ -232,8 +219,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 마스터 목록을 조회한다.
-     *
+     * ■게시판 마스터 목록을 조회한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -277,8 +264,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 마스터 상세내용을 조회한다.
-     *
+     * ■게시판 마스터 상세내용을 조회한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -303,8 +290,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 마스터 정보를 수정한다.
-     *
+     * ■게시판 마스터 정보를 수정한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param model
@@ -346,8 +333,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 마스터 정보를 삭제한다.
-     *
+     * ■게시판 마스터 정보를 삭제한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param status
@@ -379,8 +366,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 마스터 선택 팝업을 위한 목록을 조회한다.
-     *
+     * ■게시판 마스터 선택 팝업을 위한 목록을 조회한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -426,8 +413,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 사용을 위한 신규 게시판 속성정보를 생성한다.
-     *
+     * ■게시판 사용을 위한 신규 게시판 속성정보를 생성한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param bindingResult
@@ -487,8 +474,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 사용중인 게시판 속성 정보의 목록을 조회 한다.
-     *
+     * ■사용중인 게시판 속성 정보의 목록을 조회 한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -532,8 +519,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 사용을 위한 게시판 속성정보 한 건을 상세조회한다.
-     *
+     * ■게시판 사용을 위한 게시판 속성정보 한 건을 상세조회한다.
+	 * =================================
      * @param boardMasterVO
      * @param model
      * @return
@@ -560,8 +547,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 게시판 사용을 위한 게시판 속성정보를 수정한다.
-     *
+     * ■게시판 사용을 위한 게시판 속성정보를 수정한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param model
@@ -604,8 +591,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 커뮤니티, 동호회에서 사용을 위한 게시판 마스터 등록 화면으로 이동한다.
-     *
+     * ■커뮤니티, 동호회에서 사용을 위한 게시판 마스터 등록 화면으로 이동한다.
+	 * =================================
      * @param boardMasterVO
      * @param sessionVO
      * @param model
@@ -641,8 +628,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 등록된 게시판 속성정보를 삭제한다.
-     *
+     * ■등록된 게시판 속성정보를 삭제한다.
+	 * =================================
      * @param boardMasterVO
      * @param boardMaster
      * @param sessionVO
@@ -676,8 +663,8 @@ public class EgovBBSAttributeManageController {
     }
 
     /**
-     * 커뮤니티, 동호회에서 사용중인 게시판 속성 정보의 목록 조회한다.
-     *
+     * ■커뮤니티, 동호회에서 사용중인 게시판 속성 정보의 목록 조회한다.
+	 * =================================
      * @param commandMap
      * @param sessionVO
      * @param model
@@ -705,4 +692,6 @@ public class EgovBBSAttributeManageController {
 
 		return "cop/bbs/EgovBdListPortlet";
     }
+    
 }
+
