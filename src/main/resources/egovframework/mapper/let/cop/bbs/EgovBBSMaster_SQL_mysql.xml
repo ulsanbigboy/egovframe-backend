@@ -46,6 +46,7 @@
 	</resultMap>
 
 	<insert id="insertBBSMasterInf" parameterType="egovframework.let.cop.bbs.service.BoardMaster">
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 		
 			INSERT INTO LETTNBBSMASTER
 			(BBS_ID, BBS_TY_CODE, BBS_ATTRB_CODE, BBS_NM, BBS_INTRCN, 
@@ -61,7 +62,7 @@
 	</insert>
 	
 	<select id="selectBBSMasterInfs" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultMap="boardMasterList">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				a.BBS_ID, a.BBS_TY_CODE, b.CODE_NM as BBS_TY_CODE_NM,
 				a.BBS_ATTRB_CODE, c.CODE_NM as BBS_ATTRB_CODE_NM, a.BBS_NM, 
@@ -95,7 +96,7 @@
 	</select>	
 	
 	<select id="selectBBSMasterInfsCnt" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultType="java.lang.Integer">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				COUNT(a.BBS_ID)
 			FROM
@@ -122,7 +123,7 @@
 	</select>	
  
 	<select id="selectBBSMasterInf" parameterType="egovframework.let.cop.bbs.service.BoardMaster" resultMap="boardMasterDetail">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				a.BBS_ID, a.BBS_TY_CODE, b.CODE_NM as BBS_TY_CODE_NM, a.BBS_INTRCN, 
 				a.BBS_ATTRB_CODE, c.CODE_NM as BBS_ATTRB_CODE_NM, a.BBS_NM, 
@@ -150,7 +151,7 @@
 	</select> 
  
  	<update id="updateBBSMasterInf" parameterType="egovframework.let.cop.bbs.service.BoardMaster">
- 		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			UPDATE LETTNBBSMASTER SET 
 				BBS_NM = #{bbsNm},
 				BBS_INTRCN = #{bbsIntrcn}, 
@@ -165,7 +166,7 @@
  	</update>
 
  	<update id="deleteBBSMasterInf" parameterType="egovframework.let.cop.bbs.service.BoardMaster">
- 		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			UPDATE LETTNBBSMASTER SET 
 				USE_AT = 'N',
 				LAST_UPDUSR_ID = #{lastUpdusrId},
@@ -175,7 +176,7 @@
  	</update>
 
 	<select id="selectAllBBSMaster" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultMap="boardMasterAll">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				BBS_ID, BBS_TY_CODE, BBS_ATTRB_CODE, BBS_NM, TMPLAT_ID
 			FROM
@@ -185,7 +186,7 @@
 	</select>
 	
 	<select id="selectAllBdMstrByTrget" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultMap="boardMasterAll">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				a.BBS_ID, a.BBS_TY_CODE, a.BBS_ATTRB_CODE, a.BBS_NM, a.TMPLAT_ID
 			FROM
@@ -201,7 +202,7 @@
 	</select>	
 
 	<select id="selectBdMstrListByTrget" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultMap="boardMasterList">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				a.BBS_ID, a.BBS_TY_CODE, b.CODE_NM as BBS_TY_CODE_NM,
 				a.BBS_ATTRB_CODE, c.CODE_NM as BBS_ATTRB_CODE_NM, a.BBS_NM, 
@@ -236,7 +237,7 @@
 	</select>
 
 	<select id="selectBdMstrListCntByTrget" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultType="java.lang.Integer">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				COUNT(a.BBS_ID)
 			FROM
@@ -264,7 +265,7 @@
 	</select>
 
 	<select id="selectNotUsedBdMstrList" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultMap="boardMasterList">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				a.BBS_ID, a.BBS_TY_CODE, b.CODE_NM as BBS_TY_CODE_NM,
 				a.BBS_ATTRB_CODE, c.CODE_NM as BBS_ATTRB_CODE_NM, a.BBS_NM, 
@@ -296,7 +297,7 @@
 	</select>	
 	
 	<select id="selectNotUsedBdMstrListCnt" parameterType="egovframework.let.cop.bbs.service.BoardMasterVO" resultType="java.lang.Integer">
-		
+		/* ■.EgovBBSMaster_SQL_mysql.xml > YYYYYYYYYY */
 			SELECT 
 				COUNT(a.BBS_ID)
 			FROM

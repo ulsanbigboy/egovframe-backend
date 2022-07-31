@@ -12,6 +12,7 @@
 	</resultMap>
 
 	<select id="selectCmmCodeDetail" parameterType="ComDefaultCodeVO" resultMap="CmmCodeDetail">
+		/* ■.EgovCmmUse_SQL_mysql.xml > YYYYYYYYYY */
 		 
 			SELECT 
 			CODE_ID, CODE, CODE_NM, CODE_DC
@@ -24,7 +25,7 @@
 	</select>
 
     <select id="selectOgrnztIdDetail" parameterType="ComDefaultCodeVO" resultMap="CmmCodeDetail">
-             
+		/* ■.EgovCmmUse_SQL_mysql.xml > YYYYYYYYYY */
             SELECT 
                 #{tableNm}     CODE_ID, 
                 ORGNZT_ID     CODE, 
@@ -40,7 +41,7 @@
     </select>
     
     <select id="selectGroupIdDetail" parameterType="ComDefaultCodeVO" resultMap="CmmCodeDetail">
-             
+		/* ■.EgovCmmUse_SQL_mysql.xml > YYYYYYYYYY */
             SELECT 
                 #{tableNm}     CODE_ID, 
                 GROUP_ID     CODE, 
